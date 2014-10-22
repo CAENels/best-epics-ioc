@@ -10,7 +10,7 @@ dbLoadDatabase("../../dbd/best.dbd",0,0)
 best_registerRecordDeviceDriver(pdbbase) 
 
 ## Load record instances
-dbLoadRecords("../../db/best.db","user=jan")
+dbLoadRecords("../../db/best.db","P=best0")
 
 iocInit()
 

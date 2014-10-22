@@ -1,0 +1,6 @@
+record(ai,"$(P):PosX")
+{
+	field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM position X")
+	field( SCAN, "Passive")
+}

@@ -14,6 +14,7 @@ DBD += best.dbd
 
 # best.dbd will be made up from these files:
 best_DBD += base.dbd
+best_DBD += bestdev.dbd
 
 # Include dbd files from all support applications:
 #best_DBD += xxx.dbd
@@ -23,6 +24,7 @@ best_DBD += base.dbd
 
 # best_registerRecordDeviceDriver.cpp derives from best.dbd
 best_SRCS += best_registerRecordDeviceDriver.cpp
+best_SRCS += devAiBest.cpp
 
 # Build the main IOC entry point on workstation OSs.
 best_SRCS_DEFAULT += bestMain.cpp
