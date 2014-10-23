@@ -1,0 +1,4 @@
+epicsEnvSet("ARCH","linux-x86_64")
+epicsEnvSet("IOC","iocbest")
+epicsEnvSet("TOP","/home/jan/CAENels/EPICS/BEST/bestIoc")
+epicsEnvSet("EPICS_BASE","/opt/EPICS/base-3.14.12.4")

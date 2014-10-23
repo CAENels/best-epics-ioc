@@ -4,3 +4,10 @@ record(ai,"$(P):PosX")
 	field( DESC, "BPM position X")
 	field( SCAN, "Passive")
 }
+
+
+record(ao,"$(P):DACoutCh0")
+{
+	field( DTYP, "CAENels BEST Ao")
+	field( DESC, "CAENels PreDAC Direct Write")
+}
