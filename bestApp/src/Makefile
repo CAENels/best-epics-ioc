@@ -27,6 +27,7 @@ best_SRCS += best_registerRecordDeviceDriver.cpp
 best_SRCS += best.c
 best_SRCS += devAiBest.cpp
 best_SRCS += devAoBest.cpp
+best_SRCS += devMbboBest.cpp
 
 # Build the main IOC entry point on workstation OSs.
 best_SRCS_DEFAULT += bestMain.cpp

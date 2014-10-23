@@ -1,2 +1,3 @@
 device(ai, INST_IO, devAiBest, "CAENels BEST Ai")
 device(ao, INST_IO, devAoBest, "CAENels BEST Ao")
+device(mbbo, INST_IO, devMbboBest, "CAENels BEST Mbbo")

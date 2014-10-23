@@ -6,8 +6,17 @@ record(ai,"$(P):PosX")
 }
 
 
-record(ao,"$(P):DACoutCh0")
+record(ao,"$(P):PreDAC:OutCh0")
 {
 	field( DTYP, "CAENels BEST Ao")
 	field( DESC, "CAENels PreDAC Direct Write")
+}
+
+
+record(mbbo,"$(P):OutMux")
+{
+	field( DTYP, "CAENels BEST Mbbo")
+	field( DESC, "Out mux (0=HW, 1=SW)")
+	field( ZRST, "FPGA")
+	field( ONST, "SW via PCIe")
 }

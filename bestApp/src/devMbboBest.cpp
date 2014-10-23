@@ -1,4 +1,4 @@
-#include <aoRecord.h>
+#include <mbboRecord.h>
 #include <epicsExport.h>
 
 #include <dbScan.h>
@@ -12,18 +12,18 @@
 #include "best.h"
 
 static long init_record(void* precord){
-    aoRecord *pao = (aoRecord*) precord;
+    mbboRecord *pao = (mbboRecord*) precord;
     printf("%s:\n", pao->name);
     return 0;
 }
 
-static long write_ao(void* precord){
-    aoRecord *pao = (aoRecord*) precord;
+static long write_mbbo(void* precord){
+    mbboRecord *pao = (mbboRecord*) precord;
     char pvName[128];
     stripEpicsIocName(pvName, pao->name);
     printf("%s: %s\n", __FUNCTION__, pvName);
 
-    writeBest(pvName, USHORT, (void*)&pao->val);
+    writeBest(pvName, INT, (void*)&pao->val);
     return 0;
 }
 
@@ -34,19 +34,17 @@ struct {
     DEVSUPFUN  init;
     DEVSUPFUN  init_record;
     DEVSUPFUN  get_ioint_info;
-    DEVSUPFUN  write_ao;
+    DEVSUPFUN  write_mbbo;
     DEVSUPFUN  special_linconv;
-} devAoBest = {
+} devMbboBest = {
     6,
     NULL,
     NULL,
     (long int (*)(void*))init_record,
     NULL,
-    (long int (*)(void*))write_ao,
+    (long int (*)(void*))write_mbbo,
     NULL
 };
 
 
-
-
-epicsExportAddress(dset,devAoBest);
+epicsExportAddress(dset,devMbboBest);

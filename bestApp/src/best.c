@@ -16,6 +16,10 @@ int writeBest(char *pvName, retType_t type, void* payload){
         printf("DAC Out Channel: %d, value: %lf\n", dacCh, *(double*)payload);
     }
     //=========================================================================
+    else if( strcmp(pvName, "OutMux") == 0 ){
+        printf("Out Mux %d\n", *(short int*)payload);
+    }
+    //=========================================================================
     else {
         puts("unknown variable");
     }
