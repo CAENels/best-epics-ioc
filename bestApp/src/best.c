@@ -2,7 +2,7 @@
 
 int stripEpicsIocName(char *pvName, const char *name){
     strcpy(pvName, name);
-    while(sscanf(pvName, "%*[^:]:%s", pvName)>1);
+    while(sscanf(pvName, "%*[^:]:%s", pvName) > 0);
     return 0;
 }
 
@@ -18,6 +18,11 @@ int writeBest(char *pvName, retType_t type, void* payload){
     //=========================================================================
     else if( strcmp(pvName, "OutMux") == 0 ){
         printf("Out Mux %d\n", *(short int*)payload);
+    }
+    //=========================================================================
+    else if( strcmp(pvName, "Out") == 0 ){
+        double* d_ptr = (double*)payload;
+        printf("Out %lf %lf %lf %lf\n", *d_ptr, *(d_ptr+1), *(d_ptr+2), *(d_ptr+3));
     }
     //=========================================================================
     else {

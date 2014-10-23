@@ -20,3 +20,13 @@ record(mbbo,"$(P):OutMux")
 	field( ZRST, "FPGA")
 	field( ONST, "SW via PCIe")
 }
+
+
+record(waveform,"$(P):PreDAC:Out")
+{
+	field( DTYP, "CAENels BEST Waveform")
+	field( DESC, "asdsda")
+	field( FTVL, "DOUBLE")
+	field( NELM, "7")
+}
+
