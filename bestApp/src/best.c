@@ -11,17 +11,14 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
     //=========================================================================
     if( strcmp(pvName, "PosX") == 0 ) {
         printf("%s: PosX\n", __FUNCTION__);
-        double *buffer = (double*)malloc(count*sizeof(double));
+        double *buffer = (double*)malloc(count*sizeof(double)*DISP_NR_CH);
         double *retBuf = (double*)payload;
         int fd = open(FILE_DISP, O_RDONLY | O_SYNC);
-        printf("fd: %d\n", fd);
-        int rv = read(fd, buffer, count*sizeof(double));
-        printf("rv: %d\n", rv);
-
-        int i = 0;
+        int rv = read(fd, buffer, count*sizeof(double)*DISP_NR_CH);
+        int i;
         for(i = 0; i < count; i++){
-            printf("%d: %lf\n", i, buffer[DISP_POSX + i*32]);
-            retBuf[i] = buffer[DISP_POSX + i*32];
+            printf("%d: %lf\n", i, buffer[DISP_POSX + i*DISP_NR_CH]);
+            retBuf[i] = buffer[DISP_POSX + i*DISP_NR_CH];
         }
 
         close(fd);
