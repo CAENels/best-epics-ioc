@@ -29,7 +29,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
         int i;
         for(i = 0; i < count; i++){
             //printf("%d: %lf\n", i, buffer[offset + i*DISP_NR_CH]);
-            retBuf[i] = buffer[DISP_POSX + i*DISP_NR_CH];
+            retBuf[i] = buffer[offset + i*DISP_NR_CH];
         }
 
         close(fd);
