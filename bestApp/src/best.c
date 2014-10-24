@@ -19,7 +19,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 
         int i = 0;
         for(i = 0; i < 32; i++){
-            printf("%d: %ld\n", i, buffer[i]);
+            printf("%d: %lf\n", i, buffer[i]);
         }
 
         close(fd);
