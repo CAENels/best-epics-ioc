@@ -9,15 +9,26 @@ int stripEpicsIocName(char *pvName, const char *name){
 int readBest(char *pvName, retType_t type, void* payload, int count){
 
     //=========================================================================
-    if( strcmp(pvName, "PosX") == 0 ) {
-        printf("%s: PosX\n", __FUNCTION__);
+    if( (strcmp(pvName, "PosX") == 0) ||
+            (strcmp(pvName, "PosY") == 0) ||
+            (strcmp(pvName, "Int")  == 0) ) {
+
+        printf("%s: %s\n", __FUNCTION__, pvName);
+
         double *buffer = (double*)malloc(count*sizeof(double)*DISP_NR_CH);
         double *retBuf = (double*)payload;
+
         int fd = open(FILE_DISP, O_RDONLY | O_SYNC);
         int rv = read(fd, buffer, count*sizeof(double)*DISP_NR_CH);
+
+        int offset = 0;
+        if( strcmp(pvName, "PosX") == 0 ) offset = DISP_POSX;
+        if( strcmp(pvName, "PosY") == 0 ) offset = DISP_POSY;
+        if( strcmp(pvName, "Int") == 0 ) offset = DISP_INT0;
+
         int i;
         for(i = 0; i < count; i++){
-            printf("%d: %lf\n", i, buffer[DISP_POSX + i*DISP_NR_CH]);
+            //printf("%d: %lf\n", i, buffer[offset + i*DISP_NR_CH]);
             retBuf[i] = buffer[DISP_POSX + i*DISP_NR_CH];
         }
 
