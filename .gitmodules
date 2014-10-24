@@ -1,3 +1,6 @@
 [submodule "pcie_driver"]
 	path = bestApp/src/pcie_driver
 	url = Jan@192.168.1.11:/volume1/GitRepos/beamline_inst/local_feedback/pcie_driver.git
+[submodule "pcie_mailbox"]
+	path = bestApp/src/pcie_mailbox
+	url = Jan@192.168.1.11:/volume1/GitRepos/beamline_inst/local_feedback/pcie_mailbox

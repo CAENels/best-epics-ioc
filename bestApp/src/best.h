@@ -9,8 +9,9 @@
 #include <fcntl.h>
 
 #include "pcie_driver/BEST_PCIe.h"
+#include "pcie_mailbox/mailbox_comm_defs.h"
 
-
+#define FILE_MBOX       "/dev/best_mailbox"
 #define FILE_PREDAC     "/dev/best_predac0"
 
 

@@ -16,9 +16,10 @@ record(ao,"$(P):PreDAC:OutCh0")
 record(mbbo,"$(P):OutMux")
 {
 	field( DTYP, "CAENels BEST Mbbo")
-	field( DESC, "Out mux (0=HW, 1=SW)")
-	field( ZRST, "FPGA")
-	field( ONST, "SW via PCIe")
+	field( DESC, "Out mux (1=SW, 0=HW)")
+	field( ONST, "FPGA")
+	field( ZRST, "SW via PCIe")
+
 }
 
 
