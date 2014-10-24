@@ -4,6 +4,14 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <fcntl.h>
+
+#include "pcie_driver/BEST_PCIe.h"
+
+
+#define FILE_PREDAC     "/dev/best_predac0"
 
 
 typedef enum retType {

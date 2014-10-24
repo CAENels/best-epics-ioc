@@ -29,73 +29,39 @@ static long read_wf(void* precord){
     char pvName[128];
     stripEpicsIocName(pvName, pwf->name);
     printf("%s: %s\n", __FUNCTION__, pvName);
-/*
+
     printf("%s: BPTR: %p\n", __FUNCTION__, pwf->bptr);
     printf("%s: nelm: %d\n", __FUNCTION__, pwf->nelm);
+    printf("%s: nord: %d\n", __FUNCTION__, pwf->nord);
     printf("%s: @bptr: %lf\n", __FUNCTION__, *(double*)pwf->bptr);
-    printf("%s: @(bptr+8): %lf\n", __FUNCTION__, *(double*)(pwf->bptr+40));
+    printf("%s: @(bptr+8): %lf\n", __FUNCTION__, *(double*)(pwf->bptr+8));
     printf("%s: val: %lf\n", __FUNCTION__, pwf->val);
 
-    int i = 0;
-    unsigned char* tmp = (unsigned char*)pwf->bptr;
-    for(i = 0; i < 64; i++){
-        if(i % 8 == 0) printf("\n");
-        printf("%02x ", *tmp++);
-    }
-*/
-    pwf->nord = 10;
-
-    //writeBest(pvName, DOUBLE, (void*)pwf->bptr);
-    return 0;
-}
-
-
-static long write_wf(void* precord){
-    waveformRecord *pwf = (waveformRecord*) precord;
-    char pvName[128];
-    stripEpicsIocName(pvName, pwf->name);
-    printf("%s: %s\n", __FUNCTION__, pvName);
-/*
-    printf("%s: BPTR: %p\n", __FUNCTION__, pwf->bptr);
-    printf("%s: nelm: %d\n", __FUNCTION__, pwf->nelm);
-    printf("%s: @bptr: %lf\n", __FUNCTION__, *(double*)pwf->bptr);
-    printf("%s: @(bptr+8): %lf\n", __FUNCTION__, *(double*)(pwf->bptr+40));
-    printf("%s: val: %lf\n", __FUNCTION__, pwf->val);
-
-    int i = 0;
-    unsigned char* tmp = (unsigned char*)pwf->bptr;
-    for(i = 0; i < 64; i++){
-        if(i % 8 == 0) printf("\n");
-        printf("%02x ", *tmp++);
-    }
 
     pwf->nord = 10;
-*/
-    //writeBest(pvName, DOUBLE, (void*)pwf->bptr);
+
+    writeBest(pvName, DOUBLE, (void*)pwf->bptr);
     return 0;
 }
 
 
 
+struct wfdset { /* waveform dset */
+        long            number;
+        DEVSUPFUN       dev_report;
+        DEVSUPFUN       init;
+        DEVSUPFUN       init_record; /*returns: (-1,0)=>(failure,success)*/
+        DEVSUPFUN       get_ioint_info;
+        DEVSUPFUN       read_wf; /*returns: (-1,0)=>(failure,success)*/
+};
 
-struct {
-    long num;
-    DEVSUPFUN  report;
-    DEVSUPFUN  init;
-    DEVSUPFUN  init_record;
-    DEVSUPFUN  get_ioint_info;
-    DEVSUPFUN  read_wf;
-    DEVSUPFUN  write_wf;
-    DEVSUPFUN  special_linconv;
-} devWaveformBest = {
-    6,
+struct wfdset devWaveformBest = {
+    5,
     NULL,
     NULL,
     (long int (*)(void*))init_record,
     NULL,
-    (long int (*)(void*))read_wf,
-    (long int (*)(void*))write_wf,
-    NULL
+    (long int (*)(void*))read_wf
 };
 
 

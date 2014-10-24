@@ -23,6 +23,20 @@ int writeBest(char *pvName, retType_t type, void* payload){
     else if( strcmp(pvName, "Out") == 0 ){
         double* d_ptr = (double*)payload;
         printf("Out %lf %lf %lf %lf\n", *d_ptr, *(d_ptr+1), *(d_ptr+2), *(d_ptr+3));
+        int fd = open(FILE_PREDAC, O_RDWR | O_SYNC);
+        printf("fd: %d\n", fd);
+        struct dac_data dac = {
+            .ch0 = *d_ptr,
+            .ch1 = *(d_ptr+1),
+            .ch2 = *(d_ptr+2),
+            .ch3 = *(d_ptr+3),
+            .control = 0x1
+        };
+
+        int ret = ioctl(fd, IOCTL_WRITE_DAC, &dac);
+        printf("ioctl(): %d\n", ret);
+
+        close(fd);
     }
     //=========================================================================
     else {
