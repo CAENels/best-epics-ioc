@@ -16,6 +16,10 @@
 #define FILE_PREDAC     "/dev/best_predac0"
 #define FILE_DISP       "/dev/best_dma_displ"
 
+#define DISP_POSX       0
+#define DISP_POSY       1
+#define DISP_INT0       2
+
 typedef enum retType {
     INT,
     DOUBLE,
