@@ -46,13 +46,13 @@ static long read_wf(void* precord){
     */
 
     pwf->nord = pwf->nelm;
-    if( strcmp(pvName, "PosX") == 0){
+    if ( strcmp(pvName, "Out") == 0){
+            writeBest(pvName, DOUBLE, (void*)pwf->bptr);
+    } else {
         readBest(pvName, DOUBLE, (void*)pwf->dpvt, pwf->nelm);
         pwf->bptr = pwf->dpvt;
     }
-    else if ( strcmp(pvName, "Out") == 0){
-        writeBest(pvName, DOUBLE, (void*)pwf->bptr);
-    }
+
 
     return 0;
 }
