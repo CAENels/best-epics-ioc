@@ -6,6 +6,30 @@ int stripEpicsIocName(char *pvName, const char *name){
     return 0;
 }
 
+int readBest(char *pvName, retType_t type, void* payload, int count){
+
+    //=========================================================================
+    if( strcmp(pvName, "PosX") == 0 ) {
+        printf("%s: PosX\n", __FUNCTION__);
+        double *buffer = (double*)malloc(count*sizeof(double));
+        int fd = open(FILE_DISP, O_RDONLY | O_SYNC);
+        printf("fd: %d\n", fd);
+        int rv = read(fd, buffer, count*sizeof(double));
+        printf("rv: %d\n", rv);
+
+        int i = 0;
+        for(i = 0; i < 32; i++){
+            printf("%d: %ld\n", i, buffer[i]);
+        }
+
+        close(fd);
+        free(buffer);
+    }
+    //=========================================================================
+    else {
+        puts("unknown variable");
+    }
+}
 
 
 int writeBest(char *pvName, retType_t type, void* payload){

@@ -1,8 +1,17 @@
-record(ai,"$(P):PosX")
+record(ai,"$(P):PosXsingle")
 {
 	field( DTYP, "CAENels BEST Ai")
 	field( DESC, "BPM position X")
 	field( SCAN, "Passive")
+}
+
+record(waveform,"$(P):PosX")
+{
+        field( DTYP, "CAENels BEST Waveform")
+        field( DESC, "Position X")
+        field( FTVL, "DOUBLE")
+        field( NELM, "1024")
+        field( SCAN, "1 second")
 }
 
 
@@ -28,6 +37,6 @@ record(waveform,"$(P):PreDAC:Out")
 	field( DTYP, "CAENels BEST Waveform")
 	field( DESC, "asdsda")
         field( FTVL, "DOUBLE")
-	field( NELM, "7")
+        field( NELM, "4")
 }
 
