@@ -33,6 +33,13 @@ record(waveform,"$(P):BPM0:Int")
         field( SCAN, "1 second")
 }
 
+record(ai,"$(P):BPM0:ScaleX")
+{
+        field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM position X")
+	field( SCAN, "Passive")
+}
+
 
 record(ao,"$(P):PreDAC:OutCh0")
 {

@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "best_c_interface.h"
+
 static long init_record_ai(void* precord){
     aiRecord *pao = (aiRecord*) precord;
     printf("%s:\n", pao->name);
@@ -19,7 +21,11 @@ static long init_record_ai(void* precord){
 static long read_ai(void* precord){
     aiRecord *pao = (aiRecord*) precord;
     printf("%s:\n", __FUNCTION__);
-    pao->rval = 2.0;
+    //pao->rval = 2.0;
+
+	double scaleX, scaleY;
+	getBPMscaling(&scaleX, &scaleY);
+	pao->rval = scaleX;
     return 0;
 }
 
