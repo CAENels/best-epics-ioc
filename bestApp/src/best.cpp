@@ -105,7 +105,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
     }
     //=========================================================================
     else {
-        puts("unknown variable");
+        PDEBUG(DEBUG_ERROR, " %s: unknown name", pvName);
     }
 
     return -1; // unknown variable
@@ -173,7 +173,7 @@ int writeBest(char *pvName, retType_t type, void* payload){
     }
     //=========================================================================
     else {
-        puts("unknown variable");
+        PDEBUG(DEBUG_ERROR, " %s: unknown name", pvName);
     }
 
     return -1;

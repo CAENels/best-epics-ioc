@@ -104,9 +104,9 @@ record(mbbo,"$(P):PID:Config")
 	field( ONST, "X & Y")
 	field( TWST, "X & I0")
 	field( THST, "Y")
-	field( FRVL, "Y & I0")
-	field( FVVL, "X & Y & I0")
-	field( SXVL, "I0")
+	field( FRST, "Y & I0")
+	field( FVST, "X & Y & I0")
+	field( SXST, "I0")
 }
 
 record(ao,"$(P):PID:SetpointX")
