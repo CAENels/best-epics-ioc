@@ -9,23 +9,24 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "best_c_interface.h"
+#include "best.h"
 
+/*
 static long init_record_ai(void* precord){
     aiRecord *pao = (aiRecord*) precord;
     printf("%s:\n", pao->name);
     pao->val = 1.0;
     return 0;
-}
+}*/
 
 static long read_ai(void* precord){
-    aiRecord *pao = (aiRecord*) precord;
-    printf("%s:\n", __FUNCTION__);
+	aiRecord *pao = (aiRecord*) precord;
+	printf("%s:\n", __FUNCTION__);
     //pao->rval = 2.0;
 
-	double scaleX, scaleY;
-	getBPMscaling(&scaleX, &scaleY);
-	pao->rval = scaleX;
+    //double scaleX, scaleY;
+    //getBPMscaling(&scaleX, &scaleY);
+    //pao->rval = scaleX;
     return 0;
 }
 
@@ -42,7 +43,7 @@ struct {
     6,
     NULL,
     NULL,
-    (long int (*)(void*))init_record_ai,
+    NULL,//(long int (*)(void*))init_record_ai,
     NULL,
     (long int (*)(void*))read_ai,
     NULL

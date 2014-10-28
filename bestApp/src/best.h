@@ -12,6 +12,17 @@
 #include "pcie_driver/BEST_PCIe.h"
 #include "pcie_mailbox/mailbox_comm_defs.h"
 
+
+extern uint32_t debug;
+
+#define DEBUG_ERROR     (0x1)
+#define DEBUG_WARN      (0x2)
+#define DEBUG_FUNC      (0x4)
+
+#define PDEBUG(level, fmt, args...) { \
+                if (debug & (level)) \
+                         printf(fmt,  ## args);  }
+
 #define FILE_MBOX       "/dev/best_mailbox"
 #define FILE_PREDAC     "/dev/best_predac0"
 #define FILE_DISP       "/dev/best_dma_displ"

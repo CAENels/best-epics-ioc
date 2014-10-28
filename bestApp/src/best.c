@@ -1,19 +1,38 @@
 #include "best.h"
 
+uint32_t debug;
+
 int stripEpicsIocName(char *pvName, const char *name){
-    strcpy(pvName, name);
-    while(sscanf(pvName, "%*[^:]:%s", pvName) > 0);
-    return 0;
+	const char* tmp = name;
+	int nrColons = 0;
+	while(*tmp != 0){
+		if(*tmp == ':') nrColons++; 
+		*tmp++;
+	}
+
+	tmp = name;
+	while(*tmp != 0){
+		if(*tmp == ':')  nrColons--; 
+		*tmp++;
+		if(nrColons == 1) break;
+	}
+
+	strcpy(pvName, tmp);	
+
+	return 0;
 }
 
 int readBest(char *pvName, retType_t type, void* payload, int count){
+
+    PDEBUG(DEBUG_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
+
+    return 0;
 
     //=========================================================================
     if( (strcmp(pvName, "PosX") == 0) ||
             (strcmp(pvName, "PosY") == 0) ||
             (strcmp(pvName, "Int")  == 0) ) {
 
-        printf("%s: %s\n", __FUNCTION__, pvName);
 
         double *buffer = (double*)malloc(count*sizeof(double)*DISP_NR_CH);
         double *retBuf = (double*)payload;
