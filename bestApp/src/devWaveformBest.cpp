@@ -14,12 +14,15 @@
 
 
 static long init_record(void* precord){
+    char stripdName[32];
     waveformRecord *pwf = (waveformRecord*) precord;
     PDEBUG(DEBUG_REC_INIT, "record name: %s\n", pwf->name);
 
     pwf->dpvt = callocMustSucceed(pwf->nelm, dbValueSize(pwf->ftvl), "first buf");
-
     PDEBUG(DEBUG_REC_INIT, "record: %s, alloc at: %p\n", pwf->name, pwf->dpvt);
+
+    stripEpicsIocName(stripdName, pwf->name);
+    initBest(stripdName, DOUBLE, precord);
 
     return 0;
 }

@@ -23,6 +23,55 @@ int stripEpicsIocName(char *pvName, const char *name){
 	return 0;
 }
 
+int initBest(char *pvName, retType_t type, void *rec){
+
+    PDEBUG(DEBUG_LOW_FUNC | DEBUG_REC_INIT, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
+
+
+    if( strcmp(pvName, "PID:SetpointX") == 0 ) {
+        aoRecord *pao = (aoRecord*) rec;
+        double scaleX, scaleY;
+        getBPMscaling(&scaleX, &scaleY);
+
+        pao->hopr = scaleX;
+        pao->lopr = scaleX*-1.;
+
+        return 0;
+    }
+    else if( strcmp(pvName, "PID:SetpointY") == 0) {
+        aoRecord *pao = (aoRecord*) rec;
+        double scaleX, scaleY;
+        getBPMscaling(&scaleX, &scaleY);
+
+        pao->hopr = scaleY;
+        pao->lopr = scaleY*-1.;
+
+        return 0;
+    }
+    else if( strcmp(pvName, "BPM0:PosX") == 0 ){
+        waveformRecord *pwf = (waveformRecord*) rec;
+        double scaleX, scaleY;
+        getBPMscaling(&scaleX, &scaleY);
+
+        pwf->hopr = scaleX;
+        pwf->lopr = scaleX*-1.;
+
+        return 0;
+    }
+    else if( strcmp(pvName, "BPM0:PosY") == 0 ){
+        waveformRecord *pwf = (waveformRecord*) rec;
+        double scaleX, scaleY;
+        getBPMscaling(&scaleX, &scaleY);
+
+        pwf->hopr = scaleY;
+        pwf->lopr = scaleY*-1.;
+
+        return 0;
+    }
+
+    return 0;
+}
+
 int readBest(char *pvName, retType_t type, void* payload, int count){
 
     PDEBUG(DEBUG_LOW_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);

@@ -12,8 +12,12 @@
 #include "best.h"
 
 static long init_record(void* precord){
+    char stripdName[32];
     aoRecord *pao = (aoRecord*) precord;
     PDEBUG(DEBUG_REC_INIT, "record name: %s\n", pao->name);
+
+    stripEpicsIocName(stripdName, pao->name);
+    initBest(stripdName, DOUBLE, precord);
 
     return 0;
 }

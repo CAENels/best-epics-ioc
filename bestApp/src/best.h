@@ -13,6 +13,8 @@
 #include "pcie_mailbox/mailbox_comm_defs.h"
 
 #include "best_c_interface.h"
+#include <aoRecord.h>
+#include <waveformRecord.h>
 
 
 extern uint32_t debug;
@@ -53,6 +55,7 @@ typedef enum retType {
 extern "C" {
 #endif
     int stripEpicsIocName(char *pvName, const char *name);
+    int initBest(char *pvName, retType_t type, void *rec);
     int readBest(char *pvName, retType_t type, void* payload, int count);
     int writeBest(char *pvName, retType_t type, void* payload);
 #ifdef __cplusplus
