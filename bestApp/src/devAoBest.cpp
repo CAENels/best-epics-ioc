@@ -13,19 +13,22 @@
 
 static long init_record(void* precord){
     aoRecord *pao = (aoRecord*) precord;
-    printf("%s:\n", pao->name);
+    PDEBUG(DEBUG_REC_INIT, "record name: %s\n", pao->name);
+
     return 0;
 }
 
 static long write_ao(void* precord){
+    char stripdName[32];
     aoRecord *pao = (aoRecord*) precord;
-    char pvName[128];
-    stripEpicsIocName(pvName, pao->name);
-    printf("%s: %s\n", __FUNCTION__, pvName);
+    PDEBUG(DEBUG_REC_PROC, "record name: %s\n", pao->name);
 
-    writeBest(pvName, USHORT, (void*)&pao->val);
+    stripEpicsIocName(stripdName, pao->name);
+    writeBest(stripdName, DOUBLE, (void*)&pao->val);
+
     return 0;
 }
+
 
 
 struct {

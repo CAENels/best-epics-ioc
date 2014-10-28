@@ -26,6 +26,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 
     PDEBUG(DEBUG_LOW_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
 
+    //=========================================================================
     if( (strcmp(pvName, "BPM0:ScaleX") == 0) ||
             (strcmp(pvName, "BPM0:ScaleY") == 0) ) {
 
@@ -81,6 +82,32 @@ int writeBest(char *pvName, retType_t type, void* payload){
 
     PDEBUG(DEBUG_LOW_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
 
+
+    //=========================================================================
+    if( (strcmp(pvName, "PID:SetpointX") == 0) ||
+            (strcmp(pvName, "PID:SetpointY") == 0) ||
+            (strcmp(pvName, "PID:SetpointI0") == 0) ){
+        int sel;
+        switch(pvName[12]){
+        case 'X': sel = 0; break;
+        case 'Y': sel = 1; break;
+        case 'I': sel = 2; break;
+        }
+
+        PDEBUG(DEBUG_SET_DATA,
+               "pv: %s, setSetpoint(%d, %lf)\n",
+               pvName, sel, *(double*)payload);
+
+        setSetpoint(sel, *(double*)payload);
+
+    }
+    //=========================================================================
+    else {
+        puts("unknown variable");
+    }
+
+    return -1;
+    /*
     int dacCh;
 
     //=========================================================================
@@ -124,5 +151,5 @@ int writeBest(char *pvName, retType_t type, void* payload){
     //=========================================================================
     else {
         puts("unknown variable");
-    }
+    }*/
 }
