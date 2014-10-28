@@ -1,6 +1,7 @@
 #include "best.h"
 
-uint32_t debug;
+// default debug meassages on error and warn
+uint32_t debug = DEBUG_WARN | DEBUG_ERROR;
 
 int stripEpicsIocName(char *pvName, const char *name){
 	const char* tmp = name;
@@ -112,6 +113,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 
 
 int writeBest(char *pvName, retType_t type, void* payload){
+    unsigned short value;
 
     PDEBUG(DEBUG_LOW_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
 
@@ -136,13 +138,19 @@ int writeBest(char *pvName, retType_t type, void* payload){
     }
     //=========================================================================
     else if( strcmp(pvName, "PID:Enable") == 0 ) {
-        unsigned short value;
         value = *(unsigned short*)payload;
 
         PDEBUG(DEBUG_SET_DATA, "pv: %s, setFBenable(%d)\n", pvName, value);
 
         int rc = setFBenable(value);
         printf("rc: %d\n", rc); //XXX TODO
+
+        return 0;
+    }
+    //=========================================================================
+    else if ( strcmp(pvName, "PID:Config") == 0) {
+        value = *(unsigned short*)payload;
+        setPIDconf(value);
 
         return 0;
     }

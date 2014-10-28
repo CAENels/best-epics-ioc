@@ -96,6 +96,19 @@ record(bo,"$(P):PID:Enable")
 	field( ONAM, "ON")
 }
 
+record(mbbo,"$(P):PID:Config")
+{
+	field( DTYP, "CAENels BEST Mbbo")
+	field( DESC, "PID Configuration")
+	field( ZRST, "X")
+	field( ONST, "X & Y")
+	field( TWST, "X & I0")
+	field( THST, "Y")
+	field( FRVL, "Y & I0")
+	field( FVVL, "X & Y & I0")
+	field( SXVL, "I0")
+}
+
 record(ao,"$(P):PID:SetpointX")
 {
 	field( DTYP, "CAENels BEST Ao")

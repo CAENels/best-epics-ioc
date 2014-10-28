@@ -12,38 +12,37 @@
 #include "best.h"
 
 static long init_record(void* precord){
-    mbboRecord *pao = (mbboRecord*) precord;
-    printf("%s:\n", pao->name);
+    mbboRecord *pmbbo = (mbboRecord*) precord;
+    PDEBUG(DEBUG_REC_INIT, "record name: %s\n", pmbbo->name);
+
     return 0;
 }
 
 static long write_mbbo(void* precord){
-    mbboRecord *pao = (mbboRecord*) precord;
-    char pvName[128];
-    stripEpicsIocName(pvName, pao->name);
-    printf("%s: %s\n", __FUNCTION__, pvName);
+    char stripdName[32];
+    mbboRecord *pmbbo = (mbboRecord*) precord;
+    PDEBUG(DEBUG_REC_PROC, "record name: %s\n", pmbbo->name);
 
-    writeBest(pvName, INT, (void*)&pao->val);
+    writeBest(stripdName, USHORT, (void*)&pmbbo->val);
+
     return 0;
 }
 
 
-struct {
-    long num;
-    DEVSUPFUN  report;
-    DEVSUPFUN  init;
-    DEVSUPFUN  init_record;
-    DEVSUPFUN  get_ioint_info;
-    DEVSUPFUN  write_mbbo;
-    DEVSUPFUN  special_linconv;
+struct { /* multi bit binary output dset */
+    long		number;
+    DEVSUPFUN	dev_report;
+    DEVSUPFUN	init;
+    DEVSUPFUN	init_record;  /*returns: (0,2)=>(success,success no convert)*/
+    DEVSUPFUN	get_ioint_info;
+    DEVSUPFUN	write_mbbo; /*returns: (0,2)=>(success,success no convert)*/
 } devMbboBest = {
-    6,
+    5,
     NULL,
     NULL,
     (long int (*)(void*))init_record,
     NULL,
     (long int (*)(void*))write_mbbo,
-    NULL
 };
 
 
