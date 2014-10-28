@@ -26,6 +26,8 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 
     PDEBUG(DEBUG_LOW_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
 
+    int ch;
+
     //=========================================================================
     if( (strcmp(pvName, "BPM0:ScaleX") == 0) ||
             (strcmp(pvName, "BPM0:ScaleY") == 0) ) {
@@ -44,30 +46,43 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
         return 0;
     }
     //=========================================================================
-    if( (strcmp(pvName, "PosX") == 0) ||
-            (strcmp(pvName, "PosY") == 0) ||
-            (strcmp(pvName, "Int")  == 0) ) {
+    else if( (strcmp(pvName, "BPM0:PosX") == 0) ||
+            (strcmp(pvName, "BPM0:PosY") == 0) ||
+            (strcmp(pvName, "BPM0:Int")  == 0) ) {
 
 
-        double *buffer = (double*)malloc(count*sizeof(double)*DISP_NR_CH);
-        double *retBuf = (double*)payload;
+        double *posX = (double*)malloc(count*sizeof(double));
+        double *posY = (double*)malloc(count*sizeof(double));
+        double *I0 = (double*)malloc(count*sizeof(double));
 
-        int fd = open(FILE_DISP, O_RDONLY | O_SYNC);
-        int rv = read(fd, buffer, count*sizeof(double)*DISP_NR_CH);
+        getPosArray(posX, posY, I0, count);
 
-        int offset = 0;
-        if( strcmp(pvName, "PosX") == 0 ) offset = DISP_POSX;
-        if( strcmp(pvName, "PosY") == 0 ) offset = DISP_POSY;
-        if( strcmp(pvName, "Int") == 0 ) offset = DISP_INT0;
+        if(pvName[8] == 'X')      memcpy(payload, posX, count*sizeof(double));
+        else if(pvName[8] == 'Y') memcpy(payload, posY, count*sizeof(double));
+        else                      memcpy(payload, I0,   count*sizeof(double));
 
-        int i;
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
+
+        free(posX); free(posY); free(I0);
+        return 0;
+    }
+    //=========================================================================
+    else if( sscanf(pvName, "TetrAMM0:Ch%d", &ch) == 1){
+
+        double (*current)[4];
+        current = (double(*)[4])malloc(4*count*sizeof(double));
+
+        getCurrentArray(current, count);
+
+        int i = 0;
+        double *d_ptr = (double*)payload;
         for(i = 0; i < count; i++){
-            //printf("%d: %lf\n", i, buffer[offset + i*DISP_NR_CH]);
-            retBuf[i] = buffer[offset + i*DISP_NR_CH];
+            *d_ptr++ = current[i][ch-1];
         }
 
-        close(fd);
-        free(buffer);
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
+
+        return 0;
     }
     //=========================================================================
     else {
@@ -129,25 +144,7 @@ int writeBest(char *pvName, retType_t type, void* payload){
         printf("ioctl(): %d\n", ret);
         close(fd);
     }
-    //=========================================================================
-    else if( strcmp(pvName, "Out") == 0 ){
-        double* d_ptr = (double*)payload;
-        printf("Out %lf %lf %lf %lf\n", *d_ptr, *(d_ptr+1), *(d_ptr+2), *(d_ptr+3));
-        int fd = open(FILE_PREDAC, O_RDWR | O_SYNC);
-        printf("fd: %d\n", fd);
-        struct dac_data dac = {
-            .ch0 = *d_ptr,
-            .ch1 = *(d_ptr+1),
-            .ch2 = *(d_ptr+2),
-            .ch3 = *(d_ptr+3),
-            .control = 0x1
-        };
 
-        int ret = ioctl(fd, IOCTL_WRITE_DAC, &dac);
-        printf("ioctl(): %d\n", ret);
-
-        close(fd);
-    }
     //=========================================================================
     else {
         puts("unknown variable");

@@ -12,19 +12,14 @@
 
 #include "best.h"
 
-//double buffer[1024] = {1.0231,2,3,4};
-
 
 static long init_record(void* precord){
     waveformRecord *pwf = (waveformRecord*) precord;
-    printf("%s:\n", pwf->name);
+    PDEBUG(DEBUG_REC_INIT, "record name: %s\n", pwf->name);
 
     pwf->dpvt = callocMustSucceed(pwf->nelm, dbValueSize(pwf->ftvl), "first buf");
-    //pwf->dpvt = malloc(1024*8);
-    printf("pwf->dpvt: %p\n", pwf->dpvt);
 
-    double* ptr = (double*) pwf->dpvt;
-    *ptr = 1.234;
+    PDEBUG(DEBUG_REC_INIT, "record: %s, alloc at: %p\n", pwf->name, pwf->dpvt);
 
     return 0;
 }
@@ -32,24 +27,16 @@ static long init_record(void* precord){
 
 static long read_wf(void* precord){
     waveformRecord *pwf = (waveformRecord*) precord;
-    char pvName[128];
-    stripEpicsIocName(pvName, pwf->name);
-    printf("%s: %s\n", __FUNCTION__, pvName);
+    char stripdName[32];
+    PDEBUG(DEBUG_REC_PROC, "record name: %s\n", pwf->name);
 
-    /*
-    printf("%s: BPTR: %p\n", __FUNCTION__, pwf->bptr);
-    printf("%s: nelm: %d\n", __FUNCTION__, pwf->nelm);
-    printf("%s: nord: %d\n", __FUNCTION__, pwf->nord);
-    printf("%s: @bptr: %lf\n", __FUNCTION__, *(double*)pwf->bptr);
-    printf("%s: @(bptr+8): %lf\n", __FUNCTION__, *(double*)(pwf->bptr+8));
-    printf("%s: val: %lf\n", __FUNCTION__, pwf->val);
-    */
+    stripEpicsIocName(stripdName, pwf->name);
 
     pwf->nord = pwf->nelm;
-    if ( strcmp(pvName, "Out") == 0){
-            writeBest(pvName, DOUBLE, (void*)pwf->bptr);
+    if ( strcmp(stripdName, "PreDAC0:Out") == 0){
+        writeBest(stripdName, DOUBLE, (void*)pwf->bptr);
     } else {
-        readBest(pvName, DOUBLE, (void*)pwf->dpvt, pwf->nelm);
+        readBest(stripdName, DOUBLE, (void*)pwf->dpvt, pwf->nelm);
         pwf->bptr = pwf->dpvt;
     }
 
