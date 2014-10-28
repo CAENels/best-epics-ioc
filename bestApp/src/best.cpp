@@ -26,7 +26,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 
     PDEBUG(DEBUG_LOW_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
 
-    int ch;
+    int ch; unsigned short status;
 
     //=========================================================================
     if( (strcmp(pvName, "BPM0:ScaleX") == 0) ||
@@ -87,12 +87,20 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
     //=========================================================================
     else if( strcmp(pvName, "PID:Status") == 0 ){
 
-        unsigned short status = (unsigned short)getPIDstatus();
+        status = (unsigned short)getPIDstatus();
         PDEBUG(DEBUG_RET_DATA, "pv: %s, status: %d\n", pvName, status);
 
         *(unsigned short *) payload = status;
 
         return 0;
+    }
+    //=========================================================================
+    else if ( strcmp(pvName, "Login:Level") == 0){
+
+        status = (unsigned short)getLockStatus();
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, status: %d\n", pvName, status);
+
+        *(unsigned short *) payload = status;
     }
     //=========================================================================
     else {
@@ -125,6 +133,35 @@ int writeBest(char *pvName, retType_t type, void* payload){
 
         setSetpoint(sel, *(double*)payload);
 
+    }
+    //=========================================================================
+    else if( strcmp(pvName, "PID:Enable") == 0 ) {
+        unsigned short value;
+        value = *(unsigned short*)payload;
+
+        PDEBUG(DEBUG_SET_DATA, "pv: %s, setFBenable(%d)\n", pvName, value);
+
+        int rc = setFBenable(value);
+        printf("rc: %d\n", rc); //XXX TODO
+
+        return 0;
+    }
+    //=========================================================================
+    else if ( strcmp(pvName, "Login:UserPass") == 0) {
+        printf("XXXXXXXXXXXXXXXXXXXXXX\n\n");
+
+        char user[40]; char pass[40];
+        if(sscanf((char*)payload, "%[^:]:%s", user, pass) != 2){
+            PDEBUG(DEBUG_WARN, "User and password are not separated by ':'\n")
+            return -1;
+        }
+
+        int level = getLock(user, pass);
+        PDEBUG(DEBUG_ACC_SEC,
+               "pv: %s, user: %s, pass: %s, level: %d\n",
+               pvName, user, pass, level);
+
+        printf("XXXXXXXXXXXXXXXXXXXXXX\n\n");
     }
     //=========================================================================
     else {

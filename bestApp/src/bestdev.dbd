@@ -1,5 +1,8 @@
 device(ai, INST_IO, devAiBest, "CAENels BEST Ai")
 device(ao, INST_IO, devAoBest, "CAENels BEST Ao")
+device(bo, INST_IO, devBoBest, "CAENels BEST Bo")
 device(mbbo, INST_IO, devMbboBest, "CAENels BEST Mbbo")
 device(mbbi, INST_IO, devMbbiBest, "CAENels BEST Mbbi")
 device(waveform, INST_IO, devWaveformBest, "CAENels BEST Waveform")
+device(stringout, INST_IO, devStringoutBest, "CAENels BEST Stringout")
+

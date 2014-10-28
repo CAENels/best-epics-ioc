@@ -24,6 +24,7 @@ extern uint32_t debug;
 #define DEBUG_REC_PROC      (0x10)
 #define DEBUG_RET_DATA      (0x20)
 #define DEBUG_SET_DATA      (0x40)
+#define DEBUG_ACC_SEC       (0x80)
 
 #define PDEBUG(level, fmt, args...) { \
                 if (debug & (level)) \

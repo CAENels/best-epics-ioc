@@ -92,6 +92,8 @@ record(bo,"$(P):PID:Enable")
 {
 	field( DTYP, "CAENels BEST Bo")
 	field( DESC, "PID Enable")
+	field( ZNAM, "OFF")
+	field( ONAM, "ON")
 }
 
 record(ao,"$(P):PID:SetpointX")
@@ -129,4 +131,21 @@ record(waveform,"$(P):PreDAC0:Out")
         field( FTVL, "DOUBLE")
         field( NELM, "4")
 }
+
+record(stringout, "$(P):Login:UserPass")
+{
+	field( DTYP, "CAENels BEST Stringout")
+	field( DESC, "Login field")
+}
+
+record(mbbi, "$(P):Login:Level")
+{
+	field( DTYP, "CAENels BEST Mbbi")
+	field( DESC, "Login field")
+	field( ZRST, "Cruise")
+	field( ONST, "User")
+	field( TWST, "Admin")
+	field( SCAN, "1 second")
+}
+
 
