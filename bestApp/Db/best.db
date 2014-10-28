@@ -1,9 +1,39 @@
-record(ai,"$(P):PosXsingle")
+record(waveform,"$(P):TetrAMM0:Ch1")
 {
-	field( DTYP, "CAENels BEST Ai")
-	field( DESC, "BPM position X")
-	field( SCAN, "Passive")
+        field( DTYP, "CAENels BEST Waveform")
+        field( DESC, "TetrAMM Input Channel 1")
+        field( FTVL, "DOUBLE")
+        field( NELM, "1024")
+        field( SCAN, "1 second")
 }
+
+record(waveform,"$(P):TetrAMM0:Ch2")
+{
+        field( DTYP, "CAENels BEST Waveform")
+        field( DESC, "TetrAMM Input Channel 2")
+        field( FTVL, "DOUBLE")
+        field( NELM, "1024")
+        field( SCAN, "1 second")
+}
+
+record(waveform,"$(P):TetrAMM0:Ch3")
+{
+        field( DTYP, "CAENels BEST Waveform")
+        field( DESC, "TetrAMM Input Channel 3")
+        field( FTVL, "DOUBLE")
+        field( NELM, "1024")
+        field( SCAN, "1 second")
+}
+
+record(waveform,"$(P):TetrAMM0:Ch4")
+{
+        field( DTYP, "CAENels BEST Waveform")
+        field( DESC, "TetrAMM Input Channel 4")
+        field( FTVL, "DOUBLE")
+        field( NELM, "1024")
+        field( SCAN, "1 second")
+}
+
 
 record(waveform,"$(P):BPM0:PosX")
 {
@@ -37,18 +67,53 @@ record(ai,"$(P):BPM0:ScaleX")
 {
         field( DTYP, "CAENels BEST Ai")
 	field( DESC, "BPM position X")
-	field( SCAN, "Passive")
+	field( SCAN, "1 second")
 }
 
+record(ai,"$(P):BPM0:ScaleY")
+{
+        field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM position X")
+	field( SCAN, "1 second")
+}
 
-record(ao,"$(P):PreDAC:OutCh0")
+record(mbbi,"$(P):PID:Status")
+{
+	field( DTYP, "CAENels BEST Mbbi")
+	field( DESC, "PID status")
+	field( ZRST, "Stopped")
+	field( ONST, "Stopped by ROC")
+	field( TWST, "Paused")
+	field( THST, "Running")
+	field( SCAN, "1 second")
+}
+
+record(bo,"$(P):PID:Enable")
+{
+	field( DTYP, "CAENels BEST Bo")
+	field( DESC, "PID Enable")
+}
+
+record(ao,"$(P):PID:SetpointX")
 {
 	field( DTYP, "CAENels BEST Ao")
-	field( DESC, "CAENels PreDAC Direct Write")
+	field( DESC, "PID Setpoint X")
+}
+
+record(ao,"$(P):PID:SetpointY")
+{
+	field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Setpoint Y")
+}
+
+record(ao,"$(P):PID:SetpointI0")
+{
+	field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Setpoint I0")
 }
 
 
-record(mbbo,"$(P):OutMux")
+record(mbbo,"$(P):PreDAC0:OutMux")
 {
 	field( DTYP, "CAENels BEST Mbbo")
 	field( DESC, "Out mux (1=SW, 0=HW)")
@@ -57,11 +122,10 @@ record(mbbo,"$(P):OutMux")
 
 }
 
-
-record(waveform,"$(P):PreDAC:Out")
+record(waveform,"$(P):PreDAC0:Out")
 {
 	field( DTYP, "CAENels BEST Waveform")
-	field( DESC, "asdsda")
+	field( DESC, "PreDAC Out Channels (manual)")
         field( FTVL, "DOUBLE")
         field( NELM, "4")
 }
