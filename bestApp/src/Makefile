@@ -29,6 +29,7 @@ best_SRCS += best_registerRecordDeviceDriver.cpp
 best_SRCS += best.cpp
 best_SRCS += devAiBest.cpp
 best_SRCS += devAoBest.cpp
+best_SRCS += devMbbiBest.cpp
 best_SRCS += devMbboBest.cpp
 best_SRCS += devWaveformBest.cpp
 

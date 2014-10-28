@@ -85,6 +85,16 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
         return 0;
     }
     //=========================================================================
+    else if( strcmp(pvName, "PID:Status") == 0 ){
+
+        unsigned short status = (unsigned short)getPIDstatus();
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, status: %d\n", pvName, status);
+
+        *(unsigned short *) payload = status;
+
+        return 0;
+    }
+    //=========================================================================
     else {
         puts("unknown variable");
     }
