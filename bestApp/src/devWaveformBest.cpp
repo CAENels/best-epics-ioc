@@ -34,7 +34,7 @@ static long read_wf(void* precord){
     waveformRecord *pwf = (waveformRecord*) precord;
     char pvName[128];
     stripEpicsIocName(pvName, pwf->name);
-    printf("%s: %s\n", __FUNCTION__, pvName);
+    //printf("%s: %s\n", __FUNCTION__, pvName);
 
     /*
     printf("%s: BPTR: %p\n", __FUNCTION__, pwf->bptr);

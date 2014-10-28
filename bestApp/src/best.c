@@ -13,7 +13,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
             (strcmp(pvName, "PosY") == 0) ||
             (strcmp(pvName, "Int")  == 0) ) {
 
-        printf("%s: %s\n", __FUNCTION__, pvName);
+        //printf("%s: %s\n", __FUNCTION__, pvName);
 
         double *buffer = (double*)malloc(count*sizeof(double)*DISP_NR_CH);
         double *retBuf = (double*)payload;

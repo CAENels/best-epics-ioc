@@ -33,6 +33,23 @@ record(waveform,"$(P):BPM0:Int")
         field( SCAN, "1 second")
 }
 
+record(waveform, "test1")
+{
+	field( NELM, "16")
+	field( FTVL, "DOUBLE")
+	field( VAL,  "1 0 1 0 2 0 2 0 3 4 5 6 0 9 5 7")
+}
+
+record(aSub, "$(P):BPM0:PosXhist")
+{
+	field( SNAM, "stats_subroutine")
+	field( FTA,  "DOUBLE")
+	#field( NOA,  "1024")
+	#field( INPA, "$(P):BPM0:PosX")
+	field( NOA,  "16")
+	field( INPA, "test1")
+        field( SCAN, "1 second")
+}
 
 record(ao,"$(P):PreDAC:OutCh0")
 {
