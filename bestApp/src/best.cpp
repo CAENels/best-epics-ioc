@@ -24,10 +24,24 @@ int stripEpicsIocName(char *pvName, const char *name){
 
 int readBest(char *pvName, retType_t type, void* payload, int count){
 
-    PDEBUG(DEBUG_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
+    PDEBUG(DEBUG_LOW_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
 
-    return 0;
+    if( (strcmp(pvName, "BPM0:ScaleX") == 0) ||
+            (strcmp(pvName, "BPM0:ScaleY") == 0) ) {
 
+        double scaleX, scaleY;
+        getBPMscaling(&scaleX, &scaleY);
+
+        if(pvName[10] == 'X')
+            *(double*)payload = scaleX;
+        else
+            *(double*)payload = scaleY;
+
+
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, data: %lf\n", pvName, *(double*)payload);
+
+        return 0;
+    }
     //=========================================================================
     if( (strcmp(pvName, "PosX") == 0) ||
             (strcmp(pvName, "PosY") == 0) ||
@@ -58,10 +72,15 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
     else {
         puts("unknown variable");
     }
+
+    return -1; // unknown variable
 }
 
 
 int writeBest(char *pvName, retType_t type, void* payload){
+
+    PDEBUG(DEBUG_LOW_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
+
     int dacCh;
 
     //=========================================================================

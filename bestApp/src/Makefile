@@ -26,7 +26,7 @@ best_SYS_LIBS += best_if fftw3
 
 # best_registerRecordDeviceDriver.cpp derives from best.dbd
 best_SRCS += best_registerRecordDeviceDriver.cpp
-best_SRCS += best.c
+best_SRCS += best.cpp
 best_SRCS += devAiBest.cpp
 best_SRCS += devAoBest.cpp
 best_SRCS += devMbboBest.cpp

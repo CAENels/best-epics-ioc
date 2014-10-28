@@ -11,23 +11,26 @@
 
 #include "best.h"
 
-/*
 static long init_record_ai(void* precord){
-    aiRecord *pao = (aiRecord*) precord;
-    printf("%s:\n", pao->name);
-    pao->val = 1.0;
+    aiRecord *pai = (aiRecord*) precord;
+    PDEBUG(DEBUG_REC_INIT, "record name: %s\n", pai->name);
+
     return 0;
-}*/
+}
+
 
 static long read_ai(void* precord){
-	aiRecord *pao = (aiRecord*) precord;
-	printf("%s:\n", __FUNCTION__);
-    //pao->rval = 2.0;
+    double value;
+    char stripdName[32];
+    aiRecord *pai = (aiRecord*) precord;
+    PDEBUG(DEBUG_REC_PROC, "record name: %s\n", pai->name);
 
-    //double scaleX, scaleY;
-    //getBPMscaling(&scaleX, &scaleY);
-    //pao->rval = scaleX;
-    return 0;
+    stripEpicsIocName(stripdName, pai->name);
+    readBest(stripdName, DOUBLE, &value, 0);
+    pai->val = value;
+    pai->udf = FALSE;
+
+    return 2;
 }
 
 
@@ -43,13 +46,11 @@ struct {
     6,
     NULL,
     NULL,
-    NULL,//(long int (*)(void*))init_record_ai,
+    (long int (*)(void*))init_record_ai,
     NULL,
     (long int (*)(void*))read_ai,
     NULL
 };
-
-
 
 
 epicsExportAddress(dset,devAiBest);

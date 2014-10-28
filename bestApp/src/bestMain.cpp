@@ -19,7 +19,6 @@
 #include "iocsh.h"
 
 #include <getopt.h>
-#include "best.h"
 
 extern uint32_t debug;
 
