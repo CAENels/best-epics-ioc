@@ -109,6 +109,42 @@ record(mbbo,"$(P):PID:Config")
 	field( SXST, "I0")
 }
 
+record(ai,"$(P):PID:RoiX")
+{
+        field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Region of Interest, X postion")
+	field( SCAN, "1 second")
+}
+
+record(ai,"$(P):PID:RoiY")
+{
+        field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Region of Interest, Y postion")
+	field( SCAN, "1 second")
+}
+
+record(ai,"$(P):PID:RoiIntMin")
+{
+        field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Region of Interest, min Intensity")
+	field( SCAN, "1 second")
+}
+
+record(ai,"$(P):PID:RoiIntMax")
+{
+        field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Region of Interest, max Intensity")
+	field( SCAN, "1 second")
+}
+
+record(ai,"$(P):PID:Roc")
+{
+        field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Region fo Convergence")
+	field( EGU,  "%")
+	field( SCAN, "1 second")
+}
+
 record(ao,"$(P):PID:SetpointX")
 {
 	field( DTYP, "CAENels BEST Ao")

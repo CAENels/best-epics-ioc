@@ -145,6 +145,35 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
         return 0;
     }
     //=========================================================================
+    else if( (strcmp(pvName, "PID:RoiX") == 0) ||
+             (strcmp(pvName, "PID:RoiY") == 0) ||
+             (strcmp(pvName, "PID:RoiIntMax") == 0) ||
+             (strcmp(pvName, "PID:RoiIntMin") == 0) ||
+             (strcmp(pvName, "PID:Roc") == 0) ){
+
+        double roiX, roiY, roiI0min, roiI0max, roc;
+        getROCandROI( &roiX, &roiY, &roiI0min, &roiI0max, &roc );
+
+        if(pvName[6] == 'c'){
+            *(double *) payload = roc;
+        } else {
+            switch(pvName[7]){
+            case 'X': *(double *) payload = roiX; break;
+            case 'Y': *(double *) payload = roiY; break;
+            case 'I':
+                if(pvName[12] == 'x')
+                    *(double *) payload = roiI0max;
+                else
+                    *(double *) payload = roiI0min;
+                break;
+            }
+        }
+
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, value: %lf\n", pvName, *(double*)payload);
+
+        return 0;
+    }
+    //=========================================================================
     else if ( strcmp(pvName, "Login:Level") == 0){
 
         status = (unsigned short)getLockStatus();
@@ -154,7 +183,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
     }
     //=========================================================================
     else {
-        PDEBUG(DEBUG_ERROR, " %s: unknown name", pvName);
+        PDEBUG(DEBUG_ERROR, " %s: unknown name\n", pvName);
     }
 
     return -1; // unknown variable
@@ -222,7 +251,7 @@ int writeBest(char *pvName, retType_t type, void* payload){
     }
     //=========================================================================
     else {
-        PDEBUG(DEBUG_ERROR, " %s: unknown name", pvName);
+        PDEBUG(DEBUG_ERROR, " %s: unknown name\n", pvName);
     }
 
     return -1;
