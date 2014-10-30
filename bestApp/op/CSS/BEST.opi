@@ -155,7 +155,7 @@
         <axis_1_time_format>0</axis_1_time_format>
         <trace_1_point_size>4</trace_1_point_size>
         <trace_0_plot_mode>0</trace_0_plot_mode>
-        <trace_count>2</trace_count>
+        <trace_count>3</trace_count>
         <axis_0_show_grid>true</axis_0_show_grid>
         <axis_0_log_scale>false</axis_0_log_scale>
         <trace_1_name>$(trace_1_y_pv)</trace_1_name>
@@ -168,10 +168,12 @@
         <axis_1_visible>true</axis_1_visible>
         <height>529</height>
         <axis_1_maximum>100.0</axis_1_maximum>
+        <trace_2_x_pv>loc://rocX</trace_2_x_pv>
         <axis_1_title_font>
           <fontdata fontName="Arial" height="9" style="1" />
         </axis_1_title_font>
         <border_width>1</border_width>
+        <trace_2_x_axis_index>0</trace_2_x_axis_index>
         <axis_0_axis_color>
           <color red="0" green="0" blue="0" />
         </axis_0_axis_color>
@@ -185,17 +187,22 @@
         <axis_0_grid_color>
           <color red="200" green="200" blue="200" />
         </axis_0_grid_color>
+        <trace_2_line_width>2</trace_2_line_width>
         <trace_1_line_width>2</trace_1_line_width>
+        <trace_2_y_axis_index>1</trace_2_y_axis_index>
         <axis_0_auto_scale_threshold>0.0</axis_0_auto_scale_threshold>
+        <trace_2_trace_type>0</trace_2_trace_type>
         <trace_0_name>$(trace_0_y_pv)</trace_0_name>
         <trace_1_anti_alias>true</trace_1_anti_alias>
         <trace_0_update_mode>0</trace_0_update_mode>
         <trace_1_buffer_size>100</trace_1_buffer_size>
         <axis_0_axis_title>Primary X Axis (0)</axis_0_axis_title>
         <wuid>77d4e3f7:1495197e044:-7feb</wuid>
+        <trace_2_buffer_size>100</trace_2_buffer_size>
         <axis_1_axis_color>
           <color red="0" green="0" blue="0" />
         </axis_1_axis_color>
+        <trace_2_update_mode>0</trace_2_update_mode>
         <foreground_color>
           <color red="0" green="0" blue="255" />
         </foreground_color>
@@ -206,11 +213,13 @@
         <axis_0_scale_font>
           <opifont.name fontName="Ubuntu" height="11" style="0">Default</opifont.name>
         </axis_0_scale_font>
+        <trace_2_point_size>4</trace_2_point_size>
         <trace_1_y_pv_value />
         <axis_0_time_format>0</axis_0_time_format>
         <trace_1_plot_mode>0</trace_1_plot_mode>
         <axis_1_log_scale>false</axis_1_log_scale>
         <trace_1_point_style>0</trace_1_point_style>
+        <trace_2_plot_mode>0</trace_2_plot_mode>
         <title_font>
           <fontdata fontName="Arial" height="12" style="1" />
         </title_font>
@@ -225,6 +234,7 @@
           <fontdata fontName="Arial" height="9" style="1" />
         </axis_0_title_font>
         <axis_1_auto_scale>false</axis_1_auto_scale>
+        <trace_2_update_delay>100</trace_2_update_delay>
         <trace_0_concatenate_data>true</trace_0_concatenate_data>
         <actions hook="false" hook_all="false" />
         <trigger_pv_value />
@@ -236,8 +246,11 @@
         <trace_0_buffer_size>1024</trace_0_buffer_size>
         <trigger_pv></trigger_pv>
         <axis_count>2</axis_count>
+        <trace_2_name>$(trace_2_y_pv)</trace_2_name>
         <transparent>false</transparent>
+        <trace_2_anti_alias>true</trace_2_anti_alias>
         <axis_0_dash_grid_line>true</axis_0_dash_grid_line>
+        <trace_2_visible>true</trace_2_visible>
         <trace_0_x_axis_index>0</trace_0_x_axis_index>
         <trace_0_point_style>1</trace_0_point_style>
         <tooltip>$(trace_0_y_pv)
@@ -252,6 +265,8 @@ $(trace_0_y_pv_value)</tooltip>
         <plot_area_background_color>
           <color red="255" green="255" blue="255" />
         </plot_area_background_color>
+        <trace_2_concatenate_data>true</trace_2_concatenate_data>
+        <trace_2_point_style>0</trace_2_point_style>
         <title></title>
         <trace_1_y_pv>loc://roiY</trace_1_y_pv>
         <pv_name></pv_name>
@@ -273,6 +288,9 @@ $(trace_0_y_pv_value)</tooltip>
             <pv trig="false">loc://roiY</pv>
             <pv trig="false">best0:PID:RoiX</pv>
             <pv trig="false">best0:PID:RoiY</pv>
+            <pv trig="false">loc://rocX</pv>
+            <pv trig="false">loc://rocY</pv>
+            <pv trig="false">best0:PID:Roc</pv>
           </path>
         </scripts>
         <trace_0_anti_alias>true</trace_0_anti_alias>
@@ -282,6 +300,9 @@ $(trace_0_y_pv_value)</tooltip>
         <trace_1_trace_color>
           <color red="8" green="128" blue="0" />
         </trace_1_trace_color>
+        <trace_2_trace_color>
+          <color name="Minor" red="255" green="128" blue="0" />
+        </trace_2_trace_color>
         <pv_value />
         <trace_1_y_axis_index>1</trace_1_y_axis_index>
         <scale_options>
@@ -291,6 +312,7 @@ $(trace_0_y_pv_value)</tooltip>
         </scale_options>
         <trace_1_concatenate_data>true</trace_1_concatenate_data>
         <rules />
+        <trace_2_y_pv>loc://rocY</trace_2_y_pv>
         <trace_0_y_pv_value />
         <trace_0_trace_type>2</trace_0_trace_type>
         <axis_1_grid_color>
@@ -1562,58 +1584,5 @@ $(pv_value)</tooltip>
     <wrap_words>false</wrap_words>
     <tooltip></tooltip>
     <x>846</x>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <visible>true</visible>
-    <wuid>20806511:1495b907102:-7fb5</wuid>
-    <scripts />
-    <height>40</height>
-    <style>0</style>
-    <name>Action Button_1</name>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <pv_name>loc://test1</pv_name>
-    <background_color>
-      <color red="240" green="240" blue="240" />
-    </background_color>
-    <foreground_color>
-      <color red="0" green="0" blue="0" />
-    </foreground_color>
-    <widget_type>Action Button</widget_type>
-    <enabled>true</enabled>
-    <text>$(actions)</text>
-    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-    <font>
-      <opifont.name fontName="Ubuntu" height="11" style="0">Default</opifont.name>
-    </font>
-    <width>80</width>
-    <border_style>0</border_style>
-    <push_action_index>0</push_action_index>
-    <image></image>
-    <rules />
-    <pv_value />
-    <toggle_button>false</toggle_button>
-    <border_width>1</border_width>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <y>55</y>
-    <actions hook="false" hook_all="false">
-      <action type="EXECUTE_PYTHONSCRIPT">
-        <path>scripts/addRoiAndRoc.py</path>
-        <scriptText><![CDATA[from org.csstudio.opibuilder.scriptUtil import PVUtil
-]]></scriptText>
-        <embedded>false</embedded>
-        <description></description>
-      </action>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <x>815</x>
   </widget>
 </display>

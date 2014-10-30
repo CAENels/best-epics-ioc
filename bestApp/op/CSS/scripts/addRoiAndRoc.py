@@ -25,6 +25,9 @@ roiXgraph = pvs[6]
 roiYgraph = pvs[7]
 roiXpv    = pvs[8]
 roiYpv    = pvs[9]
+rocXgraph = pvs[10]
+rocYgraph = pvs[11]
+rocPV     = pvs[12]
 
 xyGraph = widget
 
@@ -33,9 +36,10 @@ xyGraph.getFigure().getXYGraph().primaryXAxis.setRange(posX_LOPR.getValue().getV
 xyGraph.getFigure().getXYGraph().primaryYAxis.setRange(posY_LOPR.getValue().getValue(), posY_HOPR.getValue().getValue())
 
 
-# draw roi
 xArray = DataUtil.createDoubleArray(4);
 yArray = DataUtil.createDoubleArray(4);
+
+# draw roi
 xArray[0] = -roiXpv.getValue().getValue()
 xArray[1] =  roiXpv.getValue().getValue()
 xArray[2] =  roiXpv.getValue().getValue()
@@ -47,4 +51,16 @@ yArray[2] = -roiYpv.getValue().getValue()
 yArray[3] = -roiYpv.getValue().getValue()
 roiXgraph.setValue(xArray)
 roiYgraph.setValue(yArray)
-print roiXgraph.getValue()
+
+
+#draw roc
+rocDouble = rocPV.getValue().getValue() / 100.0
+rocXArray = DataUtil.createDoubleArray(4);
+rocYArray = DataUtil.createDoubleArray(4);
+
+for i in range(4):
+    rocXArray[i] = xArray[i]*rocDouble
+    rocYArray[i] = yArray[i]*rocDouble
+    
+rocXgraph.setValue(rocXArray)
+rocYgraph.setValue(rocYArray)
