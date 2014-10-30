@@ -7,7 +7,7 @@ Created on Thu Oct 30 13:44:13 2014
 
 import sys
 
-_texTopLevel = 2
+_texTopLevel = 1
 _texUseTabularx = True
 
 __texLevels = ['chapter',
@@ -116,7 +116,7 @@ def tex_record(recName, recType, recFields):
     __long_desc_cntr += 1
     
     # Space at end
-    string += "\\newline \\newline \\newline\n"
+    string += "\\newline \\newline\n"
     string += "\n\n"
     
     # Some LateX spceific escapes
