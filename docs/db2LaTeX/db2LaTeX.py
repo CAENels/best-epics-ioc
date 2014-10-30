@@ -16,6 +16,9 @@ __texLevels = ['chapter',
                'subsubsection',
                'paragraph',
                'subparagraph']
+             
+__long_desc = []
+__long_desc_cntr = 0
 
 ###############################################################################
 def print_usage(file_name):
@@ -34,10 +37,31 @@ def parse_record(record):
         fName = field.split('(')[1].split(',')[0].strip()
         fVal  = field.split('"')[1]
         
+        fVal  = fVal.replace("%", "\\%")
+        fVal  = fVal.replace("&", "\\&")
+        
         recFields.append((fName, fVal))
         
     return (recName, recType, recFields)
     
+###############################################################################
+def parse_long_desc(fileStr):
+    global __long_desc
+    lines = fileStr.split("\n")
+    
+    armed = False
+    desc = ""
+    
+    for line in lines:
+        line = line.strip()
+        if(line[0:2] == "##"):
+            desc += line[2:]
+            armed = True
+        elif armed:
+            armed = False
+            __long_desc.append( desc )
+            desc = ""
+
     
 ###############################################################################
 def escape_dollar_sign(string):
@@ -50,6 +74,7 @@ def escape_underscore(string):
     
 ###############################################################################
 def tex_record(recName, recType, recFields):
+    global __long_desc, __long_desc_cntr
     string = ""
     
     # Record name
@@ -87,12 +112,8 @@ def tex_record(recName, recType, recFields):
     string += "\\newline \\newline \\newline\n" 
     string += "\\textbf{Long description}: \\newline \n"
     
-    string += """Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    Maecenas a nulla tincidunt, rutrum neque at, pharetra arcu. 
-    Cras malesuada leo vitae mi laoreet iaculis. Suspendisse 
-    rutrum vel quam consequat tincidunt. Aliquam ultrices, mi 
-    ac ullamcorper cursus, lorem tellus consectetur ante, non 
-    luctus nisl tellus ut ipsum. In hac habitasse platea dictumst. \n"""
+    string += __long_desc[__long_desc_cntr] + "\n"
+    __long_desc_cntr += 1
     
     # Space at end
     string += "\\newline \\newline \\newline\n"
@@ -106,16 +127,20 @@ def tex_record(recName, recType, recFields):
     
     
 ###############################################################################
+fileStr = ""
 def parse_file(dbFile):
+    global fileStr
     print "Opening file: ", dbFile
 
     f = open(dbFile, 'r')
     fileStr = f.read()
     f.close()    
     
+    parse_long_desc(fileStr)
+    
     records = fileStr.split('record')[1:]
     
-    texFile = dbFile.replace('.db', '.tex')
+    texFile = dbFile.split('/')[-1].replace('.db', '.tex')
     f = open(texFile, 'w')  
     
     for record in records:

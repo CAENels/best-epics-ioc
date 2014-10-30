@@ -1,82 +1,106 @@
+## Waveform from input channel of TetrAmm picoameter unit.
+## Default sampling frequency is 1kHz (decimation from 100kHz).
 record(waveform,"$(P):TetrAMM0:Ch1")
 {
         field( DTYP, "CAENels BEST Waveform")
         field( DESC, "TetrAMM Input Channel 1")
         field( FTVL, "DOUBLE")
+	field( EGU,  "Amper")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
 
+## Waveform from input channel of TetrAmm picoameter unit.
+## Default sampling frequency is 1kHz (decimation from 100kHz).
 record(waveform,"$(P):TetrAMM0:Ch2")
 {
         field( DTYP, "CAENels BEST Waveform")
         field( DESC, "TetrAMM Input Channel 2")
         field( FTVL, "DOUBLE")
+	field( EGU,  "Amper")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
 
+## Waveform from input channel of TetrAmm picoameter unit.
+## Default sampling frequency is 1kHz (decimation from 100kHz).
 record(waveform,"$(P):TetrAMM0:Ch3")
 {
         field( DTYP, "CAENels BEST Waveform")
         field( DESC, "TetrAMM Input Channel 3")
         field( FTVL, "DOUBLE")
+	field( EGU,  "Amper")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
 
+## Waveform from input channel of TetrAmm picoameter unit.
+## Default sampling frequency is 1kHz (decimation from 100kHz).
 record(waveform,"$(P):TetrAMM0:Ch4")
 {
         field( DTYP, "CAENels BEST Waveform")
         field( DESC, "TetrAMM Input Channel 4")
         field( FTVL, "DOUBLE")
+	field( EGU,  "Amper")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
 
-
+## Calculated beam position from currents and BPM scaling parameters.
+## See BEST User's Manual for detailed explanation of beam position calculation
 record(waveform,"$(P):BPM0:PosX")
 {
         field( DTYP, "CAENels BEST Waveform")
         field( DESC, "Position X")
         field( FTVL, "DOUBLE")
+	field( EGU,  "um")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
 
+## Calculated beam position from currents and BPM scaling parameters.
+## See BEST User's Manual for detailed explanation of beam position calculation
 record(waveform,"$(P):BPM0:PosY")
 {
         field( DTYP, "CAENels BEST Waveform")
         field( DESC, "Position Y")
         field( FTVL, "DOUBLE")
+	field( EGU,  "um")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
 
-
+## Calculated beam intensity (sum of all four currents).
+## See BEST User's Manual for detailed explanation of beam position calculation
 record(waveform,"$(P):BPM0:Int")
 {
         field( DTYP, "CAENels BEST Waveform")
         field( DESC, "Intensity")
         field( FTVL, "DOUBLE")
+	field( EGU,  "Amper")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
 
+## BPM Scaling parameter (defined by its dimensions) 
 record(ai,"$(P):BPM0:ScaleX")
 {
         field( DTYP, "CAENels BEST Ai")
 	field( DESC, "BPM position X")
+	field( EGU,  "um/1")
 	field( SCAN, "1 second")
 }
 
+## BPM Scaling parameter (defined by its dimensions) 
 record(ai,"$(P):BPM0:ScaleY")
 {
         field( DTYP, "CAENels BEST Ai")
 	field( DESC, "BPM position X")
+	field( EGU,  "um/1")
 	field( SCAN, "1 second")
 }
 
+## Status of PID controller on FPGA Card
 record(mbbi,"$(P):PID:Status")
 {
 	field( DTYP, "CAENels BEST Mbbi")
@@ -88,6 +112,7 @@ record(mbbi,"$(P):PID:Status")
 	field( SCAN, "1 second")
 }
 
+## Control of PID controller on FPGA Card
 record(bo,"$(P):PID:Enable")
 {
 	field( DTYP, "CAENels BEST Bo")
@@ -96,6 +121,7 @@ record(bo,"$(P):PID:Enable")
 	field( ONAM, "ON")
 }
 
+## Selects which of the three feedbacks are active
 record(mbbo,"$(P):PID:Config")
 {
 	field( DTYP, "CAENels BEST Mbbo")
@@ -109,34 +135,43 @@ record(mbbo,"$(P):PID:Config")
 	field( SXST, "I0")
 }
 
+## The region in which user can place beam
 record(ai,"$(P):PID:RoiX")
 {
         field( DTYP, "CAENels BEST Ai")
 	field( DESC, "PID Region of Interest, X postion")
+	field( EGU,  "um")
 	field( SCAN, "1 second")
 }
 
+## The region in which user can place beam
 record(ai,"$(P):PID:RoiY")
 {
         field( DTYP, "CAENels BEST Ai")
 	field( DESC, "PID Region of Interest, Y postion")
+	field( EGU,  "um")
 	field( SCAN, "1 second")
 }
 
+## The minimum intensity which can user set
 record(ai,"$(P):PID:RoiIntMin")
 {
         field( DTYP, "CAENels BEST Ai")
 	field( DESC, "PID Region of Interest, min Intensity")
+	field( EGU,  "Amper")
 	field( SCAN, "1 second")
 }
 
+## The maximum intensity which can user set
 record(ai,"$(P):PID:RoiIntMax")
 {
         field( DTYP, "CAENels BEST Ai")
 	field( DESC, "PID Region of Interest, max Intensity")
+	field( EGU,  "Amper")
 	field( SCAN, "1 second")
 }
 
+## Region of convergence, where feedback loop is still active
 record(ai,"$(P):PID:Roc")
 {
         field( DTYP, "CAENels BEST Ai")
@@ -145,25 +180,34 @@ record(ai,"$(P):PID:Roc")
 	field( SCAN, "1 second")
 }
 
+## Desired beam position
 record(ao,"$(P):PID:SetpointX")
 {
 	field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PID Setpoint X")
+	field( EGU, "um")
 }
 
+## Desired beam position
 record(ao,"$(P):PID:SetpointY")
 {
 	field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PID Setpoint Y")
+	field( EGU, "um")
 }
 
+## Desired beam intensity
 record(ao,"$(P):PID:SetpointI0")
 {
 	field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PID Setpoint I0")
+	field( EGU, "Amper")
 }
 
-
+## Output multiplexer allows to switch control from HW PID to software.
+## User can then manually control PreDAC output channels.
+## A high level feedback can also be performed by having a program writing
+## to PreDAC0:Out.
 record(mbbo,"$(P):PreDAC0:OutMux")
 {
 	field( DTYP, "CAENels BEST Mbbo")
@@ -173,6 +217,7 @@ record(mbbo,"$(P):PreDAC0:OutMux")
 
 }
 
+## When OutMux is set to SW mode, this values are written to PreDAC
 record(waveform,"$(P):PreDAC0:Out")
 {
 	field( DTYP, "CAENels BEST Waveform")
@@ -181,16 +226,20 @@ record(waveform,"$(P):PreDAC0:Out")
         field( NELM, "4")
 }
 
+## Putting appropriate username and password switches control
+## from Local GUI or Webpage control and allows controlling system parameters
+## from EPICS CA.
 record(stringout, "$(P):Login:UserPass")
 {
 	field( DTYP, "CAENels BEST Stringout")
-	field( DESC, "Login field")
+	field( DESC, "User and Password, separated by colon")
 }
 
+## Current user level
 record(mbbi, "$(P):Login:Level")
 {
 	field( DTYP, "CAENels BEST Mbbi")
-	field( DESC, "Login field")
+	field( DESC, "Current access level")
 	field( ZRST, "Cruise")
 	field( ONST, "User")
 	field( TWST, "Admin")
