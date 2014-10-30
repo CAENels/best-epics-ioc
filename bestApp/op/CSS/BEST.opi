@@ -246,7 +246,7 @@ $(trace_0_y_pv_value)</tooltip>
           <color red="0" green="128" blue="255" />
         </border_color>
         <scripts>
-          <path pathString="scripts/addRoiAndRoc.py" checkConnect="true" sfe="false" seoe="false">
+          <path pathString="scripts/addRoiAndRoc.py" checkConnect="true" sfe="true" seoe="false">
             <pv trig="true">best0:BPM0:PosX</pv>
             <pv trig="true">best0:BPM0:PosY</pv>
             <pv trig="false">best0:BPM0:PosX.HOPR</pv>
