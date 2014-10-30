@@ -24,27 +24,34 @@ int stripEpicsIocName(char *pvName, const char *name){
 }
 
 int initBest(char *pvName, retType_t type, void *rec){
-
+    double roiX, roiY, roiI0min, roiI0max, roc;
     PDEBUG(DEBUG_LOW_FUNC | DEBUG_REC_INIT, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
 
 
     if( strcmp(pvName, "PID:SetpointX") == 0 ) {
         aoRecord *pao = (aoRecord*) rec;
-        double scaleX, scaleY;
-        getBPMscaling(&scaleX, &scaleY);
+		getROCandROI( &roiX, &roiY, &roiI0min, &roiI0max, &roc );
 
-        pao->hopr = scaleX;
-        pao->lopr = scaleX*-1.;
+        pao->hopr = roiX;
+        pao->lopr = roiX*-1.;
 
         return 0;
     }
     else if( strcmp(pvName, "PID:SetpointY") == 0) {
         aoRecord *pao = (aoRecord*) rec;
-        double scaleX, scaleY;
-        getBPMscaling(&scaleX, &scaleY);
+		getROCandROI( &roiX, &roiY, &roiI0min, &roiI0max, &roc );
 
-        pao->hopr = scaleY;
-        pao->lopr = scaleY*-1.;
+        pao->hopr = roiY;
+        pao->lopr = roiY*-1.;
+
+        return 0;
+    }
+    else if( strcmp(pvName, "PID:SetpointI0") == 0) {
+        aoRecord *pao = (aoRecord*) rec;
+		getROCandROI( &roiX, &roiY, &roiI0min, &roiI0max, &roc );
+
+        pao->hopr = roiI0max;
+        pao->lopr = roiI0min;
 
         return 0;
     }
