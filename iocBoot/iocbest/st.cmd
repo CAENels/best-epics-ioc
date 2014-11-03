@@ -1,16 +1,16 @@
-#!../../bin/linux-x86_64/best
+#!/opt/CAENels/BEST/best_epics_ioc/bin/linux-x86_64/best
 
 ## You may have to change best to something else
 ## everywhere it appears in this file
 
-#< envPaths
+# < /opt/CAENels/BEST/best_epics_ioc/iocBoot/iocbest/envPaths
 
 ## Register all support components
-dbLoadDatabase("../../dbd/best.dbd",0,0)
+dbLoadDatabase("/opt/CAENels/BEST/best_epics_ioc/dbd/best.dbd",0,0)
 best_registerRecordDeviceDriver(pdbbase) 
 
 ## Load record instances
-dbLoadRecords("../../db/best.db","P=best0")
+dbLoadRecords("/opt/CAENels/BEST/best_epics_ioc/db/best.db","P=best0")
 
 iocInit()
 

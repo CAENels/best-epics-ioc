@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=BEST EPICS IOC
+Icon=/opt/CAENels/BEST/best_epics_ioc/best_epics_ioc.png
+Exec=/opt/CAENels/BEST/best_epics_ioc/iocBoot/iocbest/best_ioc.sh
+Terminal=true
