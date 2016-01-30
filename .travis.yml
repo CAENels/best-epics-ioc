@@ -16,6 +16,9 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install epics-dev
 
+  # Install libfftw3
+  - sudo apt-get install libfftw3-dev
+
   # Setup configure/RELEASE for the environment
   - echo "EPICS_BASE=/usr/lib/epics" > configure/RELEASE
 
@@ -26,8 +29,4 @@ install:
 # Run the tests. Currently we have no fully automatic tests to run,
 # so we just list the build products...
 script:
-  - ls bin/linux-x86_64
-  - ls lib/linux-x86_64
-  - ls include
-
-
+  - file bin/linux-x86_64/best
