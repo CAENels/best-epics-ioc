@@ -1,3 +1,9 @@
+bestepicsioc (1.0.7) stable; urgency=medimu
+
+  * Fixes memory leak
+
+ -- Jan Marjanovic <j.marjanovic@caenels.com>  Wed, 09 Mar 2016 16:06:46 +0100
+
 bestepicsioc (1.0-6) stable; urgency=low
 
   * Initial release 
