@@ -139,6 +139,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 
         PDEBUG(DEBUG_RET_DATA, "pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
 
+        free(current);
         return 0;
     }
     //=========================================================================
