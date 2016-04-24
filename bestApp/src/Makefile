@@ -21,8 +21,9 @@ best_DBD += bestdev.dbd
 
 # Add all the support libraries needed by this IOC
 #best_LIBS += xxx
-best_LDFLAGS += -L/lib -L$(TOP)/sh_libs
-best_SYS_LIBS += best_if fftw3
+CXXFLAGS += -I/usr/include
+best_LDFLAGS += -L/lib -L/usr/lib
+best_SYS_LIBS += best fftw3
 
 # best_registerRecordDeviceDriver.cpp derives from best.dbd
 best_SRCS += best_registerRecordDeviceDriver.cpp

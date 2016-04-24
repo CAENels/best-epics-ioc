@@ -1,6 +1,6 @@
 
-#ifndef BEST_H_
-#define BEST_H_
+#ifndef BEST_IO_H_
+#define BEST_IO_H_
 
 #include <stdio.h>
 #include <string.h>
@@ -12,7 +12,7 @@
 #include "pcie_driver/BEST_PCIe.h"
 #include "pcie_mailbox/mailbox_comm_defs.h"
 
-#include "best_c_interface.h"
+#include "best.h"
 #include <aoRecord.h>
 #include <waveformRecord.h>
 
@@ -62,4 +62,4 @@ extern "C" {
 }
 #endif
 
-#endif /* BEST_H_ */
+#endif /* BEST_IO_H_ */

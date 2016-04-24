@@ -3,6 +3,9 @@
 language: cpp
 compiler: gcc
 
+sudo: required
+dist: trusty
+
 env:
   - EPICS_BASE=/usr/lib/epics EPICS_HOST_ARCH=linux-x86_64
 
@@ -21,6 +24,12 @@ before_install:
 
   # Setup configure/RELEASE for the environment
   - echo "EPICS_BASE=/usr/lib/epics" > configure/RELEASE
+
+  # Adding BEST repository
+  - curl http://support.caenels.com/caenels/repos/best/pubkey.gpg | sudo apt-key add -
+  - echo "deb http://support.caenels.com/caenels/repos/best/ ./" | sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update -q
+  - sudo apt-get install libbest
 
 install:
   # Build the module
