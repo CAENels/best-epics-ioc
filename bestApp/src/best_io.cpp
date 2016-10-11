@@ -152,7 +152,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
     if( sscanf(pvName, "best_BPM%dscale%c", &bpm_sel, pos_sel) == 2){
 
         double scaleX, scaleY;
-        getBPMscaling(&scaleX, &scaleY);
+        getBPMscaling_sel(bpm_sel, &scaleX, &scaleY);
 
     	std::string pos_sel_str = std::string(pos_sel);
 
@@ -173,7 +173,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
         double *posY = (double*)malloc(count*sizeof(double));
         double *I0 = (double*)malloc(count*sizeof(double));
 
-        getPosArray(posX, posY, I0, count);
+        getPosArray_sel(bpm_sel, posX, posY, I0, count);
 
         if      (pos_sel_str == "X")   memcpy(payload, posX, count*sizeof(double));
         else if (pos_sel_str == "Y")   memcpy(payload, posY, count*sizeof(double));
@@ -186,12 +186,12 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
         return 0;
     }
     //=========================================================================
-    else if( sscanf(pvName, "best_TetrAMMch%d", &ch) == 1){
+    else if( sscanf(pvName, "best_TetrAMM%dch%d", &bpm_sel, &ch) == 2){
 
         double (*current)[4];
         current = (double(*)[4])malloc(4*count*sizeof(double));
 
-        getCurrentArray(current, count);
+        getCurrentArray_sel(bpm_sel, current, count);
 
         int i = 0;
         double *d_ptr = (double*)payload;
@@ -239,6 +239,23 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
         PDEBUG(DEBUG_RET_DATA, "pv: %s, status: %d\n", pvName, status);
 
         *(unsigned short *) payload = status;
+    }
+    //=========================================================================
+    else if (pv_name_str == "best_NumberTetrAMM"){
+		uint16_t id;
+		uint32_t timestamp;
+		uint32_t fw_ver;
+		uint32_t ser_nr;
+		int nr_tetramms = 0;
+
+		for (int selector = 0; selector < 4; selector++) {
+			getSFPinfo(selector, &id, &timestamp, &fw_ver, &ser_nr);
+			nr_tetramms += (id & 0xFF00) == 0x2100;
+		}
+
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, nr_tetramms: %d\n", pvName, nr_tetramms);
+
+        *(unsigned short *) payload = nr_tetramms;
     }
     //=========================================================================
     else {
