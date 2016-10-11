@@ -6,9 +6,20 @@ record(waveform,"$(P):TetrAMM0:Ch1")
         field( DESC, "TetrAMM Input Channel 1")
         field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
-	field( INP,  "@best_TetrAMMch1")
+	field( INP,  "@best_TetrAMM0ch1")
         field( NELM, "1024")
         field( SCAN, "1 second")
+}
+
+record(waveform,"$(P):TetrAMM1:Ch1")
+{
+	field( DTYP, "CAENels BEST Waveform")
+	field( DESC, "TetrAMM Input Channel 1")
+	field( FTVL, "DOUBLE")
+	field( EGU,  "Amper")
+	field( INP,  "@best_TetrAMM1ch1")
+	field( NELM, "1024")
+	field( SCAN, "1 second")
 }
 
 ## Waveform from input channel of TetrAmm picoameter unit.
@@ -19,9 +30,20 @@ record(waveform,"$(P):TetrAMM0:Ch2")
         field( DESC, "TetrAMM Input Channel 2")
         field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
-	field( INP,  "@best_TetrAMMch2")
+	field( INP,  "@best_TetrAMM0ch2")
         field( NELM, "1024")
         field( SCAN, "1 second")
+}
+
+record(waveform,"$(P):TetrAMM1:Ch2")
+{
+	field( DTYP, "CAENels BEST Waveform")
+	field( DESC, "TetrAMM Input Channel 2")
+	field( FTVL, "DOUBLE")
+	field( EGU,  "Amper")
+	field( INP,  "@best_TetrAMM1ch2")
+	field( NELM, "1024")
+	field( SCAN, "1 second")
 }
 
 ## Waveform from input channel of TetrAmm picoameter unit.
@@ -32,7 +54,18 @@ record(waveform,"$(P):TetrAMM0:Ch3")
         field( DESC, "TetrAMM Input Channel 3")
         field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
-	field( INP,  "@best_TetrAMMch3")
+	field( INP,  "@best_TetrAMM0ch3")
+        field( NELM, "1024")
+        field( SCAN, "1 second")
+}
+
+record(waveform,"$(P):TetrAMM1:Ch3")
+{
+        field( DTYP, "CAENels BEST Waveform")
+        field( DESC, "TetrAMM Input Channel 3")
+        field( FTVL, "DOUBLE")
+	field( EGU,  "Amper")
+	field( INP,  "@best_TetrAMM1ch3")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
@@ -45,7 +78,18 @@ record(waveform,"$(P):TetrAMM0:Ch4")
         field( DESC, "TetrAMM Input Channel 4")
         field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
-	field( INP,  "@best_TetrAMMch4")
+	field( INP,  "@best_TetrAMM0ch4")
+        field( NELM, "1024")
+        field( SCAN, "1 second")
+}
+
+record(waveform,"$(P):TetrAMM1:Ch4")
+{
+        field( DTYP, "CAENels BEST Waveform")
+        field( DESC, "TetrAMM Input Channel 4")
+        field( FTVL, "DOUBLE")
+	field( EGU,  "Amper")
+	field( INP,  "@best_TetrAMM1ch4")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
@@ -63,6 +107,17 @@ record(waveform,"$(P):BPM0:PosX")
         field( SCAN, "1 second")
 }
 
+record(waveform,"$(P):BPM1:PosX")
+{
+	field( DTYP, "CAENels BEST Waveform")
+	field( DESC, "Position X")
+	field( FTVL, "DOUBLE")
+	field( EGU,  "um")
+	field( INP,  "@best_BPM1wfmX")
+	field( NELM, "1024")
+	field( SCAN, "1 second")
+}
+
 ## Calculated beam position from currents and BPM scaling parameters.
 ## See BEST User's Manual for detailed explanation of beam position calculation
 record(waveform,"$(P):BPM0:PosY")
@@ -72,6 +127,17 @@ record(waveform,"$(P):BPM0:PosY")
         field( FTVL, "DOUBLE")
 	field( EGU,  "um")
 	field( INP,  "@best_BPM0wfmY")
+        field( NELM, "1024")
+        field( SCAN, "1 second")
+}
+
+record(waveform,"$(P):BPM1:PosY")
+{
+        field( DTYP, "CAENels BEST Waveform")
+        field( DESC, "Position Y")
+        field( FTVL, "DOUBLE")
+	field( EGU,  "um")
+	field( INP,  "@best_BPM1wfmY")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
@@ -89,6 +155,18 @@ record(waveform,"$(P):BPM0:Int")
         field( SCAN, "1 second")
 }
 
+record(waveform,"$(P):BPM1:Int")
+{
+        field( DTYP, "CAENels BEST Waveform")
+        field( DESC, "Intensity")
+        field( FTVL, "DOUBLE")
+	field( EGU,  "Amper")
+	field( INP,  "@best_BPM1wfmInt")
+        field( NELM, "1024")
+        field( SCAN, "1 second")
+}
+
+
 ## BPM Scaling parameter (defined by its dimensions) 
 record(ai,"$(P):BPM0:ScaleX")
 {
@@ -99,6 +177,15 @@ record(ai,"$(P):BPM0:ScaleX")
 	field( INP,  "@best_BPM0scaleX")
 }
 
+record(ai,"$(P):BPM1:ScaleX")
+{
+	field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM position X")
+	field( EGU,  "um/1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_BPM1scaleX")
+}
+
 ## BPM Scaling parameter (defined by its dimensions) 
 record(ai,"$(P):BPM0:ScaleY")
 {
@@ -107,6 +194,26 @@ record(ai,"$(P):BPM0:ScaleY")
 	field( EGU,  "um/1")
 	field( SCAN, "1 second")
 	field( INP,  "@best_BPM0scaleY")
+}
+
+record(ai,"$(P):BPM1:ScaleY")
+{
+	field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM position Y")
+	field( EGU,  "um/1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_BPM1scaleY")
+}
+
+## Number of TetrAMMs attached
+record(mbbi,"$(P):NumberTetrAMM")
+{
+	field( DTYP, "CAENels BEST Mbbi")
+	field( ZRST, "No TetrAMMs")
+	field( ONST, "1 TetrAMM")
+	field( TWST, "2 TetrAMMs")
+	field( SCAN, "1 second")
+	field( INP,  "@best_NumberTetrAMM")
 }
 
 ## Status of PID controller on FPGA Card
