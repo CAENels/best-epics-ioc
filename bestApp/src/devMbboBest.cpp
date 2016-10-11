@@ -23,9 +23,8 @@ static long write_mbbo(void* precord){
     mbboRecord *pmbbo = (mbboRecord*) precord;
     PDEBUG(DEBUG_REC_PROC, "record name: %s\n", pmbbo->name);
 
-    writeBest(stripdName, USHORT, (void*)&pmbbo->val);
-
-    return 0;
+    stripEpicsIocName(stripdName, pmbbo);
+    return writeBest(stripdName, USHORT, (void*)&pmbbo->val);
 }
 
 

@@ -13,9 +13,13 @@
 #include "pcie_mailbox/mailbox_comm_defs.h"
 
 #include "best.h"
-#include <aoRecord.h>
-#include <waveformRecord.h>
-
+#include "aiRecord.h"
+#include "aoRecord.h"
+#include "waveformRecord.h"
+#include "mbbiRecord.h"
+#include "boRecord.h"
+#include "mbboRecord.h"
+#include "stringoutRecord.h"
 
 extern uint32_t debug;
 
@@ -49,12 +53,17 @@ typedef enum retType {
     STRING
 } retType_t;
 
-
+int stripEpicsIocName(char *pvName, aoRecord *pao);
+int stripEpicsIocName(char *pvName, waveformRecord *pwf);
+int stripEpicsIocName(char *pvName, aiRecord *pai);
+int stripEpicsIocName(char *pvName, mbbiRecord *pmbbi);
+int stripEpicsIocName(char *pvName, boRecord *pbo);
+int stripEpicsIocName(char *pvName, mbboRecord *pmbbo);
+int stripEpicsIocName(char *pvName, stringoutRecord *psor);
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-    int stripEpicsIocName(char *pvName, const char *name);
     int initBest(char *pvName, retType_t type, void *rec);
     int readBest(char *pvName, retType_t type, void* payload, int count);
     int writeBest(char *pvName, retType_t type, void* payload);

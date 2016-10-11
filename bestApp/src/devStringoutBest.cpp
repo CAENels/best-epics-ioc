@@ -23,7 +23,7 @@ static long write_stringout(void* precord){
     stringoutRecord *psor = (stringoutRecord*) precord;
     PDEBUG(DEBUG_REC_PROC, "record name: %s\n", psor->name);
 
-    stripEpicsIocName(stripdName, psor->name);
+    stripEpicsIocName(stripdName, psor);
     writeBest(stripdName, STRING, (void*)&psor->val);
 
     return 0;

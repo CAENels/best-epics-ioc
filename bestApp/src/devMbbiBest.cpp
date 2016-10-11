@@ -24,7 +24,7 @@ static long read_mbbi(void* precord){
     mbbiRecord *pmbbi = (mbbiRecord*) precord;
     PDEBUG(DEBUG_REC_PROC, "record name: %s\n", pmbbi->name);
 
-    stripEpicsIocName(stripdName, pmbbi->name);
+    stripEpicsIocName(stripdName, pmbbi);
     readBest(stripdName, USHORT, &value, 0);
 
     pmbbi->val = value;

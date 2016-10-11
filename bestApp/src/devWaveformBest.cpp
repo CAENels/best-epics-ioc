@@ -21,7 +21,7 @@ static long init_record(void* precord){
     pwf->dpvt = callocMustSucceed(pwf->nelm, dbValueSize(pwf->ftvl), "first buf");
     PDEBUG(DEBUG_REC_INIT, "record: %s, alloc at: %p\n", pwf->name, pwf->dpvt);
 
-    stripEpicsIocName(stripdName, pwf->name);
+    stripEpicsIocName(stripdName, pwf);
     initBest(stripdName, DOUBLE, precord);
 
     return 0;
@@ -33,7 +33,7 @@ static long read_wf(void* precord){
     char stripdName[32];
     PDEBUG(DEBUG_REC_PROC, "record name: %s\n", pwf->name);
 
-    stripEpicsIocName(stripdName, pwf->name);
+    stripEpicsIocName(stripdName, pwf);
 
     pwf->nord = pwf->nelm;
     if ( strcmp(stripdName, "PreDAC0:Out") == 0){

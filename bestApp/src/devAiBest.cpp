@@ -25,7 +25,7 @@ static long read_ai(void* precord){
     aiRecord *pai = (aiRecord*) precord;
     PDEBUG(DEBUG_REC_PROC, "record name: %s\n", pai->name);
 
-    stripEpicsIocName(stripdName, pai->name);
+    stripEpicsIocName(stripdName, pai);
     readBest(stripdName, DOUBLE, &value, 0);
     pai->val = value;
     pai->udf = FALSE;

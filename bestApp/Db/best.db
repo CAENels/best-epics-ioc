@@ -6,6 +6,7 @@ record(waveform,"$(P):TetrAMM0:Ch1")
         field( DESC, "TetrAMM Input Channel 1")
         field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
+	field( INP,  "@best_TetrAMMch1")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
@@ -18,6 +19,7 @@ record(waveform,"$(P):TetrAMM0:Ch2")
         field( DESC, "TetrAMM Input Channel 2")
         field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
+	field( INP,  "@best_TetrAMMch2")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
@@ -30,6 +32,7 @@ record(waveform,"$(P):TetrAMM0:Ch3")
         field( DESC, "TetrAMM Input Channel 3")
         field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
+	field( INP,  "@best_TetrAMMch3")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
@@ -42,6 +45,7 @@ record(waveform,"$(P):TetrAMM0:Ch4")
         field( DESC, "TetrAMM Input Channel 4")
         field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
+	field( INP,  "@best_TetrAMMch4")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
@@ -54,6 +58,7 @@ record(waveform,"$(P):BPM0:PosX")
         field( DESC, "Position X")
         field( FTVL, "DOUBLE")
 	field( EGU,  "um")
+	field( INP,  "@best_BPM0wfmX")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
@@ -66,6 +71,7 @@ record(waveform,"$(P):BPM0:PosY")
         field( DESC, "Position Y")
         field( FTVL, "DOUBLE")
 	field( EGU,  "um")
+	field( INP,  "@best_BPM0wfmY")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
@@ -78,6 +84,7 @@ record(waveform,"$(P):BPM0:Int")
         field( DESC, "Intensity")
         field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
+	field( INP,  "@best_BPM0wfmInt")
         field( NELM, "1024")
         field( SCAN, "1 second")
 }
@@ -89,15 +96,17 @@ record(ai,"$(P):BPM0:ScaleX")
 	field( DESC, "BPM position X")
 	field( EGU,  "um/1")
 	field( SCAN, "1 second")
+	field( INP,  "@best_BPM0scaleX")
 }
 
 ## BPM Scaling parameter (defined by its dimensions) 
 record(ai,"$(P):BPM0:ScaleY")
 {
         field( DTYP, "CAENels BEST Ai")
-	field( DESC, "BPM position X")
+	field( DESC, "BPM position Y")
 	field( EGU,  "um/1")
 	field( SCAN, "1 second")
+	field( INP,  "@best_BPM0scaleY")
 }
 
 ## Status of PID controller on FPGA Card
@@ -110,6 +119,7 @@ record(mbbi,"$(P):PID:Status")
 	field( TWST, "Paused")
 	field( THST, "Running")
 	field( SCAN, "1 second")
+	field( INP,  "@best_PIDstatus")
 }
 
 ## Control of PID controller on FPGA Card
@@ -119,6 +129,7 @@ record(bo,"$(P):PID:Enable")
 	field( DESC, "PID Enable")
 	field( ZNAM, "OFF")
 	field( ONAM, "ON")
+	field( OUT,  "@best_PIDenable")
 }
 
 ## Selects which of the three feedbacks are active
@@ -133,6 +144,7 @@ record(mbbo,"$(P):PID:Config")
 	field( FRST, "Y & I0")
 	field( FVST, "X & Y & I0")
 	field( SXST, "I0")
+	field( OUT,  "@best_PIDconfig")
 }
 
 ## The region in which user can place beam
@@ -142,6 +154,7 @@ record(ai,"$(P):PID:RoiX")
 	field( DESC, "PID Region of Interest, X postion")
 	field( EGU,  "um")
 	field( SCAN, "1 second")
+	field( INP,  "@best_PIDroiX")
 }
 
 ## The region in which user can place beam
@@ -151,6 +164,7 @@ record(ai,"$(P):PID:RoiY")
 	field( DESC, "PID Region of Interest, Y postion")
 	field( EGU,  "um")
 	field( SCAN, "1 second")
+	field( INP,  "@best_PIDroiY")
 }
 
 ## The minimum intensity which can user set
@@ -160,6 +174,7 @@ record(ai,"$(P):PID:RoiIntMin")
 	field( DESC, "PID Region of Interest, min Intensity")
 	field( EGU,  "Amper")
 	field( SCAN, "1 second")
+	field( INP,  "@best_PIDroiIntMin")
 }
 
 ## The maximum intensity which can user set
@@ -169,6 +184,7 @@ record(ai,"$(P):PID:RoiIntMax")
 	field( DESC, "PID Region of Interest, max Intensity")
 	field( EGU,  "Amper")
 	field( SCAN, "1 second")
+	field( INP,  "@best_PIDroiIntMax")
 }
 
 ## Region of convergence, where feedback loop is still active
@@ -178,6 +194,7 @@ record(ai,"$(P):PID:Roc")
 	field( DESC, "PID Region fo Convergence")
 	field( EGU,  "%")
 	field( SCAN, "1 second")
+	field( INP,  "@best_PIDroc")
 }
 
 ## Desired beam position
@@ -185,6 +202,7 @@ record(ao,"$(P):PID:SetpointX")
 {
 	field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PID Setpoint X")
+	field( OUT, "@best_PidSetpointX")
 	field( EGU, "um")
 }
 
@@ -193,6 +211,7 @@ record(ao,"$(P):PID:SetpointY")
 {
 	field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PID Setpoint Y")
+	field( OUT, "@best_PidSetpointY")
 	field( EGU, "um")
 }
 
@@ -201,7 +220,32 @@ record(ao,"$(P):PID:SetpointI0")
 {
 	field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PID Setpoint I0")
+	field( OUT, "@best_PidSetpointI0")
 	field( EGU, "Amper")
+}
+
+record(ao,"$(P):PID:OffsetX")
+{
+	field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Offset X")
+	field( OUT, "@best_PidOffsetX")
+	field( EGU, "V")
+}
+
+record(ao,"$(P):PID:OffsetY")
+{
+	field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Offset Y")
+	field( OUT, "@best_PidOffsetY")
+	field( EGU, "V")
+}
+
+record(ao,"$(P):PID:OffsetI0")
+{
+	field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Offset I0")
+	field( OUT, "@best_PidOffsetI0")
+	field( EGU, "V")
 }
 
 ## Output multiplexer allows to switch control from HW PID to software.
@@ -214,16 +258,40 @@ record(mbbo,"$(P):PreDAC0:OutMux")
 	field( DESC, "Out mux (1=SW, 0=HW)")
 	field( ONST, "FPGA")
 	field( ZRST, "SW via PCIe")
-
+	field( OUT,  "@best_PreDACoutmux")
 }
 
 ## When OutMux is set to SW mode, this values are written to PreDAC
-record(waveform,"$(P):PreDAC0:Out")
+record(ao,"$(P):PreDAC0:OutCh1")
 {
-	field( DTYP, "CAENels BEST Waveform")
+	field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PreDAC Out Channels (manual)")
-        field( FTVL, "DOUBLE")
-        field( NELM, "4")
+	field( EGU,  "V")
+	field( OUT,  "@best_PreDACoutCh1")
+}
+
+record(ao,"$(P):PreDAC0:OutCh2")
+{
+	field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PreDAC Out Channels (manual)")
+	field( EGU,  "V")
+	field( OUT,  "@best_PreDACoutCh2")
+}
+
+record(ao,"$(P):PreDAC0:OutCh3")
+{
+	field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PreDAC Out Channels (manual)")
+	field( EGU,  "V")
+	field( OUT,  "@best_PreDACoutCh3")
+}
+
+record(ao,"$(P):PreDAC0:OutCh4")
+{
+	field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PreDAC Out Channels (manual)")
+	field( EGU,  "V")
+	field( OUT,  "@best_PreDACoutCh4")
 }
 
 ## Putting appropriate username and password switches control
@@ -233,6 +301,7 @@ record(stringout, "$(P):Login:UserPass")
 {
 	field( DTYP, "CAENels BEST Stringout")
 	field( DESC, "User and Password, separated by colon")
+	field( OUT,  "@best_LoginUserPass")
 }
 
 ## Current user level
@@ -244,6 +313,7 @@ record(mbbi, "$(P):Login:Level")
 	field( ONST, "User")
 	field( TWST, "Admin")
 	field( SCAN, "1 second")
+	field( INP,  "@best_LoginLevel")
 }
 
 

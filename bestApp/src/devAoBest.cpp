@@ -16,7 +16,7 @@ static long init_record(void* precord){
     aoRecord *pao = (aoRecord*) precord;
     PDEBUG(DEBUG_REC_INIT, "record name: %s\n", pao->name);
 
-    stripEpicsIocName(stripdName, pao->name);
+    stripEpicsIocName(stripdName, pao);
     initBest(stripdName, DOUBLE, precord);
 
     return 0;
@@ -27,7 +27,7 @@ static long write_ao(void* precord){
     aoRecord *pao = (aoRecord*) precord;
     PDEBUG(DEBUG_REC_PROC, "record name: %s\n", pao->name);
 
-    stripEpicsIocName(stripdName, pao->name);
+    stripEpicsIocName(stripdName, pao);
     writeBest(stripdName, DOUBLE, (void*)&pao->val);
 
     return 0;
