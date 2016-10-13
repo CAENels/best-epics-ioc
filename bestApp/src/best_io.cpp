@@ -268,6 +268,8 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 
 int writeBest(char *pvName, retType_t type, void* payload){
     unsigned short value;
+    int predac_ch;
+    static double predac_out[4];
 
     PDEBUG(DEBUG_LOW_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
 
@@ -338,21 +340,64 @@ int writeBest(char *pvName, retType_t type, void* payload){
                pvName, user, pass, level);
     }
     //=========================================================================
-    /* TODO: add to library
-        else if (pv_name_str == "best_PreDACoutmux"){
-        printf("Out Mux %d\n", *(short int*)payload);
-        int fd = open(FILE_MBOX, O_RDWR | O_SYNC);
-        printf("fd: %d\n", fd);
-        struct mail comm;
-        comm.cmd = CMD_SIG_DEMUX << 8 | CMD_WRITE;
-        memset(comm.payload, 0, 28);
-        comm.payload[0] = *(short int*)payload;
+    // TODO: add to library
+    else if (pv_name_str == "best_PreDACoutmux") {
+		int fd = open(FILE_MBOX, O_RDWR | O_SYNC);
+		if(fd < 0){
+			printf("Error opening FILE_MBOX\n");
+			return -1;
+		}
+		struct mail comm;
+		comm.cmd = CMD_SIG_DEMUX << 8 | CMD_WRITE;
+		memset(comm.payload, 0, 28);
+		comm.payload[0] = *(short int*)payload;
 
-        // emit io control
-        int ret = ioctl(fd, IOCTL_MAIL_COMM, &comm);
-        printf("ioctl(): %d\n", ret);
-        close(fd);
-    } */
+		// emit io control
+		int ret = ioctl(fd, IOCTL_MAIL_COMM, &comm);
+		if (ret < 0){
+			printf("ioctl(IOCTL_MAIL_COMM) failed\n");
+			return -1;
+		}
+
+		close(fd);
+
+		return 0;
+    }
+    //=========================================================================
+    else if( sscanf(pvName, "best_PreDACoutCh%d", &predac_ch) == 1){
+		int rc = 0;
+		int fd = open(FILE_PREDAC, O_RDWR);
+
+		if(fd < 0){
+			printf("Error opening FILE_PREDAC\n");
+			return -1;
+		}
+
+		predac_ch -= 1; // to get from the user numbers (1..4) to array idxs
+
+		if ((predac_ch < 0) ||
+				(predac_ch >= (int)(sizeof(predac_out)/sizeof(*predac_out)))){
+			return -1;
+		}
+
+		predac_out[predac_ch] = *(double*)payload;
+
+		struct dac_data data;
+		data.control = 0x1; // enable PreDAC output
+		data.ch0 = predac_out[0];
+		data.ch1 = predac_out[1];
+		data.ch2 = predac_out[2];
+		data.ch3 = predac_out[3];
+
+		rc = ioctl(fd, IOCTL_WRITE_DAC, &data);
+		if (rc < 0){
+			printf("ioctl(IOCTL_WRITE_DAC) failed\n");
+			return -1;
+		}
+
+		close(fd);
+		return 0;
+    }
     //=========================================================================
     else {
         PDEBUG(DEBUG_ERROR, " %s: unknown name\n", pvName);
