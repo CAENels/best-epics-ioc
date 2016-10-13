@@ -258,6 +258,31 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
         *(unsigned short *) payload = nr_tetramms;
     }
     //=========================================================================
+    // TODO: add to library
+    else if (pv_name_str == "best_PreDACoutmux_rbv") {
+		int fd = open(FILE_MBOX, O_RDWR | O_SYNC);
+		if(fd < 0){
+			printf("Error opening FILE_MBOX\n");
+			return -1;
+		}
+
+		struct mail comm;
+		memset(comm.payload, 0, 28);
+		comm.cmd = CMD_SIG_DEMUX << 8 | CMD_READ;
+
+		// emit io control
+		int ret = ioctl(fd, IOCTL_MAIL_COMM, &comm);
+		if (ret < 0){
+			printf("ioctl(IOCTL_MAIL_COMM) failed\n");
+			return -1;
+		}
+
+		*(short int*)payload = (short int)comm.payload[0];
+
+		close(fd);
+		return 0;
+    }
+    //=========================================================================
     else {
         PDEBUG(DEBUG_ERROR, " %s: unknown name\n", pvName);
     }

@@ -368,6 +368,15 @@ record(mbbo,"$(P):PreDAC0:OutMux")
 	field( OUT,  "@best_PreDACoutmux")
 }
 
+record(mbbi,"$(P):PreDAC0:OutMux-RBV")
+{
+	field( DTYP, "CAENels BEST Mbbi")
+	field( DESC, "Out mux (1=SW, 0=HW)")
+	field( ONST, "FPGA")
+	field( ZRST, "SW via PCIe")
+	field( INP,  "@best_PreDACoutmux_rbv")
+}
+
 ## When OutMux is set to SW mode, this values are written to PreDAC
 record(ao,"$(P):PreDAC0:OutCh1")
 {
