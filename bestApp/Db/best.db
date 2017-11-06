@@ -2,13 +2,13 @@
 ## Default sampling frequency is 1kHz (decimation from 100kHz).
 record(waveform,"$(P):TetrAMM0:Ch1")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "TetrAMM Input Channel 1")
-        field( FTVL, "DOUBLE")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "TetrAMM Input Channel 1")
+    field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM0ch1")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 record(waveform,"$(P):TetrAMM1:Ch1")
@@ -26,13 +26,13 @@ record(waveform,"$(P):TetrAMM1:Ch1")
 ## Default sampling frequency is 1kHz (decimation from 100kHz).
 record(waveform,"$(P):TetrAMM0:Ch2")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "TetrAMM Input Channel 2")
-        field( FTVL, "DOUBLE")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "TetrAMM Input Channel 2")
+    field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM0ch2")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 record(waveform,"$(P):TetrAMM1:Ch2")
@@ -50,61 +50,61 @@ record(waveform,"$(P):TetrAMM1:Ch2")
 ## Default sampling frequency is 1kHz (decimation from 100kHz).
 record(waveform,"$(P):TetrAMM0:Ch3")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "TetrAMM Input Channel 3")
-        field( FTVL, "DOUBLE")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "TetrAMM Input Channel 3")
+    field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM0ch3")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 record(waveform,"$(P):TetrAMM1:Ch3")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "TetrAMM Input Channel 3")
-        field( FTVL, "DOUBLE")
-	field( EGU,  "Amper")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "TetrAMM Input Channel 3")
+    field( FTVL, "DOUBLE")
+    field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM1ch3")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 ## Waveform from input channel of TetrAmm picoameter unit.
 ## Default sampling frequency is 1kHz (decimation from 100kHz).
 record(waveform,"$(P):TetrAMM0:Ch4")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "TetrAMM Input Channel 4")
-        field( FTVL, "DOUBLE")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "TetrAMM Input Channel 4")
+    field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM0ch4")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 record(waveform,"$(P):TetrAMM1:Ch4")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "TetrAMM Input Channel 4")
-        field( FTVL, "DOUBLE")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "TetrAMM Input Channel 4")
+    field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM1ch4")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 ## Calculated beam position from currents and BPM scaling parameters.
 ## See BEST User's Manual for detailed explanation of beam position calculation
 record(waveform,"$(P):BPM0:PosX")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "Position X")
-        field( FTVL, "DOUBLE")
-	field( EGU,  "um")
-	field( INP,  "@best_BPM0wfmX")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "Position X")
+    field( FTVL, "DOUBLE")
+    field( EGU,  "um")
+    field( INP,  "@best_BPM0wfmX")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 record(waveform,"$(P):BPM1:PosX")
@@ -122,55 +122,55 @@ record(waveform,"$(P):BPM1:PosX")
 ## See BEST User's Manual for detailed explanation of beam position calculation
 record(waveform,"$(P):BPM0:PosY")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "Position Y")
-        field( FTVL, "DOUBLE")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "Position Y")
+    field( FTVL, "DOUBLE")
 	field( EGU,  "um")
-	field( INP,  "@best_BPM0wfmY")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( INP,  "@best_BPM0wfmY")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 record(waveform,"$(P):BPM1:PosY")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "Position Y")
-        field( FTVL, "DOUBLE")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "Position Y")
+    field( FTVL, "DOUBLE")
 	field( EGU,  "um")
 	field( INP,  "@best_BPM1wfmY")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 ## Calculated beam intensity (sum of all four currents).
 ## See BEST User's Manual for detailed explanation of beam position calculation
 record(waveform,"$(P):BPM0:Int")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "Intensity")
-        field( FTVL, "DOUBLE")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "Intensity")
+    field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_BPM0wfmInt")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 record(waveform,"$(P):BPM1:Int")
 {
-        field( DTYP, "CAENels BEST Waveform")
-        field( DESC, "Intensity")
-        field( FTVL, "DOUBLE")
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "Intensity")
+    field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_BPM1wfmInt")
-        field( NELM, "1024")
-        field( SCAN, "1 second")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
 }
 
 
 ## BPM Scaling parameter (defined by its dimensions) 
 record(ai,"$(P):BPM0:ScaleX")
 {
-        field( DTYP, "CAENels BEST Ai")
+    field( DTYP, "CAENels BEST Ai")
 	field( DESC, "BPM position X")
 	field( EGU,  "um/1")
 	field( SCAN, "1 second")
@@ -189,7 +189,7 @@ record(ai,"$(P):BPM1:ScaleX")
 ## BPM Scaling parameter (defined by its dimensions) 
 record(ai,"$(P):BPM0:ScaleY")
 {
-        field( DTYP, "CAENels BEST Ai")
+    field( DTYP, "CAENels BEST Ai")
 	field( DESC, "BPM position Y")
 	field( EGU,  "um/1")
 	field( SCAN, "1 second")
@@ -257,7 +257,7 @@ record(mbbo,"$(P):PID:Config")
 ## The region in which user can place beam
 record(ai,"$(P):PID:RoiX")
 {
-        field( DTYP, "CAENels BEST Ai")
+    field( DTYP, "CAENels BEST Ai")
 	field( DESC, "PID Region of Interest, X postion")
 	field( EGU,  "um")
 	field( SCAN, "1 second")
@@ -267,7 +267,7 @@ record(ai,"$(P):PID:RoiX")
 ## The region in which user can place beam
 record(ai,"$(P):PID:RoiY")
 {
-        field( DTYP, "CAENels BEST Ai")
+    field( DTYP, "CAENels BEST Ai")
 	field( DESC, "PID Region of Interest, Y postion")
 	field( EGU,  "um")
 	field( SCAN, "1 second")
@@ -277,7 +277,7 @@ record(ai,"$(P):PID:RoiY")
 ## The minimum intensity which can user set
 record(ai,"$(P):PID:RoiIntMin")
 {
-        field( DTYP, "CAENels BEST Ai")
+    field( DTYP, "CAENels BEST Ai")
 	field( DESC, "PID Region of Interest, min Intensity")
 	field( EGU,  "Amper")
 	field( SCAN, "1 second")
@@ -287,7 +287,7 @@ record(ai,"$(P):PID:RoiIntMin")
 ## The maximum intensity which can user set
 record(ai,"$(P):PID:RoiIntMax")
 {
-        field( DTYP, "CAENels BEST Ai")
+    field( DTYP, "CAENels BEST Ai")
 	field( DESC, "PID Region of Interest, max Intensity")
 	field( EGU,  "Amper")
 	field( SCAN, "1 second")
@@ -297,7 +297,7 @@ record(ai,"$(P):PID:RoiIntMax")
 ## Region of convergence, where feedback loop is still active
 record(ai,"$(P):PID:Roc")
 {
-        field( DTYP, "CAENels BEST Ai")
+    field( DTYP, "CAENels BEST Ai")
 	field( DESC, "PID Region fo Convergence")
 	field( EGU,  "%")
 	field( SCAN, "1 second")
@@ -368,16 +368,17 @@ record(mbbo,"$(P):PreDAC0:OutMux")
 	field( OUT,  "@best_PreDACoutmux")
 }
 
-record(mbbi,"$(P):PreDAC0:OutMux-RBV")
+record(mbbi,"$(P):PreDAC0:OutMux_RBV")
 {
 	field( DTYP, "CAENels BEST Mbbi")
 	field( DESC, "Out mux (1=SW, 0=HW)")
 	field( ONST, "FPGA")
 	field( ZRST, "SW via PCIe")
+	field( SCAN, "1 second")
 	field( INP,  "@best_PreDACoutmux_rbv")
 }
 
-## When OutMux is set to SW mode, this values are written to PreDAC
+## When OutMux is set to SW mode, these values are written to PreDAC
 record(ao,"$(P):PreDAC0:OutCh1")
 {
 	field( DTYP, "CAENels BEST Ao")
@@ -432,4 +433,48 @@ record(mbbi, "$(P):Login:Level")
 	field( INP,  "@best_LoginLevel")
 }
 
+## Waveform sent to the PreDAC from the PID (in HW mode).
+record(waveform,"$(P):PreDAC0:Ch1_RBV")
+{
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "PreDAC0 Output Channel 1")
+    field( FTVL, "DOUBLE")
+	field( EGU,  "Volt")
+	field( INP,  "@best_PreDAC_Ch1_rbv")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
+}
+
+record(waveform,"$(P):PreDAC0:Ch2_RBV")
+{
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "PreDAC0 Output Channel 2")
+    field( FTVL, "DOUBLE")
+	field( EGU,  "Volt")
+	field( INP,  "@best_PreDAC_Ch2_rbv")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
+}
+
+record(waveform,"$(P):PreDAC0:Ch3_RBV")
+{
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "PreDAC0 Output Channel 3")
+    field( FTVL, "DOUBLE")
+	field( EGU,  "Volt")
+	field( INP,  "@best_PreDAC_Ch3_rbv")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
+}
+
+record(waveform,"$(P):PreDAC0:Ch4_RBV")
+{
+    field( DTYP, "CAENels BEST Waveform")
+    field( DESC, "PreDAC0 Output Channel 4")
+    field( FTVL, "DOUBLE")
+	field( EGU,  "Volt")
+	field( INP,  "@best_PreDAC_Ch4_rbv")
+    field( NELM, "1024")
+    field( SCAN, "1 second")
+}
 
