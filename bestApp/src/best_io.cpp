@@ -283,6 +283,25 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 		return 0;
     }
     //=========================================================================
+    else if( sscanf(pvName, "best_PreDAC_Ch%d_rbv", &ch) == 1){
+
+        double (*voltage)[4];
+        voltage = (double(*)[4])malloc(4*count*sizeof(double));
+
+        getVoltageArray(voltage, count);
+
+        int i = 0;
+        double *d_ptr = (double*)payload;
+        for(i = 0; i < count; i++){
+            *d_ptr++ = voltage[i][ch-1];
+        }
+
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
+
+        free(voltage);
+        return 0;
+    }
+    //=========================================================================
     else {
         PDEBUG(DEBUG_ERROR, " %s: unknown name\n", pvName);
     }
