@@ -144,6 +144,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 
     int ch;
     int bpm_sel;
+    char kappa_sel[16] = {0};
     char pos_sel[16] = {0};
     unsigned short status;
     std::string pv_name_str = std::string(pvName);
@@ -283,6 +284,104 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 		return 0;
     }
     //=========================================================================
+	else if( (pv_name_str == "best_PidOffsetX_rbv") ||
+			 (pv_name_str == "best_PidOffsetY_rbv") ||
+			 (pv_name_str == "best_PidOffsetI0_rbv") ){
+		
+        enum best_pid_select pid_sel;
+		if      (pv_name_str == "best_PidOffsetX_rbv")  pid_sel = BEST_PID_SELECT_X;
+		else if (pv_name_str == "best_PidOffsetY_rbv")  pid_sel = BEST_PID_SELECT_Y;
+		else if (pv_name_str == "best_PidOffsetI0_rbv") pid_sel = BEST_PID_SELECT_I0;
+		else                                        return -1;
+
+        getOffsetSingle(pid_sel, (double*)payload);
+
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
+
+        return 0;
+    }
+    //=========================================================================
+    else if( sscanf(pvName, "best_PidK%1s%2s_rbv", kappa_sel, pos_sel) == 2){
+    
+    	std::string K_sel_str = std::string(kappa_sel);
+        int K_sel;
+        if      (K_sel_str == "p")   K_sel = 4;
+        else if (K_sel_str == "i")   K_sel = 12;
+        else if (K_sel_str == "d")   K_sel = 20;
+        else                         return -1;
+        
+        std::string pos_sel_str = std::string(pos_sel);
+        enum best_pid_select pid_sel;
+        if      (pos_sel_str == "X_")   pid_sel = BEST_PID_SELECT_X;
+        else if (pos_sel_str == "Y_")   pid_sel = BEST_PID_SELECT_Y;
+        else if (pos_sel_str == "I0")   pid_sel = BEST_PID_SELECT_I0;
+        else                            return -1;
+                
+        getPIDparamSingle(K_sel, pid_sel, (int)pid_par_sel_K, (double*)payload);
+
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
+
+        return 0;
+    }
+    //=========================================================================
+    else if( sscanf(pvName, "best_PidO%3s%2s_rbv", kappa_sel, pos_sel) == 2){
+    
+        
+    	std::string K_sel_str = std::string(kappa_sel);
+        int K_sel;
+        if      (K_sel_str == "min")   K_sel = 4;
+        else if (K_sel_str == "max")   K_sel = 12;
+        else if (K_sel_str == "gai")   K_sel = 20;
+        else                           return -1;
+        
+        std::string pos_sel_str = std::string(pos_sel);
+        enum best_pid_select pid_sel;
+        if      (pos_sel_str == "X_")   pid_sel = BEST_PID_SELECT_X;
+        else if (pos_sel_str == "Y_")   pid_sel = BEST_PID_SELECT_Y;
+        else if (pos_sel_str == "I0")   pid_sel = BEST_PID_SELECT_I0;
+        else                            return -1;
+          
+        getPIDparamSingle(K_sel, pid_sel, (int)pid_par_sel_out, (double*)payload);
+
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
+
+        return 0;
+    }
+    //=========================================================================
+    else if( sscanf(pvName, "best_PidImax%2s_rbv", pos_sel) == 1){
+    
+        int K_sel = 12;  
+        std::string pos_sel_str = std::string(pos_sel);
+        enum best_pid_select pid_sel;
+        if      (pos_sel_str == "X_")   pid_sel = BEST_PID_SELECT_X;
+        else if (pos_sel_str == "Y_")   pid_sel = BEST_PID_SELECT_Y;
+        else if (pos_sel_str == "I0")   pid_sel = BEST_PID_SELECT_I0;
+        else                            return -1;
+          
+        getPIDparamSingle(K_sel, pid_sel, (int)pid_par_sel_lim, (double*)payload);
+
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
+
+        return 0;
+    }
+    //=========================================================================
+    else if( sscanf(pvName, "best_Pidemin%2s_rbv", pos_sel) == 1){
+    
+        int K_sel = 4;  
+        std::string pos_sel_str = std::string(pos_sel);
+        enum best_pid_select pid_sel;
+        if      (pos_sel_str == "X_")   pid_sel = BEST_PID_SELECT_X;
+        else if (pos_sel_str == "Y_")   pid_sel = BEST_PID_SELECT_Y;
+        else if (pos_sel_str == "I0")   pid_sel = BEST_PID_SELECT_I0;
+        else                            return -1;
+          
+        getPIDparamSingle(K_sel, pid_sel, (int)pid_par_sel_lim, (double*)payload);
+
+        PDEBUG(DEBUG_RET_DATA, "pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
+
+        return 0;
+    }
+    //=========================================================================
     else if( sscanf(pvName, "best_PreDAC_Ch%d_rbv", &ch) == 1){
 
         double (*voltage)[4];
@@ -314,6 +413,8 @@ int writeBest(char *pvName, retType_t type, void* payload){
     unsigned short value;
     int predac_ch;
     static double predac_out[4];
+    char kappa_sel[16] = {0};
+    char pos_sel[16] = {0};
 
     PDEBUG(DEBUG_LOW_FUNC, "func: %s(), pv: %s\n", __FUNCTION__, pvName);
 
@@ -354,6 +455,90 @@ int writeBest(char *pvName, retType_t type, void* payload){
                pvName, (int)pid_sel, *(double*)payload);
 
         setOffsetSingle(pid_sel, *(double*)payload);
+
+        return 0;
+    }
+    //=========================================================================
+    else if( sscanf(pvName, "best_PidK%1s%2s", kappa_sel, pos_sel) == 2){
+    
+    	std::string K_sel_str = std::string(kappa_sel);
+        int K_sel;
+        if      (K_sel_str == "p")   K_sel = 4;
+        else if (K_sel_str == "i")   K_sel = 12;
+        else if (K_sel_str == "d")   K_sel = 20;
+        else                         return -1;
+        //printf("%2s\n",pos_sel);
+        std::string pos_sel_str = std::string(pos_sel);
+        enum best_pid_select pid_sel;
+        if      (pos_sel_str == "X")    pid_sel = BEST_PID_SELECT_X;
+        else if (pos_sel_str == "Y")    pid_sel = BEST_PID_SELECT_Y;
+        else if (pos_sel_str == "I0")   pid_sel = BEST_PID_SELECT_I0;
+        else                            return -1;
+                
+        PDEBUG(DEBUG_SET_DATA, "pv: %s, setPIDparamSingle(%d, %d, %d, %lf)\n",
+               pvName, K_sel, (int)pid_sel, (int)pid_par_sel_K, *(double*)payload);
+
+        setPIDparamSingle(K_sel, pid_sel, (int)pid_par_sel_K, *(double*)payload);
+
+        return 0;
+    }
+    //=========================================================================
+    else if( sscanf(pvName, "best_PidO%3s%2s", kappa_sel, pos_sel) == 2){
+    
+    	std::string K_sel_str = std::string(kappa_sel);
+        int K_sel;
+        if      (K_sel_str == "min")   K_sel = 4;
+        else if (K_sel_str == "max")   K_sel = 12;
+        else if (K_sel_str == "gai")   K_sel = 20;
+        else                           return -1;
+        
+        std::string pos_sel_str = std::string(pos_sel);
+        enum best_pid_select pid_sel;
+        if      (pos_sel_str == "X")    pid_sel = BEST_PID_SELECT_X;
+        else if (pos_sel_str == "Y")    pid_sel = BEST_PID_SELECT_Y;
+        else if (pos_sel_str == "I0")   pid_sel = BEST_PID_SELECT_I0;
+        else                            return -1;
+                
+        PDEBUG(DEBUG_SET_DATA, "pv: %s, setPIDparamSingle(%d, %d, %d, %lf)\n",
+               pvName, K_sel, (int)pid_sel, (int)pid_par_sel_out, *(double*)payload);
+
+        setPIDparamSingle(K_sel, pid_sel, (int)pid_par_sel_out, *(double*)payload);
+
+        return 0;
+    }
+    //=========================================================================
+    else if( sscanf(pvName, "best_PidImax%2s", pos_sel) == 1){
+    
+        int K_sel = 12;
+        std::string pos_sel_str = std::string(pos_sel);
+        enum best_pid_select pid_sel;
+        if      (pos_sel_str == "X")    pid_sel = BEST_PID_SELECT_X;
+        else if (pos_sel_str == "Y")    pid_sel = BEST_PID_SELECT_Y;
+        else if (pos_sel_str == "I0")   pid_sel = BEST_PID_SELECT_I0;
+        else                            return -1;
+                
+        PDEBUG(DEBUG_SET_DATA, "pv: %s, setPIDparamSingle(%d, %d, %d, %lf)\n",
+               pvName, K_sel, (int)pid_sel, (int)pid_par_sel_lim, *(double*)payload);
+
+        setPIDparamSingle(K_sel, pid_sel, (int)pid_par_sel_lim, *(double*)payload);
+
+        return 0;
+    }
+    //=========================================================================
+    else if( sscanf(pvName, "best_Pidemin%2s", pos_sel) == 1){
+    
+        int K_sel = 4;
+        std::string pos_sel_str = std::string(pos_sel);
+        enum best_pid_select pid_sel;
+        if      (pos_sel_str == "X")    pid_sel = BEST_PID_SELECT_X;
+        else if (pos_sel_str == "Y")    pid_sel = BEST_PID_SELECT_Y;
+        else if (pos_sel_str == "I0")   pid_sel = BEST_PID_SELECT_I0;
+        else                            return -1;
+                
+        PDEBUG(DEBUG_SET_DATA, "pv: %s, setPIDparamSingle(%d, %d, %d, %lf)\n",
+               pvName, K_sel, (int)pid_sel, (int)pid_par_sel_lim, *(double*)payload);
+
+        setPIDparamSingle(K_sel, pid_sel, (int)pid_par_sel_lim, *(double*)payload);
 
         return 0;
     }
