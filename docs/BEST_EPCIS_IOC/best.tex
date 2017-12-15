@@ -497,6 +497,32 @@ ZRST & SW via PCIe\\
  Output multiplexer allows to switch control from HW PID to software. User can then manually control PreDAC output channels. A high level feedback can also be performed by having a program writing to PreDAC0:Out.
 \newline \newline
 
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PreDAC0:OutMux_RBV}
+\catcode`_=8
+\textbf{Record Type}: mbbi \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Mbbi\\
+\hline
+DESC & Out mux (1=SW, 0=HW)\\
+\hline
+ONST & FPGA\\
+\hline
+ZRST & SW via PCIe\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Output multiplexer configuration.
+\newline \newline
+
 
 \subsection{\$(P):PreDAC0:Out}
 \textbf{Record Type}: waveform \newline \newline 
@@ -563,4 +589,1233 @@ SCAN & 1 second\\
  Current user level
 \newline \newline
 
+\clearpage
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PreDAC0:Ch1_RBV}
+\catcode`_=8
+\textbf{Record Type}: waveform \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Waveform\\
+\hline
+DESC & PreDAC0 Output Channel 1\\
+\hline
+FTVL & DOUBLE\\
+\hline
+EGU & Volt\\
+\hline
+NELM & 1024\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Waveform sent to PreDAC from the PID (in HW mode).
+\newline \newline
 
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PreDAC0:Ch2_RBV}
+\catcode`_=8
+\textbf{Record Type}: waveform \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Waveform\\
+\hline
+DESC & PreDAC0 Output Channel 2\\
+\hline
+FTVL & DOUBLE\\
+\hline
+EGU & Volt\\
+\hline
+NELM & 1024\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Waveform sent to PreDAC from the PID (in HW mode).
+\newline \newline
+
+\clearpage
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PreDAC0:Ch3_RBV}
+\catcode`_=8
+\textbf{Record Type}: waveform \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Waveform\\
+\hline
+DESC & PreDAC0 Output Channel 3\\
+\hline
+FTVL & DOUBLE\\
+\hline
+EGU & Volt\\
+\hline
+NELM & 1024\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Waveform sent to PreDAC from the PID (in HW mode).
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PreDAC0:Ch4_RBV}
+\catcode`_=8
+\textbf{Record Type}: waveform \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Waveform\\
+\hline
+DESC & PreDAC0 Output Channel 4\\
+\hline
+FTVL & DOUBLE\\
+\hline
+EGU & Volt\\
+\hline
+NELM & 1024\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Waveform sent to PreDAC from the PID (in HW mode).
+\newline \newline
+
+
+\clearpage
+\subsection{\$(P):PID:KpX}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Kp X\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Kp parameter for PID X
+\newline \newline
+
+\subsection{\$(P):PID:KiX}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Ki X\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Ki parameter for PID X
+\newline \newline
+
+\subsection{\$(P):PID:KdX}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Kd X\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Kd parameter for PID X
+\newline \newline
+
+\subsection{\$(P):PID:eminX}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID emin X\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired emin parameter for PID X
+\newline \newline
+
+\subsection{\$(P):PID:ImaxX}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Imax X\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Imax parameter for PID X
+\newline \newline
+
+\subsection{\$(P):PID:OminX}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Omin X\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Omin parameter for PID X
+\newline \newline
+
+\subsection{\$(P):PID:OmaxX}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Omax X\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Omax parameter for PID X
+\newline \newline
+
+\subsection{\$(P):PID:OgainX}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Ogain X\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Ogain parameter for PID X
+\newline \newline
+
+\subsection{\$(P):PID:OffsetX}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Offset X\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Offset parameter for PID X
+\newline \newline
+
+
+\subsection{\$(P):PID:KpY}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Kp Y\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Kp parameter for PID Y
+\newline \newline
+
+\subsection{\$(P):PID:KiY}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Ki Y\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Ki parameter for PID Y
+\newline \newline
+
+\subsection{\$(P):PID:KdY}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Kd Y\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Kd parameter for PID Y
+\newline \newline
+
+\subsection{\$(P):PID:eminY}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID emin Y\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired emin parameter for PID Y
+\newline \newline
+
+\subsection{\$(P):PID:ImaxY}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Imax Y\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Imax parameter for PID Y
+\newline \newline
+
+\subsection{\$(P):PID:OminY}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Omin Y\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Omin parameter for PID Y
+\newline \newline
+
+\subsection{\$(P):PID:OmaxY}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Omax Y\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Omax parameter for PID Y
+\newline \newline
+
+\subsection{\$(P):PID:OgainY}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Ogain Y\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Ogain parameter for PID Y
+\newline \newline
+
+\subsection{\$(P):PID:OffsetY}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Offset Y\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Offset parameter for PID Y
+\newline \newline
+
+
+\subsection{\$(P):PID:KpI0}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Kp I0\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Kp parameter for PID I0
+\newline \newline
+
+\subsection{\$(P):PID:KiI0}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Ki I0\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Ki parameter for PID I0
+\newline \newline
+
+\subsection{\$(P):PID:KdI0}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Kd I0\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Kd parameter for PID I0
+\newline \newline
+
+\subsection{\$(P):PID:eminI0}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID emin I0\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired emin parameter for PID I0
+\newline \newline
+
+\subsection{\$(P):PID:ImaxI0}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Imax I0\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Imax parameter for PID I0
+\newline \newline
+
+\subsection{\$(P):PID:OminI0}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Omin I0\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Omin parameter for PID I0
+\newline \newline
+
+\subsection{\$(P):PID:OmaxI0}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Omax I0\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Omax parameter for PID I0
+\newline \newline
+
+\subsection{\$(P):PID:OgainI0}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Ogain I0\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Ogain parameter for PID I0
+\newline \newline
+
+\subsection{\$(P):PID:OffsetI0}
+\textbf{Record Type}: ao \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ao\\
+\hline
+DESC & PID Offset I0\\
+\hline
+PINI & YES\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Set desired Offset parameter for PID I0
+\newline \newline
+
+
+
+% READBACK VALUES
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:KpX_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Kp X Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Kp parameter from PID X configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:KiX_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Ki X Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Ki parameter from PID X configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:KdX_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Kd X Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Kd parameter from PID X configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:eminX_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID emin X Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get emin parameter from PID X configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:ImaxX_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Imax X Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Imax parameter from PID X configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OminX_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Omin X Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Omin parameter from PID X configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OmaxX_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Omax X Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Omax parameter from PID X configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OgainX_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Ogain X Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Ogain parameter from PID X configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OffsetX_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Offset X Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Offset parameter from PID X configuration register
+\newline \newline
+
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:KpY_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Kp Y Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Kp parameter from PID Y configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:KiY_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Ki Y Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Ki parameter from PID Y configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:KdY_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Kd Y Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Kd parameter from PID Y configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:eminY_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID emin Y Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get emin parameter from PID Y configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:ImaxY_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Imax Y Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Imax parameter from PID Y configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OminY_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Omin Y Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Omin parameter from PID Y configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OmaxY_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Omax Y Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Omax parameter from PID Y configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OgainY_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Ogain Y Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Ogain parameter from PID Y configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OffsetY_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Offset Y Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Offset parameter from PID Y configuration register
+\newline \newline
+
+
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:KpI0_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Kp I0 Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Kp parameter from PID I0 configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:KiI0_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Ki I0 Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Ki parameter from PID I0 configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:KdI0_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Kd I0 Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Kd parameter from PID I0 configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:eminI0_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID emin I0 Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get emin parameter from PID I0 configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:ImaxI0_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Imax I0 Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Imax parameter from PID I0 configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OminI0_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Omin I0 Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Omin parameter from PID I0 configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OmaxI0_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Omax I0 Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Omax parameter from PID I0 configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OgainI0_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Ogain I0 Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Ogain parameter from PID I0 configuration register
+\newline \newline
+
+\catcode`\_=13 
+\def_{\textunderscore}
+\subsection{\$(P):PID:OffsetI0_RBV}
+\catcode`_=8
+\textbf{Record Type}: ai \newline \newline 
+\textbf{Fields}: \newline 
+\begin{tabularx}{0.7\linewidth}{|r|X|}
+\hline Field & Value \\
+\hline
+\hline
+DTYP & CAENels BEST Ai\\
+\hline
+DESC & PID Offset I0 Readback\\
+\hline
+SCAN & 1 second\\
+\hline
+\end{tabularx}
+\newline \newline \newline
+\textbf{Long description}: \newline 
+ Get Offset parameter from PID I0 configuration register
+\newline \newline

@@ -9,3 +9,12 @@ configure/O.Common/
 db/
 dbd/
 st.cmd
+docs/BEST_EPCIS_IOC/best.log
+docs/BEST_EPCIS_IOC/best.pdf
+docs/BEST_EPCIS_IOC/best.synctex.gz
+docs/BEST_EPCIS_IOC/best_epics.aux
+docs/BEST_EPCIS_IOC/best_epics.log
+docs/BEST_EPCIS_IOC/best_epics.synctex.gz
+docs/BEST_EPCIS_IOC/best_epics.toc
+docs/BEST_EPCIS_IOC/defs.aux
+docs/BEST_EPCIS_IOC/defs.log
