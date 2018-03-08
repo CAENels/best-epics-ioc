@@ -239,6 +239,18 @@ record(bo,"$(P):PID:Enable")
 	field( OUT,  "@best_PIDenable")
 }
 
+## Reset of PID controller on FPGA Card
+record(bo,"$(P):PID:Reset")
+{
+	field( DTYP, "CAENels BEST Bo")
+	field( DESC, "PID Reset")
+	field( VAL,  "0")
+    field( ONAM, "ON")
+    field( ZNAM, "OFF")
+    field( HIGH, "1")
+	field( OUT,  "@best_PIDreset")
+}
+
 ## Selects which of the three feedbacks are active
 record(mbbo,"$(P):PID:Config")
 {

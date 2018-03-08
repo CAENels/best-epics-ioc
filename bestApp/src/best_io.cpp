@@ -551,6 +551,14 @@ int writeBest(char *pvName, retType_t type, void* payload){
         return setFBenable(value);
     }
     //=========================================================================
+    else if (pv_name_str == "best_PIDreset") {
+        value = *(unsigned short*)payload;
+
+        PDEBUG(DEBUG_SET_DATA, "pv: %s, setCtrlReset()\n", pvName);
+
+        return setCtrlReset();
+    }
+    //=========================================================================
     else if (pv_name_str == "best_PIDconfig") {
         value = *(unsigned short*)payload;
         return setPIDconf(value);
