@@ -15,11 +15,14 @@ cd ../bestepicsioc-$VER.$BUILD_NR
 
 rm -rf .git
 rm -rf bestApp/op/.metadata
+rm -rf create_debian_package.sh
 
-debuild -k95926773 -b
+cd ..
 
-if [ $? -ne 0 ]; then
-	exit 1
-fi
+tar czvf bestepicsioc_$VER.$BUILD_NR.orig.tar.gz bestepicsioc-$VER.$BUILD_NR
+
+cd bestepicsioc-$VER.$BUILD_NR
+
+debuild -us -uc -k51895D5F &&
 
 echo "$BUILD_NR" > $ORIG_DIR/build_number

@@ -1,3 +1,16 @@
+bestepicsioc (1.0.10) stable; urgency=medimu
+
+  * Fixed RBV 
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Mon, 21 Oct 2019 16:10:00 +0100
+
+bestepicsioc (1.0.9) stable; urgency=low
+
+  * All the PID-related parameters exposed to epics
+  * PID reset function exposed to EPICS
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Thu, 8 Mar 2018 15:42:00 +0200
+
 bestepicsioc (1.0.7) stable; urgency=medimu
 
   * Fixes memory leak

@@ -355,7 +355,7 @@ record(ai,"$(P):PID:OffsetX_RBV")
     field( DESC, "PID Offset X Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOffsetX_rbv")
+	field( INP, "@best_rbv_PidOffsetX")
 }
 
 record(ao,"$(P):PID:OffsetY")
@@ -370,7 +370,7 @@ record(ai,"$(P):PID:OffsetY_RBV")
     field( DESC, "PID Offset Y Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOffsetY_rbv")
+	field( INP, "@best_rbv_PidOffsetY")
 }
 
 record(ao,"$(P):PID:OffsetI0")
@@ -385,7 +385,7 @@ record(ai,"$(P):PID:OffsetI0_RBV")
     field( DESC, "PID Offset I0 Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOffsetI0_rbv")
+	field( INP, "@best_rbv_PidOffsetI0")
 }
 
 ## Output multiplexer allows to switch control from HW PID to software.
@@ -408,7 +408,7 @@ record(mbbi,"$(P):PreDAC0:OutMux_RBV")
 	field( ONST, "FPGA")
 	field( ZRST, "SW via PCIe")
 	field( SCAN, "1 second")
-	field( INP,  "@best_PreDACoutmux_rbv")
+	field( INP,  "@best_rbv_PreDACoutmux")
 }
 
 ## When OutMux is set to SW mode, these values are written to PreDAC
@@ -473,7 +473,7 @@ record(waveform,"$(P):PreDAC0:Ch1_RBV")
     field( DESC, "PreDAC0 Output Channel 1")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Volt")
-	field( INP,  "@best_PreDAC_Ch1_rbv")
+	field( INP,  "@best_rbv_PreDAC_Ch1")
     field( NELM, "1024")
     field( SCAN, "1 second")
 }
@@ -484,7 +484,7 @@ record(waveform,"$(P):PreDAC0:Ch2_RBV")
     field( DESC, "PreDAC0 Output Channel 2")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Volt")
-	field( INP,  "@best_PreDAC_Ch2_rbv")
+	field( INP,  "@best_rbv_PreDAC_Ch2")
     field( NELM, "1024")
     field( SCAN, "1 second")
 }
@@ -495,7 +495,7 @@ record(waveform,"$(P):PreDAC0:Ch3_RBV")
     field( DESC, "PreDAC0 Output Channel 3")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Volt")
-	field( INP,  "@best_PreDAC_Ch3_rbv")
+	field( INP,  "@best_rbv_PreDAC_Ch3")
     field( NELM, "1024")
     field( SCAN, "1 second")
 }
@@ -506,7 +506,7 @@ record(waveform,"$(P):PreDAC0:Ch4_RBV")
     field( DESC, "PreDAC0 Output Channel 4")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Volt")
-	field( INP,  "@best_PreDAC_Ch4_rbv")
+	field( INP,  "@best_rbv_PreDAC_Ch4")
     field( NELM, "1024")
     field( SCAN, "1 second")
 }
@@ -741,56 +741,56 @@ record(ai,"$(P):PID:KpX_RBV")
 	field( DESC, "PID Kp X Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidKpX_rbv")
+	field( INP, "@best_rbv_PidKpX")
 }
 record(ai,"$(P):PID:KiX_RBV")
 {
 	field( DESC, "PID Ki X Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidKiX_rbv")
+	field( INP, "@best_rbv_PidKiX")
 }
 record(ai,"$(P):PID:KdX_RBV")
 {
 	field( DESC, "PID Kd X Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidKdX_rbv")
+	field( INP, "@best_rbv_PidKdX")
 }
 record(ai,"$(P):PID:eminX_RBV")
 {
 	field( DESC, "PID emin X Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PideminX_rbv")
+	field( INP, "@best_rbv_PideminX")
 }
 record(ai,"$(P):PID:ImaxX_RBV")
 {
 	field( DESC, "PID Imax X Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidImaxX_rbv")
+	field( INP, "@best_rbv_PidImaxX")
 }
 record(ai,"$(P):PID:OminX_RBV")
 {
 	field( DESC, "PID Omin X Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOminX_rbv")
+	field( INP, "@best_rbv_PidOminX")
 }
 record(ai,"$(P):PID:OmaxX_RBV")
 {
 	field( DESC, "PID Omax X Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOmaxX_rbv")
+	field( INP, "@best_rbv_PidOmaxX")
 }
 record(ai,"$(P):PID:OgainX_RBV")
 {
 	field( DESC, "PID Ogain X Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOgaiX_rbv")
+	field( INP, "@best_rbv_PidOgaiX")
 }
 
 ## Y
@@ -799,56 +799,56 @@ record(ai,"$(P):PID:KpY_RBV")
 	field( DESC, "PID Kp Y Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidKpY_rbv")
+	field( INP, "@best_rbv_PidKpY")
 }
 record(ai,"$(P):PID:KiY_RBV")
 {
 	field( DESC, "PID Ki Y Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidKiY_rbv")
+	field( INP, "@best_rbv_PidKiY")
 }
 record(ai,"$(P):PID:KdY_RBV")
 {
 	field( DESC, "PID Kd Y Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidKdY_rbv")
+	field( INP, "@best_rbv_PidKdY")
 }
 record(ai,"$(P):PID:eminY_RBV")
 {
 	field( DESC, "PID emin Y Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PideminY_rbv")
+	field( INP, "@best_rbv_PideminY")
 }
 record(ai,"$(P):PID:ImaxY_RBV")
 {
 	field( DESC, "PID Imax Y Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidImaxY_rbv")
+	field( INP, "@best_rbv_PidImaxY")
 }
 record(ai,"$(P):PID:OminY_RBV")
 {
 	field( DESC, "PID Omin Y Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOminY_rbv")
+	field( INP, "@best_rbv_PidOminY")
 }
 record(ai,"$(P):PID:OmaxY_RBV")
 {
 	field( DESC, "PID Omax Y Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOmaxY_rbv")
+	field( INP, "@best_rbv_PidOmaxY")
 }
 record(ai,"$(P):PID:OgainY_RBV")
 {
 	field( DESC, "PID Ogain Y Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOgaiY_rbv")
+	field( INP, "@best_rbv_PidOgaiY")
 }
 
 ## I0
@@ -857,54 +857,54 @@ record(ai,"$(P):PID:KpI0_RBV")
 	field( DESC, "PID Kp I0 Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidKpI0_rbv")
+	field( INP, "@best_rbv_PidKpI0")
 }
 record(ai,"$(P):PID:KiI0_RBV")
 {
 	field( DESC, "PID Ki I0 Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidKiI0_rbv")
+	field( INP, "@best_rbv_PidKiI0")
 }
 record(ai,"$(P):PID:KdI0_RBV")
 {
 	field( DESC, "PID Kd I0 Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidKdI0_rbv")
+	field( INP, "@best_rbv_PidKdI0")
 }
 record(ai,"$(P):PID:eminI0_RBV")
 {
 	field( DESC, "PID emin I0 Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PideminI0_rbv")
+	field( INP, "@best_rbv_PideminI0")
 }
 record(ai,"$(P):PID:ImaxI0_RBV")
 {
 	field( DESC, "PID Imax I0 Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidImaxI0_rbv")
+	field( INP, "@best_rbv_PidImaxI0")
 }
 record(ai,"$(P):PID:OminI0_RBV")
 {
 	field( DESC, "PID Omin I0 Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOminI0_rbv")
+	field( INP, "@best_rbv_PidOminI0")
 }
 record(ai,"$(P):PID:OmaxI0_RBV")
 {
 	field( DESC, "PID Omax I0 Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOmaxI0_rbv")
+	field( INP, "@best_rbv_PidOmaxI0")
 }
 record(ai,"$(P):PID:OgainI0_RBV")
 {
 	field( DESC, "PID Ogain I0 Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_PidOgaiI0_rbv")
+	field( INP, "@best_rbv_PidOgaiI0")
 }

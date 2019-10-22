@@ -1,7 +1,7 @@
 Source: bestepicsioc
 Section: unknown
 Priority: optional
-Maintainer: Jan Marjanovic <j.marjanovic@caenels.com>
+Maintainer: Paolo Scarbolo <p.scarbolo@caenels.com>
 Build-Depends: debhelper (>= 8.0.0), autotools-dev
 Standards-Version: 3.9.4
 Homepage: http://www.caenels.com
