@@ -1,4 +1,4 @@
 epicsEnvSet("ARCH","linux-x86_64")
 epicsEnvSet("IOC","iocbest")
-epicsEnvSet("TOP","/home/jan/CAENels/EPICS/BEST/bestepicsioc-1.0")
-epicsEnvSet("EPICS_BASE","/usr/lib/epics")
+epicsEnvSet("TOP","/home/best/Desktop/bibest/best-epics-ioc")
+epicsEnvSet("EPICS_BASE","/home/best/software/base-3.14.12.8")

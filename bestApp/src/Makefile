@@ -23,7 +23,7 @@ best_DBD += bestdev.dbd
 #best_LIBS += xxx
 CXXFLAGS += -I/usr/include
 best_LDFLAGS += -L/lib -L/usr/lib
-best_SYS_LIBS += best fftw3
+best_SYS_LIBS += bibest fftw3
 
 # best_registerRecordDeviceDriver.cpp derives from best.dbd
 best_SRCS += best_registerRecordDeviceDriver.cpp

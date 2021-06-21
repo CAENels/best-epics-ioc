@@ -12,7 +12,7 @@
 #include "pcie_driver/BEST_PCIe.h"
 #include "pcie_mailbox/mailbox_comm_defs.h"
 
-#include "best.h"
+#include "bibest.h"
 #include "aiRecord.h"
 #include "aoRecord.h"
 #include "waveformRecord.h"

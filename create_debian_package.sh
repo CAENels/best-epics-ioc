@@ -1,28 +1,33 @@
 #! /bin/bash
 
-VER=1.0
-BUILD_NR=$(cat build_number)
-BUILD_NR=$(echo $BUILD_NR+1 | bc)
+VER=$(cat .version)
+BUILD_NR=$(cat .buildnumber)
 
-ORIG_DIR=$(pwd)
+rm -rf pkg/bibestepicsioc-$VER.$BUILD_NR
 
-rm -rf ../bestepicsioc-$VER.$BUILD_NR
-mkdir  ../bestepicsioc-$VER.$BUILD_NR
 
-cp -r . ../bestepicsioc-$VER.$BUILD_NR
+cd ..
+mkdir -p bibestepicsioc-temp
+cp -r best-epics-ioc/* bibestepicsioc-temp/
+mkdir -p best-epics-ioc/pkg/bibestepicsioc-$VER.$BUILD_NR
+cp -r bibestepicsioc-temp/* best-epics-ioc/pkg/bibestepicsioc-$VER.$BUILD_NR/
+rm -rf bibestepicsioc-temp
 
-cd ../bestepicsioc-$VER.$BUILD_NR
+cd best-epics-ioc/pkg/bibestepicsioc-$VER.$BUILD_NR
 
 rm -rf .git
 rm -rf bestApp/op/.metadata
 rm -rf create_debian_package.sh
+rm -rf debian
 
 cd ..
 
-tar czvf bestepicsioc_$VER.$BUILD_NR.orig.tar.gz bestepicsioc-$VER.$BUILD_NR
+tar czvf bibestepicsioc_$VER.$BUILD_NR.orig.tar.gz bibestepicsioc-$VER.$BUILD_NR
 
-cd bestepicsioc-$VER.$BUILD_NR
+cp -r ../debian/ bibestepicsioc-$VER.$BUILD_NR
 
-debuild -us -uc -k51895D5F &&
+cd bibestepicsioc-$VER.$BUILD_NR
 
-echo "$BUILD_NR" > $ORIG_DIR/build_number
+#debuild -us -uc
+dpkg-buildpackage -rfakeroot -D -us -uc
+

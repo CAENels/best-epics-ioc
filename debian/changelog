@@ -1,24 +1,6 @@
-bestepicsioc (1.0.10) stable; urgency=medimu
+bibestepicsioc (1.0.0) unstable; urgency=low
 
-  * Fixed RBV 
+  * First realease of bibest-epics-ioc
 
- -- Paolo Scarbolo <p.scarbolo@caenels.com>  Mon, 21 Oct 2019 16:10:00 +0100
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Mon, 21 Jun 2021 13:42:04 +0200
 
-bestepicsioc (1.0.9) stable; urgency=low
-
-  * All the PID-related parameters exposed to epics
-  * PID reset function exposed to EPICS
-
- -- Paolo Scarbolo <p.scarbolo@caenels.com>  Thu, 8 Mar 2018 15:42:00 +0200
-
-bestepicsioc (1.0.7) stable; urgency=medimu
-
-  * Fixes memory leak
-
- -- Jan Marjanovic <j.marjanovic@caenels.com>  Wed, 09 Mar 2016 16:06:46 +0100
-
-bestepicsioc (1.0-6) stable; urgency=low
-
-  * Initial release 
-
- -- Jan Marjanovic <j.marjanovic@caenels.com>  Thu, 30 Oct 2014 18:06:21 +0100

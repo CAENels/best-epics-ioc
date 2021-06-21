@@ -1,4 +1,4 @@
-Source: bestepicsioc
+Source: bibestepicsioc
 Section: unknown
 Priority: optional
 Maintainer: Paolo Scarbolo <p.scarbolo@caenels.com>
@@ -7,8 +7,8 @@ Standards-Version: 3.9.4
 Homepage: http://www.caenels.com
 
 
-Package: bestepicsioc
+Package: bibestepicsioc
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libepics3.14.12.3
-Description: BEST EPICS Input/Output Controller
- EPICS IOC to control and to monitor BEST system
+Description: BiBEST EPICS Input/Output Controller
+ EPICS IOC to control and to monitor BiBEST system
