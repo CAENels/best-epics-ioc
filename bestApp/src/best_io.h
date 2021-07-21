@@ -8,9 +8,12 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <math.h>
+#include <string>
 
 #include "pcie_driver/BEST_PCIe.h"
 #include "pcie_mailbox/mailbox_comm_defs.h"
+#include "mini/ini.h"
 
 #include "bibest.h"
 #include "aiRecord.h"
@@ -39,6 +42,7 @@ extern uint32_t debug;
 #define FILE_MBOX       "/dev/best_mailbox"
 #define FILE_PREDAC     "/dev/best_predac0"
 #define FILE_DISP       "/dev/best_dma_displ"
+#define CONFIG_PATH     "/opt/CAENels/BIBEST/config_bibest.ini"
 
 #define DISP_NR_CH      32
 #define DISP_POSX       0

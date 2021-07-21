@@ -23,10 +23,15 @@ best_DBD += bestdev.dbd
 #best_LIBS += xxx
 CXXFLAGS += -I/usr/include
 best_LDFLAGS += -L/lib -L/usr/lib
-best_SYS_LIBS += bibest fftw3
+best_SYS_LIBS += bibest fftw3 armadillo lapack blas
+
+# Extra flags
+USR_CXXFLAGS += -std=c++11
+USR_CXXFLAGS += -DARMA_DONT_USE_WRAPPER
 
 # best_registerRecordDeviceDriver.cpp derives from best.dbd
 best_SRCS += best_registerRecordDeviceDriver.cpp
+best_SRCS += butterworth.cpp
 best_SRCS += best_io.cpp
 best_SRCS += devAiBest.cpp
 best_SRCS += devAoBest.cpp

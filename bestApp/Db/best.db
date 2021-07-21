@@ -1,910 +1,1556 @@
 ## Waveform from input channel of TetrAmm picoameter unit.
 ## Default sampling frequency is 1kHz (decimation from 100kHz).
-record(waveform,"$(P):TetrAMM0:Ch1")
-{
+record(waveform,"$(P):TetrAMM0:Ch1") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "TetrAMM Input Channel 1")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM0ch1")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
 
-record(waveform,"$(P):TetrAMM1:Ch1")
-{
+record(waveform,"$(P):TetrAMM1:Ch1") {
 	field( DTYP, "CAENels BEST Waveform")
 	field( DESC, "TetrAMM Input Channel 1")
 	field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM1ch1")
 	field( NELM, "1024")
-	field( SCAN, "1 second")
-}
-
-## Waveform from input channel of TetrAmm picoameter unit.
-## Default sampling frequency is 1kHz (decimation from 100kHz).
-record(waveform,"$(P):TetrAMM0:Ch2")
-{
+	field( SCAN, "1 second") }
+record(waveform,"$(P):TetrAMM0:Ch2") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "TetrAMM Input Channel 2")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM0ch2")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
 
-record(waveform,"$(P):TetrAMM1:Ch2")
-{
+record(waveform,"$(P):TetrAMM1:Ch2") {
 	field( DTYP, "CAENels BEST Waveform")
 	field( DESC, "TetrAMM Input Channel 2")
 	field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM1ch2")
 	field( NELM, "1024")
-	field( SCAN, "1 second")
-}
+	field( SCAN, "1 second") }
 
-## Waveform from input channel of TetrAmm picoameter unit.
-## Default sampling frequency is 1kHz (decimation from 100kHz).
-record(waveform,"$(P):TetrAMM0:Ch3")
-{
+record(waveform,"$(P):TetrAMM0:Ch3") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "TetrAMM Input Channel 3")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM0ch3")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
 
-record(waveform,"$(P):TetrAMM1:Ch3")
-{
+record(waveform,"$(P):TetrAMM1:Ch3") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "TetrAMM Input Channel 3")
     field( FTVL, "DOUBLE")
     field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM1ch3")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
 
-## Waveform from input channel of TetrAmm picoameter unit.
-## Default sampling frequency is 1kHz (decimation from 100kHz).
-record(waveform,"$(P):TetrAMM0:Ch4")
-{
+record(waveform,"$(P):TetrAMM0:Ch4") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "TetrAMM Input Channel 4")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM0ch4")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
 
-record(waveform,"$(P):TetrAMM1:Ch4")
-{
+record(waveform,"$(P):TetrAMM1:Ch4") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "TetrAMM Input Channel 4")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_TetrAMM1ch4")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
 
 ## Calculated beam position from currents and BPM scaling parameters.
 ## See BEST User's Manual for detailed explanation of beam position calculation
-record(waveform,"$(P):BPM0:PosX")
-{
+record(waveform,"$(P):BPM0:PosX") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "Position X")
     field( FTVL, "DOUBLE")
     field( EGU,  "um")
     field( INP,  "@best_BPM0wfmX")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
 
-record(waveform,"$(P):BPM1:PosX")
-{
+record(waveform,"$(P):BPM1:PosX") {
 	field( DTYP, "CAENels BEST Waveform")
 	field( DESC, "Position X")
 	field( FTVL, "DOUBLE")
 	field( EGU,  "um")
 	field( INP,  "@best_BPM1wfmX")
 	field( NELM, "1024")
-	field( SCAN, "1 second")
-}
+	field( SCAN, "1 second") }
 
-## Calculated beam position from currents and BPM scaling parameters.
-## See BEST User's Manual for detailed explanation of beam position calculation
-record(waveform,"$(P):BPM0:PosY")
-{
+record(waveform,"$(P):BPM0:PosY") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "Position Y")
     field( FTVL, "DOUBLE")
 	field( EGU,  "um")
     field( INP,  "@best_BPM0wfmY")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
 
-record(waveform,"$(P):BPM1:PosY")
-{
+record(waveform,"$(P):BPM1:PosY") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "Position Y")
     field( FTVL, "DOUBLE")
 	field( EGU,  "um")
 	field( INP,  "@best_BPM1wfmY")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
 
 ## Calculated beam intensity (sum of all four currents).
 ## See BEST User's Manual for detailed explanation of beam position calculation
-record(waveform,"$(P):BPM0:Int")
-{
+record(waveform,"$(P):BPM0:Int") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "Intensity")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_BPM0wfmInt")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
 
-record(waveform,"$(P):BPM1:Int")
-{
+record(waveform,"$(P):BPM1:Int") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "Intensity")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Amper")
 	field( INP,  "@best_BPM1wfmInt")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
-
-
-## BPM Scaling parameter (defined by its dimensions) 
-record(ai,"$(P):BPM0:ScaleX")
-{
-    field( DTYP, "CAENels BEST Ai")
-	field( DESC, "BPM position X")
-	field( EGU,  "um/1")
+    field( SCAN, "1 second") }
+## Putting appropriate username and password switches control
+## from Local GUI or Webpage control and allows controlling system parameters
+## from EPICS CA.
+record(stringout, "$(P):Login:UserPass") {
+    field( DTYP, "CAENels BEST Stringout")
+	field( DESC, "User and Password, separated by colon")
+	field( OUT,  "@best_LoginUserPass") }
+## Current user level
+record(mbbi, "$(P):Login:Level") {
+    field( DTYP, "CAENels BEST Mbbi")
+	field( DESC, "Current access level")
+	field( ZRST, "Cruise")
+	field( ONST, "User")
+	field( TWST, "Admin")
 	field( SCAN, "1 second")
-	field( INP,  "@best_BPM0scaleX")
-}
-
-record(ai,"$(P):BPM1:ScaleX")
-{
-	field( DTYP, "CAENels BEST Ai")
-	field( DESC, "BPM position X")
-	field( EGU,  "um/1")
-	field( SCAN, "1 second")
-	field( INP,  "@best_BPM1scaleX")
-}
-
-## BPM Scaling parameter (defined by its dimensions) 
-record(ai,"$(P):BPM0:ScaleY")
-{
-    field( DTYP, "CAENels BEST Ai")
-	field( DESC, "BPM position Y")
-	field( EGU,  "um/1")
-	field( SCAN, "1 second")
-	field( INP,  "@best_BPM0scaleY")
-}
-
-record(ai,"$(P):BPM1:ScaleY")
-{
-	field( DTYP, "CAENels BEST Ai")
-	field( DESC, "BPM position Y")
-	field( EGU,  "um/1")
-	field( SCAN, "1 second")
-	field( INP,  "@best_BPM1scaleY")
-}
-
+	field( INP,  "@best_LoginLevel") }
 ## Number of TetrAMMs attached
-record(mbbi,"$(P):NumberTetrAMM")
-{
-	field( DTYP, "CAENels BEST Mbbi")
+record(mbbi,"$(P):NumberTetrAMM") {
+    field( DTYP, "CAENels BEST Mbbi")
 	field( ZRST, "No TetrAMMs")
 	field( ONST, "1 TetrAMM")
 	field( TWST, "2 TetrAMMs")
 	field( SCAN, "1 second")
-	field( INP,  "@best_NumberTetrAMM")
-}
-
+	field( INP,  "@best_NumberTetrAMM") }
 ## Status of PID controller on FPGA Card
-record(mbbi,"$(P):PID:Status")
-{
-	field( DTYP, "CAENels BEST Mbbi")
+record(mbbi,"$(P):PID:Status") {
+    field( DTYP, "CAENels BEST Mbbi")
 	field( DESC, "PID status")
 	field( ZRST, "Stopped")
 	field( ONST, "Stopped by ROC")
 	field( TWST, "Paused")
 	field( THST, "Running")
 	field( SCAN, "1 second")
-	field( INP,  "@best_PIDstatus")
-}
-
+	field( INP,  "@best_PIDstatus") }
 ## Control of PID controller on FPGA Card
-record(bo,"$(P):PID:Enable")
-{
-	field( DTYP, "CAENels BEST Bo")
+record(bo,"$(P):PID:Enable") {
+    field( DTYP, "CAENels BEST Bo")
 	field( DESC, "PID Enable")
 	field( ZNAM, "OFF")
 	field( ONAM, "ON")
-	field( OUT,  "@best_PIDenable")
-}
-
+	field( OUT,  "@best_PIDenable") }
 ## Reset of PID controller on FPGA Card
-record(bo,"$(P):PID:Reset")
-{
-	field( DTYP, "CAENels BEST Bo")
+record(bo,"$(P):PID:Reset") {
+    field( DTYP, "CAENels BEST Bo")
 	field( DESC, "PID Reset")
 	field( VAL,  "0")
     field( ONAM, "ON")
     field( ZNAM, "OFF")
     field( HIGH, "1")
-	field( OUT,  "@best_PIDreset")
-}
-
-## Selects which of the three feedbacks are active
-record(mbbo,"$(P):PID:Config")
-{
-	field( DTYP, "CAENels BEST Mbbo")
-	field( DESC, "PID Configuration")
-	field( ZRST, "X")
-	field( ONST, "X & Y")
-	field( TWST, "X & I0")
-	field( THST, "Y")
-	field( FRST, "Y & I0")
-	field( FVST, "X & Y & I0")
-	field( SXST, "I0")
-	field( OUT,  "@best_PIDconfig")
-}
-
-## The region in which user can place beam
-record(ai,"$(P):PID:RoiX")
-{
+	field( OUT,  "@best_PIDreset") }
+## BPM Scaling parameter (defined by its dimensions) 
+record(ai,"$(P):BPM0:ScaleX") {
     field( DTYP, "CAENels BEST Ai")
-	field( DESC, "PID Region of Interest, X postion")
-	field( EGU,  "um")
+	field( DESC, "BPM position X")
+	field( EGU,  "um/1")
 	field( SCAN, "1 second")
-	field( INP,  "@best_PIDroiX")
-}
-
-## The region in which user can place beam
-record(ai,"$(P):PID:RoiY")
-{
+	field( INP,  "@best_BPM0scaleX") }
+record(ai,"$(P):BPM1:ScaleX") {
+	field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM position X")
+	field( EGU,  "um/1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_BPM1scaleX") }
+record(ai,"$(P):BPM0:ScaleY") {
     field( DTYP, "CAENels BEST Ai")
-	field( DESC, "PID Region of Interest, Y postion")
-	field( EGU,  "um")
+	field( DESC, "BPM position Y")
+	field( EGU,  "um/1")
 	field( SCAN, "1 second")
-	field( INP,  "@best_PIDroiY")
-}
-
-## The minimum intensity which can user set
-record(ai,"$(P):PID:RoiIntMin")
-{
+	field( INP,  "@best_BPM0scaleY") }
+record(ai,"$(P):BPM1:ScaleY") {
     field( DTYP, "CAENels BEST Ai")
-	field( DESC, "PID Region of Interest, min Intensity")
-	field( EGU,  "Amper")
+	field( DESC, "BPM position Y")
+	field( EGU,  "um/1")
 	field( SCAN, "1 second")
-	field( INP,  "@best_PIDroiIntMin")
-}
-
-## The maximum intensity which can user set
-record(ai,"$(P):PID:RoiIntMax")
-{
-    field( DTYP, "CAENels BEST Ai")
-	field( DESC, "PID Region of Interest, max Intensity")
-	field( EGU,  "Amper")
-	field( SCAN, "1 second")
-	field( INP,  "@best_PIDroiIntMax")
-}
-
-## Region of convergence, where feedback loop is still active
-record(ai,"$(P):PID:Roc")
-{
-    field( DTYP, "CAENels BEST Ai")
-	field( DESC, "PID Region fo Convergence")
-	field( EGU,  "%")
-	field( SCAN, "1 second")
-	field( INP,  "@best_PIDroc")
-}
-
+	field( INP,  "@best_BPM1scaleY") }
+record(ao,"$(P):BPM0:ScalingX") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "BPM position X")
+	field( OUT,  "@best_BPM0scalingX") }
+record(ao,"$(P):BPM1:ScalingX") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "BPM position X")
+	field( OUT,  "@best_BPM1scalingX") }
+record(ao,"$(P):BPM0:ScalingY") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "BPM position Y")
+	field( OUT,  "@best_BPM0scalingY") }
+record(ao,"$(P):BPM1:ScalingY") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "BPM position Y")
+	field( OUT,  "@best_BPM1scalingY") }
 ## Desired beam position
-record(ao,"$(P):PID:SetpointX")
-{
-	field( DTYP, "CAENels BEST Ao")
-	field( DESC, "PID Setpoint X")
-	field( OUT, "@best_PidSetpointX")
+record(ao,"$(P):PID:SetpointXlf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Setpoint Xlf")
+	field( OUT, "@best_PidSetpointXlf")
+	field( EGU, "um") }
+record(ao,"$(P):PID:SetpointYlf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Setpoint Ylf")
+	field( OUT, "@best_PidSetpointYlf")
+	field( EGU, "um") }
+record(ai,"$(P):PID:SetpointXlf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Setpoint Xlf")
+	field( INP, "@best_rbv_PidSetpointXlf")
 	field( EGU, "um")
-}
-
-## Desired beam position
-record(ao,"$(P):PID:SetpointY")
-{
-	field( DTYP, "CAENels BEST Ao")
-	field( DESC, "PID Setpoint Y")
-	field( OUT, "@best_PidSetpointY")
+	field( SCAN, "1 second") }
+record(ai,"$(P):PID:SetpointYlf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Setpoint Ylf")
+	field( INP, "@best_rbv_PidSetpointYlf")
 	field( EGU, "um")
-}
-
-## Desired beam intensity
-record(ao,"$(P):PID:SetpointI0")
-{
-	field( DTYP, "CAENels BEST Ao")
-	field( DESC, "PID Setpoint I0")
-	field( OUT, "@best_PidSetpointI0")
-	field( EGU, "Amper")
-}
-
-record(ao,"$(P):PID:OffsetX")
-{
-	field( DTYP, "CAENels BEST Ao")
-	field( DESC, "PID Offset X")
-	field( OUT, "@best_PidOffsetX")
-	field( EGU, "V")
-}
-record(ai,"$(P):PID:OffsetX_RBV")
-{
-    field( DESC, "PID Offset X Readback")
-    field( DTYP, "CAENels BEST Ai")
-	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOffsetX")
-}
-
-record(ao,"$(P):PID:OffsetY")
-{
-	field( DTYP, "CAENels BEST Ao")
-	field( DESC, "PID Offset Y")
-	field( OUT, "@best_PidOffsetY")
-	field( EGU, "V")
-}
-record(ai,"$(P):PID:OffsetY_RBV")
-{
-    field( DESC, "PID Offset Y Readback")
-    field( DTYP, "CAENels BEST Ai")
-	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOffsetY")
-}
-
-record(ao,"$(P):PID:OffsetI0")
-{
-	field( DTYP, "CAENels BEST Ao")
-	field( DESC, "PID Offset I0")
-	field( OUT, "@best_PidOffsetI0")
-	field( EGU, "V")
-}
-record(ai,"$(P):PID:OffsetI0_RBV")
-{
-    field( DESC, "PID Offset I0 Readback")
-    field( DTYP, "CAENels BEST Ai")
-	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOffsetI0")
-}
-
+	field( SCAN, "1 second") }
 ## Output multiplexer allows to switch control from HW PID to software.
 ## User can then manually control PreDAC output channels.
 ## A high level feedback can also be performed by having a program writing
 ## to PreDAC0:Out.
-record(mbbo,"$(P):PreDAC0:OutMux")
-{
-	field( DTYP, "CAENels BEST Mbbo")
+record(mbbo,"$(P):PreDAC0:OutMux") {
+    field( DTYP, "CAENels BEST Mbbo")
 	field( DESC, "Out mux (1=SW, 0=HW)")
 	field( ONST, "FPGA")
 	field( ZRST, "SW via PCIe")
-	field( OUT,  "@best_PreDACoutmux")
-}
-
-record(mbbi,"$(P):PreDAC0:OutMux_RBV")
-{
-	field( DTYP, "CAENels BEST Mbbi")
+	field( OUT,  "@best_PreDACoutmux") }
+record(mbbi,"$(P):PreDAC0:OutMux_RBV") {
+    field( DTYP, "CAENels BEST Mbbi")
 	field( DESC, "Out mux (1=SW, 0=HW)")
 	field( ONST, "FPGA")
 	field( ZRST, "SW via PCIe")
 	field( SCAN, "1 second")
-	field( INP,  "@best_rbv_PreDACoutmux")
-}
-
+	field( INP,  "@best_rbv_PreDACoutmux") }
 ## When OutMux is set to SW mode, these values are written to PreDAC
-record(ao,"$(P):PreDAC0:OutCh1")
-{
-	field( DTYP, "CAENels BEST Ao")
+record(ao,"$(P):PreDAC0:OutCh1") {
+    field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PreDAC Out Channels (manual)")
 	field( EGU,  "V")
-	field( OUT,  "@best_PreDACoutCh1")
-}
-
-record(ao,"$(P):PreDAC0:OutCh2")
-{
-	field( DTYP, "CAENels BEST Ao")
+	field( OUT,  "@best_PreDACoutCh1") }
+record(ao,"$(P):PreDAC0:OutCh2") {
+    field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PreDAC Out Channels (manual)")
 	field( EGU,  "V")
-	field( OUT,  "@best_PreDACoutCh2")
-}
-
-record(ao,"$(P):PreDAC0:OutCh3")
-{
-	field( DTYP, "CAENels BEST Ao")
+	field( OUT,  "@best_PreDACoutCh2") }
+record(ao,"$(P):PreDAC0:OutCh3") {
+    field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PreDAC Out Channels (manual)")
 	field( EGU,  "V")
-	field( OUT,  "@best_PreDACoutCh3")
-}
-
-record(ao,"$(P):PreDAC0:OutCh4")
-{
-	field( DTYP, "CAENels BEST Ao")
+	field( OUT,  "@best_PreDACoutCh3") }
+record(ao,"$(P):PreDAC0:OutCh4") {
+    field( DTYP, "CAENels BEST Ao")
 	field( DESC, "PreDAC Out Channels (manual)")
 	field( EGU,  "V")
-	field( OUT,  "@best_PreDACoutCh4")
-}
-
-## Putting appropriate username and password switches control
-## from Local GUI or Webpage control and allows controlling system parameters
-## from EPICS CA.
-record(stringout, "$(P):Login:UserPass")
-{
-	field( DTYP, "CAENels BEST Stringout")
-	field( DESC, "User and Password, separated by colon")
-	field( OUT,  "@best_LoginUserPass")
-}
-
-## Current user level
-record(mbbi, "$(P):Login:Level")
-{
-	field( DTYP, "CAENels BEST Mbbi")
-	field( DESC, "Current access level")
-	field( ZRST, "Cruise")
-	field( ONST, "User")
-	field( TWST, "Admin")
-	field( SCAN, "1 second")
-	field( INP,  "@best_LoginLevel")
-}
+	field( OUT,  "@best_PreDACoutCh4") }
 
 ## Waveform sent to the PreDAC from the PID (in HW mode).
-record(waveform,"$(P):PreDAC0:Ch1_RBV")
-{
+record(waveform,"$(P):PreDAC0:Ch1_RBV") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "PreDAC0 Output Channel 1")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Volt")
 	field( INP,  "@best_rbv_PreDAC_Ch1")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
-
-record(waveform,"$(P):PreDAC0:Ch2_RBV")
-{
+    field( SCAN, "1 second") }
+record(waveform,"$(P):PreDAC0:Ch2_RBV") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "PreDAC0 Output Channel 2")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Volt")
 	field( INP,  "@best_rbv_PreDAC_Ch2")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
-
-record(waveform,"$(P):PreDAC0:Ch3_RBV")
-{
+    field( SCAN, "1 second") }
+record(waveform,"$(P):PreDAC0:Ch3_RBV") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "PreDAC0 Output Channel 3")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Volt")
 	field( INP,  "@best_rbv_PreDAC_Ch3")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
-
-record(waveform,"$(P):PreDAC0:Ch4_RBV")
-{
+    field( SCAN, "1 second") }
+record(waveform,"$(P):PreDAC0:Ch4_RBV") {
     field( DTYP, "CAENels BEST Waveform")
     field( DESC, "PreDAC0 Output Channel 4")
     field( FTVL, "DOUBLE")
 	field( EGU,  "Volt")
 	field( INP,  "@best_rbv_PreDAC_Ch4")
     field( NELM, "1024")
-    field( SCAN, "1 second")
-}
+    field( SCAN, "1 second") }
+## Set configuration
+record(ao,"$(P):PID:OUTconfig") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID out confselect")
+	field( OUT,  "@best_PidConfigOUT") }
+record(ai,"$(P):PID:OUTconfig_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID out conf")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidConfigOUT") }
 
 ## PID CONFIGURATION VARIABLES
-## X 
-record(ao,"$(P):PID:KpX")
-{
-	field( DESC, "PID Kp X")
+# Xlf
+record(ao,"$(P):PID:FreqXlf") {
+    field( DESC, "PID Freq Xlf")
+    #field( PINI, "YES")
+    field( VAL,  "10.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidFreqXlf") }
+record(ao,"$(P):PID:KpXlf") {
+    field( DESC, "PID Kp Xlf")
     field( PINI, "YES")
     field( VAL,  "0.3")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidKpX")
-}
-record(ao,"$(P):PID:KiX")
-{
-	field( DESC, "PID Ki X")
+	field( OUT, "@best_PidKpXlf") }
+record(ao,"$(P):PID:KiXlf") {
+    field( DESC, "PID Ki Xlf")
     field( PINI, "YES")
     field( VAL,  "0.01")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidKiX")
-}
-record(ao,"$(P):PID:KdX")
-{
-	field( DESC, "PID Kd X")
+	field( OUT, "@best_PidKiXlf") }
+record(ao,"$(P):PID:KdXlf") {
+    field( DESC, "PID Kd Xlf")
     field( PINI, "YES")
     field( VAL,  "0.01")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidKdX")
-}
-record(ao,"$(P):PID:eminX")
-{
-	field( DESC, "PID emin X")
+	field( OUT, "@best_PidKdXlf") }
+record(ao,"$(P):PID:eminXlf") {
+    field( DESC, "PID emin Xlf")
     field( PINI, "YES")
     field( VAL,  "0.0")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PideminX")
-}
-record(ao,"$(P):PID:ImaxX")
-{
-	field( DESC, "PID Imax X")
+	field( OUT, "@best_PideminXlf") }
+record(ao,"$(P):PID:ImaxXlf") {
+    field( DESC, "PID Imax Xlf")
     field( PINI, "YES")
     field( VAL,  "10.0")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidImaxX")
-}
-record(ao,"$(P):PID:OminX")
-{
-	field( DESC, "PID Omin X")
+	field( OUT, "@best_PidImaxXlf") }
+record(ao,"$(P):PID:OminXlf") {
+    field( DESC, "PID Omin Xlf")
     field( PINI, "YES")
     field( VAL,  "0.0")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidOminX")
-}
-record(ao,"$(P):PID:OmaxX")
-{
-	field( DESC, "PID Omax X")
+	field( OUT, "@best_PidOminXlf") }
+record(ao,"$(P):PID:OmaxXlf") {
+    field( DESC, "PID Omax Xlf")
     field( PINI, "YES")
     field( VAL,  "9.0")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidOmaxX")
-}
-record(ao,"$(P):PID:OgainX")
-{
-	field( DESC, "PID Ogai X")
+	field( OUT, "@best_PidOmaxXlf") }
+record(ao,"$(P):PID:OgainXlf") {
+    field( DESC, "PID Ogai Xlf")
     field( PINI, "YES")
     field( VAL,  "-1.0")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidOgaiX")
-}
-
-## Y
-record(ao,"$(P):PID:KpY")
-{
-	field( DESC, "PID Kp Y")
-    field( PINI, "YES")
-    field( VAL,  "0.12")
-    field( PREC, "5")
+	field( OUT, "@best_PidOgaiXlf") }
+record(ao,"$(P):PID:OffsetXlf") {
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidKpY")
-}
-record(ao,"$(P):PID:KiY")
-{
-	field( DESC, "PID Ki Y")
-    field( PINI, "YES")
-    field( VAL,  "0.05")
-    field( PREC, "5")
-    field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidKiY")
-}
-record(ao,"$(P):PID:KdY")
-{
-	field( DESC, "PID Kd Y")
-    field( PINI, "YES")
-    field( VAL,  "0.0")
-    field( PREC, "5")
-    field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidKdY")
-}
-record(ao,"$(P):PID:eminY")
-{
-	field( DESC, "PID emin Y")
-    field( PINI, "YES")
-    field( VAL,  "0.0")
-    field( PREC, "5")
-    field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PideminY")
-}
-record(ao,"$(P):PID:ImaxY")
-{
-	field( DESC, "PID Imax Y")
-    field( PINI, "YES")
+	field( DESC, "PID Offset Xlf")
+	field( OUT, "@best_PidOffsetXlf")
+	field( EGU, "V") }
+# Xhf
+record(ao,"$(P):PID:FreqXhf") {
+    field( DESC, "PID Freq Xhf")
+    #field( PINI, "YES")
     field( VAL,  "10.0")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidImaxY")
-}
-record(ao,"$(P):PID:OminY")
-{
-	field( DESC, "PID Omin Y")
+	field( OUT, "@best_PidFreqXhf") }
+record(ao,"$(P):PID:KpXhf") {
+    field( DESC, "PID Kp Xhf")
     field( PINI, "YES")
-    field( VAL,  "0.0")
+    field( VAL,  "0.3")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidOminY")
-}
-record(ao,"$(P):PID:OmaxY")
-{
-	field( DESC, "PID Omax Y")
-    field( PINI, "YES")
-    field( VAL,  "10.0")
-    field( PREC, "5")
-    field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidOmaxY")
-}
-record(ao,"$(P):PID:OgainY")
-{
-	field( DESC, "PID Ogai Y")
-    field( PINI, "YES")
-    field( VAL,  "1.0")
-    field( PREC, "5")
-    field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidOgaiY")
-}
-
-## I0
-record(ao,"$(P):PID:KpI0")
-{
-	field( DESC, "PID Kp I0")
-    field( PINI, "YES")
-    field( VAL,  "100.0")
-    field( PREC, "5")
-    field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidKpI0")
-}
-record(ao,"$(P):PID:KiI0")
-{
-	field( DESC, "PID Ki I0")
-    field( PINI, "YES")
-    field( VAL,  "1000.0")
-    field( PREC, "5")
-    field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidKiI0")
-}
-record(ao,"$(P):PID:KdI0")
-{
-	field( DESC, "PID Kd I0")
+	field( OUT, "@best_PidKpXhf") }
+record(ao,"$(P):PID:KiXhf") {
+    field( DESC, "PID Ki Xhf")
     field( PINI, "YES")
     field( VAL,  "0.01")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidKdI0")
-}
-record(ao,"$(P):PID:eminI0")
-{
-	field( DESC, "PID emin I0")
+	field( OUT, "@best_PidKiXhf") }
+record(ao,"$(P):PID:KdXhf") {
+    field( DESC, "PID Kd Xhf")
+    field( PINI, "YES")
+    field( VAL,  "0.01")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidKdXhf") }
+record(ao,"$(P):PID:eminXhf") {
+    field( DESC, "PID emin Xhf")
     field( PINI, "YES")
     field( VAL,  "0.0")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PideminI0")
-}
-record(ao,"$(P):PID:ImaxI0")
-{
-	field( DESC, "PID Imax I0")
-    field( PINI, "YES")
-    field( VAL,  "0.1")
-    field( PREC, "5")
-    field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidImaxI0")
-}
-record(ao,"$(P):PID:OminI0")
-{
-	field( DESC, "PID Omin I0")
-    field( PINI, "YES")
-    field( VAL,  "3.0")
-    field( PREC, "5")
-    field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidOminI0")
-}
-record(ao,"$(P):PID:OmaxI0")
-{
-	field( DESC, "PID Omax I0")
-    field( PINI, "YES")
-    field( VAL,  "11.0")
-    field( PREC, "5")
-    field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidOmaxI0")
-}
-record(ao,"$(P):PID:OgainI0")
-{
-	field( DESC, "PID Ogain I0")
+	field( OUT, "@best_PideminXhf") }
+record(ao,"$(P):PID:ImaxXhf") {
+    field( DESC, "PID Imax Xhf")
     field( PINI, "YES")
     field( VAL,  "10.0")
     field( PREC, "5")
     field( DTYP, "CAENels BEST Ao")
-	field( OUT, "@best_PidOgaiI0")
-}
+	field( OUT, "@best_PidImaxXhf") }
+record(ao,"$(P):PID:OminXhf") {
+    field( DESC, "PID Omin Xhf")
+    field( PINI, "YES")
+    field( VAL,  "0.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidOminXhf") }
+record(ao,"$(P):PID:OmaxXhf") {
+    field( DESC, "PID Omax Xhf")
+    field( PINI, "YES")
+    field( VAL,  "9.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidOmaxXhf") }
+record(ao,"$(P):PID:OgainXhf") {
+    field( DESC, "PID Ogai Xhf")
+    field( PINI, "YES")
+    field( VAL,  "-1.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidOgaiXhf") }
+record(ao,"$(P):PID:OffsetXhf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Offset Xhf")
+	field( OUT, "@best_PidOffsetXhf")
+	field( EGU, "V") }
 
+# Ylf
+record(ao,"$(P):PID:FreqYlf") {
+    field( DESC, "PID Freq Ylf")
+    #field( PINI, "YES")
+    field( VAL,  "10.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidFreqYlf") }
+record(ao,"$(P):PID:KpYlf") {
+    field( DESC, "PID Kp Ylf")
+    field( PINI, "YES")
+    field( VAL,  "0.12")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidKpYlf") }
+record(ao,"$(P):PID:KiYlf") {
+    field( DESC, "PID Ki Ylf")
+    field( PINI, "YES")
+    field( VAL,  "0.05")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidKiYlf") }
+record(ao,"$(P):PID:KdYlf") {
+    field( DESC, "PID Kd Ylf")
+    field( PINI, "YES")
+    field( VAL,  "0.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidKdYlf") }
+record(ao,"$(P):PID:eminYlf") {
+    field( DESC, "PID emin Ylf")
+    field( PINI, "YES")
+    field( VAL,  "0.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PideminYlf") }
+record(ao,"$(P):PID:ImaxYlf") {
+    field( DESC, "PID Imax Ylf")
+    field( PINI, "YES")
+    field( VAL,  "10.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidImaxYlf") }
+record(ao,"$(P):PID:OminYlf") {
+    field( DESC, "PID Omin Ylf")
+    field( PINI, "YES")
+    field( VAL,  "0.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidOminYlf") }
+record(ao,"$(P):PID:OmaxYlf") {
+    field( DESC, "PID Omax Ylf")
+    field( PINI, "YES")
+    field( VAL,  "10.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidOmaxYlf") }
+record(ao,"$(P):PID:OgainYlf") {
+    field( DESC, "PID Ogai Ylf")
+    field( PINI, "YES")
+    field( VAL,  "1.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidOgaiYlf") }
+record(ao,"$(P):PID:OffsetYlf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Offset Ylf")
+	field( OUT, "@best_PidOffsetYlf")
+	field( EGU, "V") }
+# Yhf
+record(ao,"$(P):PID:FreqYhf") {
+    field( DESC, "PID Freq Yhf")
+    #field( PINI, "YES")
+    field( VAL,  "10.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidFreqYhf") }
+record(ao,"$(P):PID:KpYhf") {
+    field( DESC, "PID Kp Yhf")
+    field( PINI, "YES")
+    field( VAL,  "0.12")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidKpYhf") }
+record(ao,"$(P):PID:KiYhf") {
+    field( DESC, "PID Ki Yhf")
+    field( PINI, "YES")
+    field( VAL,  "0.05")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidKiYhf") }
+record(ao,"$(P):PID:KdYhf") {
+    field( DESC, "PID Kd Yhf")
+    field( PINI, "YES")
+    field( VAL,  "0.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidKdYhf") }
+record(ao,"$(P):PID:eminYhf") {
+    field( DESC, "PID emin Yhf")
+    field( PINI, "YES")
+    field( VAL,  "0.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PideminYhf") }
+record(ao,"$(P):PID:ImaxYhf") {
+    field( DESC, "PID Imax Yhf")
+    field( PINI, "YES")
+    field( VAL,  "10.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidImaxYhf") }
+record(ao,"$(P):PID:OminYhf") {
+    field( DESC, "PID Omin Yhf")
+    field( PINI, "YES")
+    field( VAL,  "0.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidOminYhf") }
+record(ao,"$(P):PID:OmaxYhf") {
+    field( DESC, "PID Omax Yhf")
+    field( PINI, "YES")
+    field( VAL,  "10.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidOmaxYhf") }
+record(ao,"$(P):PID:OgainYhf") {
+    field( DESC, "PID Ogai Yhf")
+    field( PINI, "YES")
+    field( VAL,  "1.0")
+    field( PREC, "5")
+    field( DTYP, "CAENels BEST Ao")
+	field( OUT, "@best_PidOgaiYhf") }
+record(ao,"$(P):PID:OffsetYhf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Offset Yhf")
+	field( OUT, "@best_PidOffsetYhf")
+	field( EGU, "V") }
 ## PID CONFIGURATION VARIABLES READBACK
-## X 
-record(ai,"$(P):PID:KpX_RBV")
-{
-	field( DESC, "PID Kp X Readback")
+# Xlf
+record(ai,"$(P):PID:FreqXlf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Freq Xlf")
+	field( INP, "@best_rbv_PidFreqXlf")
+	field( EGU, "Hz")
+	field( SCAN, "1 second") }
+record(ai,"$(P):PID:KpXlf_RBV") {
+    field( DESC, "PID Kp Xlf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidKpX")
-}
-record(ai,"$(P):PID:KiX_RBV")
-{
-	field( DESC, "PID Ki X Readback")
+	field( INP, "@best_rbv_PidKpXlf") }
+record(ai,"$(P):PID:KiXlf_RBV") {
+    field( DESC, "PID Ki Xlf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidKiX")
-}
-record(ai,"$(P):PID:KdX_RBV")
-{
-	field( DESC, "PID Kd X Readback")
+	field( INP, "@best_rbv_PidKiXlf") }
+record(ai,"$(P):PID:KdXlf_RBV") {
+    field( DESC, "PID Kd Xlf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidKdX")
-}
-record(ai,"$(P):PID:eminX_RBV")
-{
-	field( DESC, "PID emin X Readback")
+	field( INP, "@best_rbv_PidKdXlf") }
+record(ai,"$(P):PID:eminXlf_RBV") {
+    field( DESC, "PID emin Xlf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PideminX")
-}
-record(ai,"$(P):PID:ImaxX_RBV")
-{
-	field( DESC, "PID Imax X Readback")
+	field( INP, "@best_rbv_PideminXlf") }
+record(ai,"$(P):PID:ImaxXlf_RBV") {
+    field( DESC, "PID Imax Xlf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidImaxX")
-}
-record(ai,"$(P):PID:OminX_RBV")
-{
-	field( DESC, "PID Omin X Readback")
+	field( INP, "@best_rbv_PidImaxXlf") }
+record(ai,"$(P):PID:OminXlf_RBV") {
+    field( DESC, "PID Omin Xlf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOminX")
-}
-record(ai,"$(P):PID:OmaxX_RBV")
-{
-	field( DESC, "PID Omax X Readback")
+	field( INP, "@best_rbv_PidOminXlf") }
+record(ai,"$(P):PID:OmaxXlf_RBV") {
+    field( DESC, "PID Omax Xlf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOmaxX")
-}
-record(ai,"$(P):PID:OgainX_RBV")
-{
-	field( DESC, "PID Ogain X Readback")
+	field( INP, "@best_rbv_PidOmaxXlf") }
+record(ai,"$(P):PID:OgainXlf_RBV") {
+    field( DESC, "PID Ogain Xlf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOgaiX")
-}
+	field( INP, "@best_rbv_PidOgaiXlf") }
+record(ai,"$(P):PID:OffsetXlf_RBV") {
+    field( DESC, "PID Offset Xlf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidOffsetXlf") }
 
-## Y
-record(ai,"$(P):PID:KpY_RBV")
-{
-	field( DESC, "PID Kp Y Readback")
+# Xhf
+record(ai,"$(P):PID:FreqXhf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Freq Xhf")
+	field( INP, "@best_rbv_PidFreqXhf")
+	field( EGU, "Hz")
+	field( SCAN, "1 second") }
+record(ai,"$(P):PID:KpXhf_RBV") {
+    field( DESC, "PID Kp Xhf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidKpY")
-}
-record(ai,"$(P):PID:KiY_RBV")
-{
-	field( DESC, "PID Ki Y Readback")
+	field( INP, "@best_rbv_PidKpXhf") }
+record(ai,"$(P):PID:KiXhf_RBV") {
+    field( DESC, "PID Ki Xhf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidKiY")
-}
-record(ai,"$(P):PID:KdY_RBV")
-{
-	field( DESC, "PID Kd Y Readback")
+	field( INP, "@best_rbv_PidKiXhf") }
+record(ai,"$(P):PID:KdXhf_RBV") {
+    field( DESC, "PID Kd Xhf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidKdY")
-}
-record(ai,"$(P):PID:eminY_RBV")
-{
-	field( DESC, "PID emin Y Readback")
+	field( INP, "@best_rbv_PidKdXhf") }
+record(ai,"$(P):PID:eminXhf_RBV") {
+    field( DESC, "PID emin Xhf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PideminY")
-}
-record(ai,"$(P):PID:ImaxY_RBV")
-{
-	field( DESC, "PID Imax Y Readback")
+	field( INP, "@best_rbv_PideminXhf") }
+record(ai,"$(P):PID:ImaxXhf_RBV") {
+    field( DESC, "PID Imax Xhf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidImaxY")
-}
-record(ai,"$(P):PID:OminY_RBV")
-{
-	field( DESC, "PID Omin Y Readback")
+	field( INP, "@best_rbv_PidImaxXhf") }
+record(ai,"$(P):PID:OminXhf_RBV") {
+    field( DESC, "PID Omin Xhf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOminY")
-}
-record(ai,"$(P):PID:OmaxY_RBV")
-{
-	field( DESC, "PID Omax Y Readback")
+	field( INP, "@best_rbv_PidOminXhf") }
+record(ai,"$(P):PID:OmaxXhf_RBV") {
+    field( DESC, "PID Omax Xhf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOmaxY")
-}
-record(ai,"$(P):PID:OgainY_RBV")
-{
-	field( DESC, "PID Ogain Y Readback")
+	field( INP, "@best_rbv_PidOmaxXhf") }
+record(ai,"$(P):PID:OgainXhf_RBV") {
+    field( DESC, "PID Ogain Xhf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOgaiY")
-}
-
-## I0
-record(ai,"$(P):PID:KpI0_RBV")
-{
-	field( DESC, "PID Kp I0 Readback")
+	field( INP, "@best_rbv_PidOgaiXhf") }
+record(ai,"$(P):PID:OffsetXhf_RBV") {
+    field( DESC, "PID Offset Xhf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidKpI0")
-}
-record(ai,"$(P):PID:KiI0_RBV")
-{
-	field( DESC, "PID Ki I0 Readback")
+	field( INP, "@best_rbv_PidOffsetXhf") }
+# Ylf
+record(ai,"$(P):PID:FreqYlf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Freq Ylf")
+	field( INP, "@best_rbv_PidFreqYlf")
+	field( EGU, "Hz")
+	field( SCAN, "1 second") }
+record(ai,"$(P):PID:KpYlf_RBV") {
+    field( DESC, "PID Kp Ylf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidKiI0")
-}
-record(ai,"$(P):PID:KdI0_RBV")
-{
-	field( DESC, "PID Kd I0 Readback")
+	field( INP, "@best_rbv_PidKpYlf") }
+record(ai,"$(P):PID:KiYlf_RBV") {
+    field( DESC, "PID Ki Ylf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidKdI0")
-}
-record(ai,"$(P):PID:eminI0_RBV")
-{
-	field( DESC, "PID emin I0 Readback")
+	field( INP, "@best_rbv_PidKiYlf") }
+record(ai,"$(P):PID:KdYlf_RBV") {
+    field( DESC, "PID Kd Ylf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PideminI0")
-}
-record(ai,"$(P):PID:ImaxI0_RBV")
-{
-	field( DESC, "PID Imax I0 Readback")
+	field( INP, "@best_rbv_PidKdYlf") }
+record(ai,"$(P):PID:eminYlf_RBV") {
+    field( DESC, "PID emin Ylf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidImaxI0")
-}
-record(ai,"$(P):PID:OminI0_RBV")
-{
-	field( DESC, "PID Omin I0 Readback")
+	field( INP, "@best_rbv_PideminYlf") }
+record(ai,"$(P):PID:ImaxYlf_RBV") {
+    field( DESC, "PID Imax Ylf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOminI0")
-}
-record(ai,"$(P):PID:OmaxI0_RBV")
-{
-	field( DESC, "PID Omax I0 Readback")
+	field( INP, "@best_rbv_PidImaxYlf") }
+record(ai,"$(P):PID:OminYlf_RBV") {
+    field( DESC, "PID Omin Ylf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOmaxI0")
-}
-record(ai,"$(P):PID:OgainI0_RBV")
-{
-	field( DESC, "PID Ogain I0 Readback")
+	field( INP, "@best_rbv_PidOminYlf") }
+record(ai,"$(P):PID:OmaxYlf_RBV") {
+    field( DESC, "PID Omax Ylf Readback")
     field( DTYP, "CAENels BEST Ai")
 	field( SCAN, "1 second")
-	field( INP, "@best_rbv_PidOgaiI0")
-}
+	field( INP, "@best_rbv_PidOmaxYlf") }
+record(ai,"$(P):PID:OgainYlf_RBV") {
+    field( DESC, "PID Ogain Ylf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidOgaiYlf") }
+record(ai,"$(P):PID:OffsetYlf_RBV") {
+    field( DESC, "PID Offset Ylf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidOffsetYlf") }
+# Yhf
+record(ai,"$(P):PID:FreqYhf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Freq Yhf")
+	field( INP, "@best_rbv_PidFreqYhf")
+	field( EGU, "Hz")
+	field( SCAN, "1 second") }
+record(ai,"$(P):PID:KpYhf_RBV") {
+    field( DESC, "PID Kp Yhf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidKpYhf") }
+record(ai,"$(P):PID:KiYhf_RBV") {
+    field( DESC, "PID Ki Yhf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidKiYhf") }
+record(ai,"$(P):PID:KdYhf_RBV") {
+    field( DESC, "PID Kd Yhf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidKdYhf") }
+record(ai,"$(P):PID:eminYhf_RBV") {
+    field( DESC, "PID emin Yhf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PideminYhf") }
+record(ai,"$(P):PID:ImaxYhf_RBV") {
+    field( DESC, "PID Imax Yhf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidImaxYhf") }
+record(ai,"$(P):PID:OminYhf_RBV") {
+    field( DESC, "PID Omin Yhf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidOminYhf") }
+record(ai,"$(P):PID:OmaxYhf_RBV") {
+    field( DESC, "PID Omax Yhf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidOmaxYhf") }
+record(ai,"$(P):PID:OgainYhf_RBV") {
+    field( DESC, "PID Ogain Yhf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidOgaiYhf") }
+record(ai,"$(P):PID:OffsetYhf_RBV") {
+    field( DESC, "PID Offset Yhf Readback")
+    field( DTYP, "CAENels BEST Ai")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_PidOffsetYhf") }
+## ROC
+record(ao,"$(P):PID0:Roc") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ROC limits")
+	field( OUT, "@best_Pidroc0")
+	field( EGU, "%") }
+record(ao,"$(P):PID1:Roc") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ROC limits")
+	field( OUT, "@best_Pidroc1")
+	field( EGU, "%") }
+record(ao,"$(P):PID0:RocI") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ROC limits")
+	field( OUT, "@best_PidrocI0")
+	field( EGU, "%") }
+record(ao,"$(P):PID1:RocI") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ROC limits")
+	field( OUT, "@best_PidrocI1")
+	field( EGU, "%") }
+record(ai,"$(P):PID0:Roc_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID ROC limits")
+	field( INP, "@best_rbv_Pidroc0")
+	field( EGU, "%")
+	field( SCAN, "1 second") }
+record(ai,"$(P):PID1:Roc_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID ROC limits")
+	field( INP, "@best_rbv_Pidroc1")
+	field( EGU, "%")
+	field( SCAN, "1 second") }
+record(ai,"$(P):PID0:RocI_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID ROC limits")
+	field( INP, "@best_rbv_PidrocI0")
+	field( EGU, "%")
+	field( SCAN, "1 second") }
+record(ai,"$(P):PID1:RocI_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID ROC limits")
+	field( INP, "@best_rbv_PidrocI1")
+	field( EGU, "%")
+	field( SCAN, "1 second") }
+record(ao,"$(P):PID0:ENArocX") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ENA Region of Convergence, X pos")
+	field( OUT,  "@best_EnarocX") }
+record(ao,"$(P):PID0:ENArocY") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ENA Region of Convergence, Y pos")
+	field( OUT,  "@best_EnarocY") }
+record(ao,"$(P):PID0:ENArocI") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ENA Region of Convergence, I0 pos")
+	field( OUT,  "@best_EnarocI0") }
+record(ao,"$(P):PID1:ENArocX") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ENA Region of Convergence, X2 pos")
+	field( OUT,  "@best_EnarocX2") }
+record(ao,"$(P):PID1:ENArocY") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ENA Region of Convergence, Y2 pos")
+	field( OUT,  "@best_EnarocY2") }
+record(ao,"$(P):PID1:ENArocI") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ENA Region of Convergence, I02 pos")
+	field( OUT,  "@best_EnarocI02") }
+record(ai,"$(P):PID0:ENArocX_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID ENA Region of Convergence, X pos")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_EnarocX") }
+record(ai,"$(P):PID0:ENArocY_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID ENA Region of Convergence, Y pos")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_EnarocY") }
+record(ai,"$(P):PID0:ENArocI_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID ENA Region of Convergence, I0 pos")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_EnarocI") }
+record(ai,"$(P):PID1:ENArocX_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID ENA Region of Convergence, X2 pos")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_EnarocX2") }
+record(ai,"$(P):PID1:ENArocY_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID ENA Region of Convergence, Y2 pos")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_EnarocY2") }
+record(ai,"$(P):PID1:ENArocI_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID ENA Region of Convergence, I02 pos")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_EnarocI2") }
+## ROI
+record(ao,"$(P):PID0:RoiX") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ROI X limits")
+	field( OUT, "@best_Pidroi0X")
+	field( EGU, "um") }
+record(ao,"$(P):PID0:RoiY") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ROI Y limits")
+	field( OUT, "@best_Pidroi0Y")
+	field( EGU, "um") }
+record(ao,"$(P):PID1:RoiX") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ROI X limits")
+	field( OUT, "@best_Pidroi1X")
+	field( EGU, "um") }
+record(ao,"$(P):PID1:RoiY") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID ROI Y limits")
+	field( OUT, "@best_Pidroi1Y")
+	field( EGU, "um") }
+record(ai,"$(P):PID0:RoiX_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Region of Interest, X postion")
+	field( EGU,  "um")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_Pidroi0X") }
+record(ai,"$(P):PID0:RoiY_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Region of Interest, Y postion")
+	field( EGU,  "um")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_Pidroi0Y") }
+record(ai,"$(P):PID1:RoiX_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Region of Interest, X postion")
+	field( EGU,  "um")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_Pidroi1X") }
+record(ai,"$(P):PID1:RoiY_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Region of Interest, Y postion")
+	field( EGU,  "um")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_Pidroi1Y") }
+## Filters configuration
+record(bo,"$(P):PID:FiltLPX") {
+    field( DTYP, "CAENels BEST Bo")
+	field( DESC, "LP filter X")
+	field( ZNAM, "LOWPass filter X enabled")
+	field( ONAM, "FULLPass filter X enabled")
+	field( OUT,  "@best_PidFilterLPX") }
+record(bo,"$(P):PID:FiltLPY") {
+    field( DTYP, "CAENels BEST Bo")
+	field( DESC, "LP filter Y")
+	field( ZNAM, "LOWPass filter Y enabled")
+	field( ONAM, "FULLPass filter Y enabled")
+	field( OUT,  "@best_PidFilterLPY") }
+record(mbbi,"$(P):PID:FiltLPX_RBV") {
+    field( DTYP, "CAENels BEST Mbbi")
+	field( DESC, "LP filter X")
+	field( ZRST, "LOWPass filter X enabled")
+	field( ONST, "FULLPass filter X enabled")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterLPX") }
+record(mbbi,"$(P):PID:FiltLPY_RBV") {
+    field( DTYP, "CAENels BEST Mbbi")
+	field( DESC, "LP filter Y")
+	field( ZRST, "LOWPass filter Y enabled")
+	field( ONST, "FULLPass filter Y enabled")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterLPY") }
+## Filter coefficient
+record(ao,"$(P):PID:FreqLPXlf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Low pass filter frequency")
+	field( OUT,  "@best_FilterFreqLPXlf") }
+record(ao,"$(P):PID:FreqLPYlf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Low pass filter frequency")
+	field( OUT,  "@best_FilterFreqLPYlf") }
+record(ao,"$(P):PID:FreqLPXhf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Low pass filter frequency")
+	field( OUT,  "@best_FilterFreqLPXhf") }
+record(ao,"$(P):PID:FreqLPYhf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID Low pass filter frequency")
+	field( OUT,  "@best_FilterFreqLPYhf") }
+record(ao,"$(P):PID:FreqHPXhf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID High pass filter frequency")
+	field( OUT,  "@best_FilterFreqHPXhf") }
+record(ao,"$(P):PID:FreqHPYhf") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "PID High pass filter frequency")
+	field( OUT,  "@best_FilterFreqHPYhf") }
+record(ai,"$(P):PID:FreqLPXlf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Low pass filter frequency")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_FilterFreqLPXlf") }
+record(ai,"$(P):PID:FreqLPYlf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Low pass filter frequency")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_FilterFreqLPYlf") }
+record(ai,"$(P):PID:FreqLPXhf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Low pass filter frequency")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_FilterFreqLPXhf") }
+record(ai,"$(P):PID:FreqLPYhf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Low pass filter frequency")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_FilterFreqLPYhf") }
+record(ai,"$(P):PID:FreqHPXhf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Low pass filter frequency")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_FilterFreqHPXhf") }
+record(ai,"$(P):PID:FreqHPYhf_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "PID Low pass filter frequency")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_FilterFreqHPYhf") }
+record(bo,"$(P):PID:FiltCommitXlf") {
+    field( DTYP, "CAENels BEST Bo")
+	field( DESC, "PID Commit Filter filter coef LP X")
+	field( ZNAM, "Committed")
+	field( ONAM, "Failed")
+	field( OUT,  "@best_PIDFiltercommitXlf") }
+record(bo,"$(P):PID:FiltCommitYlf") {
+    field( DTYP, "CAENels BEST Bo")
+	field( DESC, "PID Commit Filter filter coef LP Y")
+	field( ZNAM, "Committed")
+	field( ONAM, "Failed")
+	field( OUT,  "@best_PIDFiltercommitYlf") }
+record(bo,"$(P):PID:FiltCommitXhf") {
+    field( DTYP, "CAENels BEST Bo")
+	field( DESC, "PID Commit Filter filter coef BP X")
+	field( ZNAM, "Committed")
+	field( ONAM, "Failed")
+	field( OUT,  "@best_PIDFiltercommitXhf") }
+record(bo,"$(P):PID:FiltCommitYhf") {
+    field( DTYP, "CAENels BEST Bo")
+	field( DESC, "PID Commit Filter filter coef BP Y")
+	field( ZNAM, "Committed")
+	field( ONAM, "Failed")
+	field( OUT,  "@best_PIDFiltercommitYhf") }
+## Filters parameters
+record(ao,"$(P):PID:FilterLPposXparamAcoef1") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP X a 1")
+	field( OUT,  "@best_PidFilterCoefLPXA1") }
+record(ao,"$(P):PID:FilterLPposXparamAcoef2") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP X a 2")
+	field( OUT,  "@best_PidFilterCoefLPXA2") }
+record(ao,"$(P):PID:FilterLPposXparamAcoef3") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP X a 3")
+	field( OUT,  "@best_PidFilterCoefLPXA3") }
+record(ao,"$(P):PID:FilterLPposXparamAcoef4") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP X a 4")
+	field( OUT,  "@best_PidFilterCoefLPXA4") }
+record(ao,"$(P):PID:FilterLPposXparamBcoef0") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP X b 0")
+	field( OUT,  "@best_PidFilterCoefLPXB0") }
+record(ao,"$(P):PID:FilterLPposXparamBcoef1") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP X b 1")
+	field( OUT,  "@best_PidFilterCoefLPXB1") }
+record(ao,"$(P):PID:FilterLPposXparamBcoef2") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP X b 2")
+	field( OUT,  "@best_PidFilterCoefLPXB2") }
+record(ao,"$(P):PID:FilterLPposXparamBcoef3") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP X b 3")
+	field( OUT,  "@best_PidFilterCoefLPXB3") }
+record(ao,"$(P):PID:FilterLPposXparamBcoef4") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP X b 4")
+	field( OUT,  "@best_PidFilterCoefLPXB4") }
+record(ao,"$(P):PID:FilterLPposYparamAcoef1") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP Y a 1")
+	field( OUT,  "@best_PidFilterCoefLPYA1") }
+record(ao,"$(P):PID:FilterLPposYparamAcoef2") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP Y a 2")
+	field( OUT,  "@best_PidFilterCoefLPYA2") }
+record(ao,"$(P):PID:FilterLPposYparamAcoef3") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP Y a 3")
+	field( OUT,  "@best_PidFilterCoefLPYA3") }
+record(ao,"$(P):PID:FilterLPposYparamAcoef4") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP Y a 4")
+	field( OUT,  "@best_PidFilterCoefLPYA4") }
+record(ao,"$(P):PID:FilterLPposYparamBcoef0") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP Y b 0")
+	field( OUT,  "@best_PidFilterCoefLPYB0") }
+record(ao,"$(P):PID:FilterLPposYparamBcoef1") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP Y b 1")
+	field( OUT,  "@best_PidFilterCoefLPYB1") }
+record(ao,"$(P):PID:FilterLPposYparamBcoef2") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP Y b 2")
+	field( OUT,  "@best_PidFilterCoefLPYB2") }
+record(ao,"$(P):PID:FilterLPposYparamBcoef3") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP Y b 3")
+	field( OUT,  "@best_PidFilterCoefLPYB3") }
+record(ao,"$(P):PID:FilterLPposYparamBcoef4") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef LP Y b 4")
+	field( OUT,  "@best_PidFilterCoefLPYB4") }
+record(ao,"$(P):PID:FilterBPposXparamAcoef1") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP X a 1")
+	field( OUT,  "@best_PidFilterCoefBPXA1") }
+record(ao,"$(P):PID:FilterBPposXparamAcoef2") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP X a 2")
+	field( OUT,  "@best_PidFilterCoefBPXA2") }
+record(ao,"$(P):PID:FilterBPposXparamAcoef3") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP X a 3")
+	field( OUT,  "@best_PidFilterCoefBPXA3") }
+record(ao,"$(P):PID:FilterBPposXparamAcoef4") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP X a 4")
+	field( OUT,  "@best_PidFilterCoefBPXA4") }
+record(ao,"$(P):PID:FilterBPposXparamBcoef0") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP X b 0")
+	field( OUT,  "@best_PidFilterCoefBPXB0") }
+record(ao,"$(P):PID:FilterBPposXparamBcoef1") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP X b 1")
+	field( OUT,  "@best_PidFilterCoefBPXB1") }
+record(ao,"$(P):PID:FilterBPposXparamBcoef2") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP X b 2")
+	field( OUT,  "@best_PidFilterCoefBPXB2") }
+record(ao,"$(P):PID:FilterBPposXparamBcoef3") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP X b 3")
+	field( OUT,  "@best_PidFilterCoefBPXB3") }
+record(ao,"$(P):PID:FilterBPposXparamBcoef4") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP X b 4")
+	field( OUT,  "@best_PidFilterCoefBPXB4") }
+record(ao,"$(P):PID:FilterBPposYparamAcoef1") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP Y a 1")
+	field( OUT,  "@best_PidFilterCoefBPYA1") }
+record(ao,"$(P):PID:FilterBPposYparamAcoef2") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP Y a 2")
+	field( OUT,  "@best_PidFilterCoefBPYA2") }
+record(ao,"$(P):PID:FilterBPposYparamAcoef3") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP Y a 3")
+	field( OUT,  "@best_PidFilterCoefBPYA3") }
+record(ao,"$(P):PID:FilterBPposYparamAcoef4") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP Y a 4")
+	field( OUT,  "@best_PidFilterCoefBPYA4") }
+record(ao,"$(P):PID:FilterBPposYparamBcoef0") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP Y b 0")
+	field( OUT,  "@best_PidFilterCoefBPYB0") }
+record(ao,"$(P):PID:FilterBPposYparamBcoef1") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP Y b 1")
+	field( OUT,  "@best_PidFilterCoefBPYB1") }
+record(ao,"$(P):PID:FilterBPposYparamBcoef2") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP Y b 2")
+	field( OUT,  "@best_PidFilterCoefBPYB2") }
+record(ao,"$(P):PID:FilterBPposYparamBcoef3") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP Y b 3")
+	field( OUT,  "@best_PidFilterCoefBPYB3") }
+record(ao,"$(P):PID:FilterBPposYparamBcoef4") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "Filter coef BP Y b 4")
+	field( OUT,  "@best_PidFilterCoefBPYB4") }
+record(ai,"$(P):PID:FilterLPposXparamAcoef1_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP X a 1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPXA1") }
+record(ai,"$(P):PID:FilterLPposXparamAcoef2_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP X a 2")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPXA2") }
+record(ai,"$(P):PID:FilterLPposXparamAcoef3_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP X a 3")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPXA3") }
+record(ai,"$(P):PID:FilterLPposXparamAcoef4_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP X a 4")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPXA4") }
+record(ai,"$(P):PID:FilterLPposXparamBcoef0_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP X b 0")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPXB0") }
+record(ai,"$(P):PID:FilterLPposXparamBcoef1_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP X b 1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPXB1") }
+record(ai,"$(P):PID:FilterLPposXparamBcoef2_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP X b 2")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPXB2") }
+record(ai,"$(P):PID:FilterLPposXparamBcoef3_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP X b 3")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPXB3") }
+record(ai,"$(P):PID:FilterLPposXparamBcoef4_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP X b 4")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPXB4") }
+record(ai,"$(P):PID:FilterLPposYparamAcoef1_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP Y a 1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPYA1") }
+record(ai,"$(P):PID:FilterLPposYparamAcoef2_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP Y a 2")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPYA2") }
+record(ai,"$(P):PID:FilterLPposYparamAcoef3_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP Y a 3")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPYA3") }
+record(ai,"$(P):PID:FilterLPposYparamAcoef4_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP Y a 4")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPYA4") }
+record(ai,"$(P):PID:FilterLPposYparamBcoef0_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP Y b 0")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPYB0") }
+record(ai,"$(P):PID:FilterLPposYparamBcoef1_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP Y b 1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPYB1") }
+record(ai,"$(P):PID:FilterLPposYparamBcoef2_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP Y b 2")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPYB2") }
+record(ai,"$(P):PID:FilterLPposYparamBcoef3_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP Y b 3")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPYB3") }
+record(ai,"$(P):PID:FilterLPposYparamBcoef4_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef LP Y b 4")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefLPYB4") }
+record(ai,"$(P):PID:FilterBPposXparamAcoef1_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP X a 1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPXA1") }
+record(ai,"$(P):PID:FilterBPposXparamAcoef2_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP X a 2")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPXA2") }
+record(ai,"$(P):PID:FilterBPposXparamAcoef3_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP X a 3")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPXA3") }
+record(ai,"$(P):PID:FilterBPposXparamAcoef4_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP X a 4")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPXA4") }
+record(ai,"$(P):PID:FilterBPposXparamBcoef0_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP X b 0")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPXB0") }
+record(ai,"$(P):PID:FilterBPposXparamBcoef1_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP X b 1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPXB1") }
+record(ai,"$(P):PID:FilterBPposXparamBcoef2_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP X b 2")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPXB2") }
+record(ai,"$(P):PID:FilterBPposXparamBcoef3_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP X b 3")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPXB3") }
+record(ai,"$(P):PID:FilterBPposXparamBcoef4_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP X b 4")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPXB4") }
+record(ai,"$(P):PID:FilterBPposYparamAcoef1_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP Y a 1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPYA1") }
+record(ai,"$(P):PID:FilterBPposYparamAcoef2_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP Y a 2")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPYA2") }
+record(ai,"$(P):PID:FilterBPposYparamAcoef3_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP Y a 3")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPYA3") }
+record(ai,"$(P):PID:FilterBPposYparamAcoef4_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP Y a 4")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPYA4") }
+record(ai,"$(P):PID:FilterBPposYparamBcoef0_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP Y b 0")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPYB0") }
+record(ai,"$(P):PID:FilterBPposYparamBcoef1_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP Y b 1")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPYB1") }
+record(ai,"$(P):PID:FilterBPposYparamBcoef2_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP Y b 2")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPYB2") }
+record(ai,"$(P):PID:FilterBPposYparamBcoef3_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP Y b 3")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPYB3") }
+record(ai,"$(P):PID:FilterBPposYparamBcoef4_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "Filter coef BP Y b 4")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_PidFilterCoefBPYB4") }
+## Orientament
+record(bo,"$(P):BPM0:Orient") {
+    field( DTYP, "CAENels BEST Bo")
+	field( DESC, "BPM Orientation")
+	field( ZNAM, "45deg")
+	field( ONAM, "90deg")
+	field( OUT, "@best_BPMorient0") }
+record(bo,"$(P):BPM1:Orient") {
+    field( DTYP, "CAENels BEST Bo")
+	field( DESC, "BPM Orientation")
+	field( ZNAM, "45deg")
+	field( ONAM, "90deg")
+	field( OUT, "@best_BPMorient1") }
+record(mbbi,"$(P):BPM0:Orient_RBV") {
+    field( DTYP, "CAENels BEST Mbbi")
+	field( DESC, "BPM Orientation")
+	field( ZRST, "45deg")	
+	field( ONST, "90deg")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_BPMorient0") }
+record(mbbi,"$(P):BPM1:Orient_RBV") {
+    field( DTYP, "CAENels BEST Mbbi")
+	field( DESC, "BPM Orientation")
+	field( ZRST, "45deg")	
+	field( ONST, "90deg")
+	field( TWST, "90deg")
+	field( SCAN, "1 second")
+	field( INP, "@best_rbv_BPMorient1") }
+## Crossbar
+record(ao,"$(P):BPM0:Crossbar") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "BPM Crossbar")
+	field( OUT,  "@best_BPMcrossbar0") }
+record(ai,"$(P):BPM0:Crossbar_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM Crossbar")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_BPMcrossbar0") }
+record(ao,"$(P):BPM1:Crossbar") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "BPM Crossbar")
+	field( OUT,  "@best_BPMcrossbar1") }
+record(ai,"$(P):BPM1:Crossbar_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM Crossbar")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_BPMcrossbar1") }
+## Offset
+record(ao,"$(P):BPM0:OffsetX") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "BPM offset")
+	field( OUT,  "@best_BPMoffset0X") }
+record(ai,"$(P):BPM0:OffsetX_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM offset")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_BPMoffset0X") }
+record(ao,"$(P):BPM1:OffsetX") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "BPM offset")
+	field( OUT,  "@best_BPMoffset1X") }
+record(ai,"$(P):BPM1:OffsetX_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM offset")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_BPMoffset1X") }
+record(ao,"$(P):BPM0:OffsetY") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "BPM offset")
+	field( OUT,  "@best_BPMoffset0Y") }
+record(ai,"$(P):BPM0:OffsetY_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM offset")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_BPMoffset0Y") }
+record(ao,"$(P):BPM1:OffsetY") {
+    field( DTYP, "CAENels BEST Ao")
+	field( DESC, "BPM offset")
+	field( OUT,  "@best_BPMoffset1Y") }
+record(ai,"$(P):BPM1:OffsetY_RBV") {
+    field( DTYP, "CAENels BEST Ai")
+	field( DESC, "BPM offset")
+	field( SCAN, "1 second")
+	field( INP,  "@best_rbv_BPMoffset1Y") }
+## BPM selector
+record(mbbo,"$(P):BPM:select") {
+    field( DTYP, "CAENels BEST Mbbo")
+	field( DESC, "BPM selector")
+	field( ZRST, "0 0 0 0")
+	field( ONST, "0 0 0 1")
+	field( TWST, "0 0 1 0")
+	field( THST, "0 0 1 1")
+	field( FRST, "0 1 0 0")
+	field( FVST, "0 1 0 1")
+	field( SXST, "0 1 1 0")
+	field( SVST, "0 1 1 1")
+	field( EIST, "1 0 0 0")
+	field( NIST, "1 0 0 1")
+	field( TEST, "1 0 1 0")
+	field( ELST, "1 0 1 1")
+	field( TVST, "1 1 0 0")
+	field( TTST, "1 1 0 1")
+	field( FTST, "1 1 1 0")
+	field( FFST, "1 1 1 1")
+	field( OUT,  "@best_BPMselector") }
+record(mbbi,"$(P):BPM:select_RBV") {
+    field( DTYP, "CAENels BEST Mbbi")
+	field( DESC, "BPM selector")
+	field( SCAN, "1 second")
+	field( ZRST, "0 0 0 0")
+	field( ONST, "0 0 0 1")
+	field( TWST, "0 0 1 0")
+	field( THST, "0 0 1 1")
+	field( FRST, "0 1 0 0")
+	field( FVST, "0 1 0 1")
+	field( SXST, "0 1 1 0")
+	field( SVST, "0 1 1 1")
+	field( EIST, "1 0 0 0")
+	field( NIST, "1 0 0 1")
+	field( TEST, "1 0 1 0")
+	field( ELST, "1 0 1 1")
+	field( TVST, "1 1 0 0")
+	field( TTST, "1 1 0 1")
+	field( FTST, "1 1 1 0")
+	field( FFST, "1 1 1 1")
+	field( INP,  "@best_rbv_BPMselector") }
+## BPM config
+record(mbbo,"$(P):PID:INconfig") {
+    field( DTYP, "CAENels BEST Mbbo")
+	field( DESC, "PID Configuration")
+	field( ZRST, "Xlf")
+	field( ONST, "Xlf & Xhf")
+	field( TWST, "Xlf & Ylf")
+	field( THST, "Xlf & Yhf")
+	field( FRST, "Xlf & Xhf & Ylf")
+	field( FVST, "Xlf & Xhf & Yhf")
+	field( SXST, "Xlf & Ylf & Yhf")
+	field( SVST, "Xlf & Xhf & Ylf & Yhf")
+	field( EIST, "Xhf")
+	field( NIST, "Xhf & Ylf")
+	field( TEST, "Xhf & Yhf")
+	field( ELST, "Xhf & Ylf & Yhf")
+	field( TVST, "Ylf")
+	field( TTST, "Ylf & Yhf")
+	field( FTST, "Yhf")
+	field( OUT,  "@best_PidConfigIN") }
+record(mbbi,"$(P):PID:INconfig_RBV") {
+    field( DTYP, "CAENels BEST Mbbi")
+	field( DESC, "PID Configuration")
+	field( SCAN, "1 second")
+	field( ZRST, "Xlf")
+	field( ONST, "Xlf & Xhf")
+	field( TWST, "Xlf & Ylf")
+	field( THST, "Xlf & Yhf")
+	field( FRST, "Xlf & Xhf & Ylf")
+	field( FVST, "Xlf & Xhf & Yhf")
+	field( SXST, "Xlf & Ylf & Yhf")
+	field( SVST, "Xlf & Xhf & Ylf & Yhf")
+	field( EIST, "Xhf")
+	field( NIST, "Xhf & Ylf")
+	field( TEST, "Xhf & Yhf")
+	field( ELST, "Xhf & Ylf & Yhf")
+	field( TVST, "Ylf")
+	field( TTST, "Ylf & Yhf")
+	field( FTST, "Yhf")
+	field( INP,  "@best_rbv_PidConfigIN") }
