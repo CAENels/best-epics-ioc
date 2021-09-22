@@ -1,4 +1,10 @@
-bestepicsioc (1.0.10) stable; urgency=medimu
+bestepicsioc (1.0.11) stable; urgency=low
+
+  * Tetramm range set function exposed to EPICS
+
+ -- Stefano Altin <s.altin@caenels.com>  Wed, 22 Sep 2021 14:29:00 +0100
+
+bestepicsioc (1.0.10) stable; urgency=medium
 
   * Fixed RBV 
 
@@ -11,7 +17,7 @@ bestepicsioc (1.0.9) stable; urgency=low
 
  -- Paolo Scarbolo <p.scarbolo@caenels.com>  Thu, 8 Mar 2018 15:42:00 +0200
 
-bestepicsioc (1.0.7) stable; urgency=medimu
+bestepicsioc (1.0.7) stable; urgency=medium
 
   * Fixes memory leak
 
