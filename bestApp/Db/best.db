@@ -94,6 +94,20 @@ record(waveform,"$(P):TetrAMM1:Ch4")
     field( SCAN, "1 second")
 }
 
+## TetrAmm ranges
+record(bo,"$(P):TetrAMM0:Range")
+{
+	field( DTYP, "CAENels BEST Bo")
+	field( DESC, "TetrAMM Range")
+	field( OUT,  "@best_TetrAMM0range")
+}
+record(bo,"$(P):TetrAMM1:Range")
+{
+	field( DTYP, "CAENels BEST Bo")
+	field( DESC, "TetrAMM Range")
+	field( OUT,  "@best_TetrAMM1range")
+}
+
 ## Calculated beam position from currents and BPM scaling parameters.
 ## See BEST User's Manual for detailed explanation of beam position calculation
 record(waveform,"$(P):BPM0:PosX")

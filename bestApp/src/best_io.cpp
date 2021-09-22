@@ -320,8 +320,8 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
         getPIDparamSingle(K_sel, pid_sel, (int)pid_par_sel_K, (double*)payload);
 
         //PDEBUG(DEBUG_RET_DATA, "pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
-        if ((K_sel == 4) & (pid_sel == 1))
-            printf("pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
+        //if ((K_sel == 4) & (pid_sel == 1))
+        //    printf("pv: %s, data[0]: %lf\n", pvName, *(double*)payload);
 
         return 0;
     }
@@ -414,6 +414,7 @@ int readBest(char *pvName, retType_t type, void* payload, int count){
 int writeBest(char *pvName, retType_t type, void* payload){
     unsigned short value;
     int predac_ch;
+    int bpm_sel;
     static double predac_out[4];
     char kappa_sel[16] = {0};
     char pos_sel[16] = {0};
@@ -422,9 +423,19 @@ int writeBest(char *pvName, retType_t type, void* payload){
 
     std::string pv_name_str = std::string(pvName);
 
-
     //=========================================================================
-    if( (pv_name_str == "best_PidSetpointX") ||
+    if(sscanf(pvName, "best_TetrAMM%drange", &bpm_sel) == 1) {
+        value = *(unsigned short*)payload;
+	PDEBUG(DEBUG_SET_DATA,
+               "pv: %s, tetrammSetRange(%d, %d)\n",
+               pvName, value, bpm_sel);
+
+        tetrammSetRange(value, bpm_sel);
+
+        return 0;
+    }
+    //=========================================================================
+    else if( (pv_name_str == "best_PidSetpointX") ||
 			(pv_name_str == "best_PidSetpointY") ||
 			(pv_name_str == "best_PidSetpointI0") ){
 	    int sel;
