@@ -1,0 +1,6 @@
+for user in /home/*
+do
+    cp /opt/CAENels/BIBEST/best_epics_ioc/best_epics_ioc.desktop ${user}/Desktop/
+    chown $(basename ${user}):$(basename ${user}) ${user}/Desktop/best_epics_ioc.desktop
+    chmod 755 ${user}/Desktop/best_epics_ioc.desktop
+done

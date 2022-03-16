@@ -1,0 +1,22 @@
+bibestepicsioc (1.0.2-bibest1~trusty) stable; urgency=low
+
+  * Added PIDconf in config.ini
+  * FILTER:TypeXlf_RBV and FILTER:TypeYlf_RBV changed to bi
+
+ -- Stefano Altin <s.altin@caenels.com>  Thu, 10 Mar 2022 12:11:22 +0100
+ 
+bibestepicsioc (1.0.1-bibest1~trusty) stable; urgency=low
+
+  * Added butterworth source
+  * Fixed bandpass filter order
+  * Fixed init
+
+ -- Stefano Altin <s.altin@caenels.com>  Mon, 07 Feb 2022 17:11:58 +0100
+
+bibestepicsioc (1.0.0-bibest1~trusty) stable; urgency=low
+
+  * Synced with best best-epic-ioc v1.0.29
+  * Compatible with libbibest >= 1.2.6
+
+ -- Stefano Altin <s.altin@caenels.com>  Thu, 16 Dec 2021 11:22:18 +0100
+

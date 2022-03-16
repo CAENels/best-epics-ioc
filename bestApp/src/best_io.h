@@ -8,9 +8,15 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <math.h>
+#include <string>
+#include <sstream>
+#include <armadillo>
 
 #include "pcie_driver/BEST_PCIe.h"
 #include "pcie_mailbox/mailbox_comm_defs.h"
+#include "mini/ini.h"
+#include "butterworth.h"
 
 #include "bibest.h"
 #include "aiRecord.h"
@@ -20,8 +26,11 @@
 #include "boRecord.h"
 #include "mbboRecord.h"
 #include "stringoutRecord.h"
+#include "biRecord.h"
+#include "stringinRecord.h"
 
 extern uint32_t debug;
+extern uint32_t PID_MAX_FREQ;
 
 #define DEBUG_ERROR         (0x1)
 #define DEBUG_WARN          (0x2)
@@ -39,6 +48,7 @@ extern uint32_t debug;
 #define FILE_MBOX       "/dev/best_mailbox"
 #define FILE_PREDAC     "/dev/best_predac0"
 #define FILE_DISP       "/dev/best_dma_displ"
+#define CONFIG_PATH     "/opt/CAENels/BIBEST/config_bibest.ini"
 
 #define DISP_NR_CH      32
 #define DISP_POSX       0
@@ -60,6 +70,8 @@ int stripEpicsIocName(char *pvName, mbbiRecord *pmbbi);
 int stripEpicsIocName(char *pvName, boRecord *pbo);
 int stripEpicsIocName(char *pvName, mbboRecord *pmbbo);
 int stripEpicsIocName(char *pvName, stringoutRecord *psor);
+int stripEpicsIocName(char *pvName, biRecord *pbi);
+int stripEpicsIocName(char *pvName, stringinRecord *psir);
 
 #ifdef __cplusplus
 extern "C" {

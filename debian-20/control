@@ -1,0 +1,14 @@
+Source: bibestepicsioc
+Section: unknown
+Priority: optional
+Maintainer: Paolo Scarbolo <p.scarbolo@caenels.com>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, libbibest (>=1.2.5)
+Standards-Version: 3.9.4
+Homepage: http://www.caenels.com
+
+
+Package: bibestepicsioc
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: BEST EPICS Input/Output Controller
+ EPICS IOC to control and to monitor BEST system

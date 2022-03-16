@@ -49,16 +49,14 @@ static long read_wf(void* precord){
 
 
 
-struct wfdset { /* waveform dset */
+struct { /* waveform dset */
         long            number;
         DEVSUPFUN       dev_report;
         DEVSUPFUN       init;
         DEVSUPFUN       init_record; /*returns: (-1,0)=>(failure,success)*/
         DEVSUPFUN       get_ioint_info;
         DEVSUPFUN       read_wf; /*returns: (-1,0)=>(failure,success)*/
-};
-
-struct wfdset devWaveformBest = {
+} devWaveformBest = {
     5,
     NULL,
     NULL,
