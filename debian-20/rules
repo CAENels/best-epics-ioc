@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	
+override_dh_auto_build:
+	make build
+
+override_dh_shlibdeps:
+	
+
+override_dh_auto_install:
+	make install INSTALL_LOCATION=$(CURDIR)/debian/bestepicsioc/opt/CAENels/BEST/best_epics_ioc
+	mkdir -p $(CURDIR)/debian/bestepicsioc/opt/CAENels/BEST/best_epics_ioc/lib
+	#cp sh_libs/* $(CURDIR)/debian/bestepicsioc/opt/CAENels/BEST/best_epics_ioc/lib
+	mkdir -p $(CURDIR)/debian/bestepicsioc/opt/CAENels/BEST/best_epics_ioc/iocBoot/iocbest
+	cp iocBoot/iocbest/* $(CURDIR)/debian/bestepicsioc/opt/CAENels/BEST/best_epics_ioc/iocBoot/iocbest
+	cp best_epics_ioc.png $(CURDIR)/debian/bestepicsioc/opt/CAENels/BEST/best_epics_ioc
+	cp best_epics_ioc.desktop $(CURDIR)/debian/bestepicsioc/opt/CAENels/BEST/best_epics_ioc

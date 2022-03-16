@@ -21,7 +21,7 @@ best_DBD += bestdev.dbd
 
 # Add all the support libraries needed by this IOC
 #best_LIBS += xxx
-CXXFLAGS += -I/usr/include
+CXXFLAGS += -I/usr/include -std=c++11
 best_LDFLAGS += -L/lib -L/usr/lib
 best_SYS_LIBS += best fftw3
 
@@ -35,6 +35,8 @@ best_SRCS += devMbbiBest.cpp
 best_SRCS += devMbboBest.cpp
 best_SRCS += devWaveformBest.cpp
 best_SRCS += devStringoutBest.cpp
+best_SRCS += devBiBest.cpp
+best_SRCS += devStringinBest.cpp
 
 # Build the main IOC entry point on workstation OSs.
 best_SRCS_DEFAULT += bestMain.cpp

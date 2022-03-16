@@ -15,4 +15,4 @@ dbLoadRecords("/opt/CAENels/BEST/best_epics_ioc/db/best.db","P=best0")
 iocInit()
 
 ## Start any sequence programs
-#seq sncbest,"user=jan"
+#seq sncbest,"user=best"

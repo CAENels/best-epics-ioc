@@ -5,4 +5,6 @@ device(mbbo, INST_IO, devMbboBest, "CAENels BEST Mbbo")
 device(mbbi, INST_IO, devMbbiBest, "CAENels BEST Mbbi")
 device(waveform, INST_IO, devWaveformBest, "CAENels BEST Waveform")
 device(stringout, INST_IO, devStringoutBest, "CAENels BEST Stringout")
+device(bi, INST_IO, devBiBest, "CAENels BEST Bi")
+device(stringin, INST_IO, devStringinBest, "CAENels BEST Stringin")
 

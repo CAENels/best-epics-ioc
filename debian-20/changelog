@@ -1,0 +1,240 @@
+bestepicsioc (1.0-32-best1~focal) stable; urgency=low
+
+  * Added PIDconf in config.ini
+
+ -- Stefano Altin <s.altin@caenels.com>  Thu, 10 Mar 2022 12:11:22 +0100
+
+bestepicsioc (1.0-31-best1~focal) stable; urgency=low
+
+  * Fixed ROCs in BEST:Init
+
+ -- Stefano Altin <s.altin@caenels.com>  Thu, 23 Dec 2021 13:51:11 +0100
+
+bestepicsioc (1.0-30-best1~focal) stable; urgency=low
+
+  * Modified BPMselector to use config.ini (set and init)
+  * Removed TetrAMM number check on BPM selector
+  * Added TetrAMM check in TetrAMMx:Range/HVvoltage/HVenable
+  * Added BEST:SFP_A and BEST:SFP_B
+  * Fixed BEST:Init
+
+ -- Stefano Altin <s.altin@caenels.com>  Tue, 21 Dec 2021 14:38:08 +0100
+
+bestepicsioc (1.0-29-best1~focal) stable; urgency=low
+
+  * compatible with libbest_1.8.12
+  * Fixed set/get PID param functions
+  * Fixed BPM:Selector and BPM:Selector_RBV -> X, Y, I0
+  * Fixed PID frequency in BEST:Init
+  * Removed unused PID:Config and PID:Config_RBV records
+  * Fixed buildnumber
+
+ -- Stefano Altin <s.altin@caenels.com>  Thu, 16 Dec 2021 11:22:18 +0100
+
+bestepicsioc (1.0-28-best1~focal) stable; urgency=low
+
+  * Added best-lib functions check (before writing config.ini)
+  * Removed PID :RoiX, :RoiY, :RoiIntMin, :RoiIntMax, :Roc
+  * Init moved from startup to writeBest
+  * Added :TetrAMM0HVvoltage :TetrAMM1HVvoltage
+  * Added :TetrAMM0HVenable :TetrAMM1HVenable
+  * Added best-lib dependence in Debian-xx/control
+
+ -- Stefano Altin <s.altin@caenels.com>  Tue, 14 Dec 2021 09:58:56 +0100
+
+bestepicsioc (1.0-27-best1~focal) stable; urgency=low
+
+  * Fixed best_rbv_PidSetpoint with setSetpoint2
+  * Fixed Init record
+  * Used ostringstream in UpdateFrequency (setWindAvg)
+  * Added PID:SetpointX_RBV, PID:SetpointY_RBV, PID:SetpointI0_RBV
+  * Changed to Bo BPMx:ENArocx and BPMx:ENAbeamOff
+  * Changed to Bi BPMx:ENArocx_RBV and BPMx:ENAbeamOff_RBV
+  * Modified best_NumberTetrAMM with getTetrammsNumber()
+
+ -- Stefano Altin <s.altin@caenels.com>  Fri, 10 Dec 2021 10:33:21 +0100
+
+bestepicsioc (1.0-26-best1~focal) stable; urgency=low
+
+  * Moved scaling to best-lib (set/getROClimits and set/getBPMoffset)
+  * Included <stream> to write in confi.ini with scientific notation
+  * Added ROCs enable to init and to config.ini
+  * compatible with libbest_1.8-10
+
+ -- Stefano Altin <s.altin@caenels.com>  Tue, 07 Dec 2021 08:57:38 +0100
+
+bestepicsioc (1.0-25-best1~focal) stable; urgency=low
+
+  *Added :Init (Initialize device with parameters in config.ini)
+  *Added Binary Input Bi and String Input Stringin record types
+
+ -- Stefano Altin <s.altin@caenels.com>  Mon, 06 Dec 2021 13:45:00 +1000
+
+bestepicsioc (1.0-24-best1~focal) stable; urgency=low
+
+  * Added :PID:FreqX      (Write PID X update frequency to FPGA and CONFIG_FILE)
+  * Added :PID:FreqY      (Write PID Y update frequency to FPGA and CONFIG_FILE)
+  * Added :PID:FreqI0     (Write PID I0 update frequency to FPGA and CONFIG_FILE)
+  * Added :PID:FreqX_RBV  (Read PID X update frequency from FPGA)
+  * Added :PID:FreqY_RBV  (Read PID Y update frequency from FPGA)
+  * Added :PID:FreqI0_RBV (Read PID I0 update frequency from FPGA)
+  * compatible with libbest_1.8-9
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Fri, 03 Dec 2021 12:27:41 +0100
+
+bestepicsioc (1.0-23-best1~focal) stable; urgency=low
+
+  * Added :BPM0:OffsetX      (Write BPM Offset to FPGA and CONFIG_FILE)
+  * Added :BPM0:OffsetY      (Write BPM Offset to FPGA and CONFIG_FILE)
+  * Added :BPM0:OffsetX_RBV  (Read BPM Offset from FPGA)
+  * Added :BPM0:OffsetY_RBV  (Read BPM Offset from FPGA)
+  * compatible with libbest_1.8-8
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Fri, 26 Nov 2021 16:56:22 +0100
+
+bestepicsioc (1.0-22-best1~focal) stable; urgency=low
+
+  * Added :BPM0:RocX      (Write ROC to FPGA)
+  * Added :BPM0:RocY      (Write ROC to FPGA)
+  * Added :BPM0:BeamOffTh (Write ROC to FPGA)
+  * Added :BPM1:RocX      (Write ROC to FPGA)
+  * Added :BPM1:RocY      (Write ROC to FPGA)
+  * Added :BPM1:BeamOffTh (Write ROC to FPGA)
+  * Added :BPM0:RocX_RBV  (Read ROC from FPGA)
+  * Added :BPM0:RocY_RBV  (Read ROC from FPGA)
+  * Added :BPM0:BeamOffTh_RBV (Read ROC from FPGA)
+  * Added :BPM1:RocX_RBV  (Read ROC from FPGA)
+  * Added :BPM1:RocY_RBV  (Read ROC from FPGA)
+  * Added :BPM1:BeamOffTh_RBV (Read ROC from FPGA)
+  * compatible with libbest_1.8-7
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Mon, 22 Nov 2021 14:12:50 +0100
+
+bestepicsioc (1.0-21-best1~focal) stable; urgency=low
+
+  * Changed :BPM0:ENArocX  (Write enable ROC configuration to FPGA only)
+  * Changed :BPM0:ENArocY  (Write enable ROC configuration to FPGA only)
+  * Changed :BPM0:ENArocI0 to :BPM0:ENAbeamOff (Write enable ROC configuration to FPGA only)
+  * Changed :BPM1:ENArocX  (Write enable ROC configuration to FPGA only)
+  * Changed :BPM1:ENArocY  (Write enable ROC configuration to FPGA only)
+  * Changed :BPM1:ENArocI0 to :BPM1:ENAbeamOff (Write enable ROC configuration to FPGA only)
+  * Changed :BPM0:ENArocI0_RBV to :BPM0:ENAbeamOff_RBV (Read enable ROC configuration from FPGA)
+  * Changed :BPM1:ENArocI0_RBV to :BPM1:ENAbeamOff_RBV (Read enable ROC configuration from FPGA)
+  * compatible with libbest_1.8-6
+  * Roc & Roi values and enable won't be saved in CONFIG_FILE and thus not loaded at startup
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Thu, 18 Nov 2021 16:54:52 +0100
+
+bestepicsioc (1.0-20-best1~focal) stable; urgency=low
+
+  * Added :BPM0:ENArocX  (Write enable ROC configuration to FPGA and CONFIG_FILE)
+  * Added :BPM0:ENArocY  (Write enable ROC configuration to FPGA and CONFIG_FILE)
+  * Added :BPM0:ENArocI0 (Write enable ROC configuration to FPGA and CONFIG_FILE)
+  * Added :BPM1:ENArocX  (Write enable ROC configuration to FPGA and CONFIG_FILE)
+  * Added :BPM1:ENArocY  (Write enable ROC configuration to FPGA and CONFIG_FILE)
+  * Added :BPM1:ENArocI0 (Write enable ROC configuration to FPGA and CONFIG_FILE)
+  * Added :BPM0:ENArocX_RBV  (Read enable ROC configuration from FPGA)
+  * Added :BPM0:ENArocY_RBV  (Read enable ROC configuration from FPGA)
+  * Added :BPM0:ENArocI0_RBV (Read enable ROC configuration from FPGA)
+  * Added :BPM1:ENArocX_RBV  (Read enable ROC configuration from FPGA)
+  * Added :BPM1:ENArocY_RBV  (Read enable ROC configuration from FPGA)
+  * Added :BPM1:ENArocI0_RBV (Read enable ROC configuration from FPGA)
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Thu, 18 Nov 2021 14:54:52 +0100
+
+bestepicsioc (1.0-19-best1~focal) stable; urgency=low
+
+  * Added :BPM0:Crossbar (Write TetrAMM crossbar configuration to FPGA and CONFIG_FILE)
+  * Added :BPM1:Crossbar (Write TetrAMM crossbar configuration to FPGA and CONFIG_FILE)
+  * Added :BPM0:Crossbar_RBV (Read TetrAMM crossbar configuration from FPGA)
+  * Added :BPM1:Crossbar_RBV (Read TetrAMM crossbar configuration from FPGA)
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Thu, 18 Nov 2021 11:48:07 +0100
+
+bestepicsioc (1.0-18-best1~focal) stable; urgency=low
+
+  * Added :BPM:Selector (Write BPM selector configuration to FPGA)
+  * Added :BPM:Selector_RBV (Read BPM selector configuration from FPGA)
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Wed, 17 Nov 2021 09:53:58 +0100
+
+bestepicsioc (1.0-17-best1~focal) stable; urgency=low
+
+  * Added :PID:INconfig
+  * Added :PID:INconfig_RBV
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Tue, 16 Nov 2021 13:46:42 +0100
+
+bestepicsioc (1.0-16-best1~focal) stable; urgency=low
+
+  * Added :PID:Config_RBV
+  * Added :PID:OUTconfig
+  * Added :PID:OUTconfig_RBV
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Fri, 29 Oct 2021 17:13:12 +0200
+
+bestepicsioc (1.0-15-best1~focal) stable; urgency=low
+
+  * Added :BPM0:Orient (write BPM0 orientation to FPGA and CONFIG_FILE)
+  * Added :BPM0:Orient_RBV (read BPM0 orientation from FPGA)
+  * Added :BPM1:Orient (write BPM1 orientation to FPGA and CONFIG_FILE)
+  * Added :BPM1:Orient_RBV (read BPM1 orientation from FPGA)
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Fri, 29 Oct 2021 15:38:40 +0200
+
+bestepicsioc (1.0-14-best1~focal) stable; urgency=low
+
+  * Added write in CONFIG_FILE the PID parameters and added library to write INI file
+  * BPM0:ScaleX changed to BPM0:ScaleX_RBV (since it was a ai)
+  * BPM0:ScaleX changed to ao db record (write to FPGA and to CONFIG_FILE)
+  * BPM0:ScaleY changed to BPM0:ScaleY_RBV (since it was a ai)
+  * BPM0:ScaleY changed to ao db record (write to FPGA and to CONFIG_FILE)
+  * BPM1:ScaleX changed to BPM1:ScaleX_RBV (since it was a ai)
+  * BPM1:ScaleX changed to ao db record (write to FPGA and to CONFIG_FILE)
+  * BPM1:ScaleY changed to BPM1:ScaleY_RBV (since it was a ai)
+  * BPM1:ScaleY changed to ao db record (write to FPGA and to CONFIG_FILE)
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Fri, 29 Oct 2021 09:32:06 +0200
+
+bestepicsioc (1.0-13-best1~focal) stable; urgency=low
+
+  * Updated Readme with all EPICS db functions and relative libbest functions
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Fri, 29 Oct 2021 09:32:06 +0200
+
+bestepicsioc (1.0-12-best1~focal) stable; urgency=low
+
+  * Added compatibility with Ubuntu 20.04 and 14.04
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Mon, 18 Oct 2021 12:41:00 +0100
+
+bestepicsioc (1.0.11) stable; urgency=low
+
+  * Tetramm range set function exposed to EPICS
+
+ -- Stefano Altin <s.altin@caenels.com>  Wed, 22 Sep 2021 14:29:00 +0100
+
+bestepicsioc (1.0.10) stable; urgency=medium
+
+  * Fixed RBV 
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Mon, 21 Oct 2019 16:10:00 +0100
+
+bestepicsioc (1.0.9) stable; urgency=low
+
+  * All the PID-related parameters exposed to epics
+  * PID reset function exposed to EPICS
+
+ -- Paolo Scarbolo <p.scarbolo@caenels.com>  Thu, 8 Mar 2018 15:42:00 +0200
+
+bestepicsioc (1.0.7) stable; urgency=medium
+
+  * Fixes memory leak
+
+ -- Jan Marjanovic <j.marjanovic@caenels.com>  Wed, 09 Mar 2016 16:06:46 +0100
+
+bestepicsioc (1.0-6) stable; urgency=low
+
+  * Initial release 
+
+ -- Jan Marjanovic <j.marjanovic@caenels.com>  Thu, 30 Oct 2014 18:06:21 +0100

@@ -1,28 +1,45 @@
 #! /bin/bash
 
-VER=1.0
-BUILD_NR=$(cat build_number)
-BUILD_NR=$(echo $BUILD_NR+1 | bc)
+# exit if some command fails
+set -e
 
-ORIG_DIR=$(pwd)
+VER=$(cat .version)
+BUILDNR=$(cat .buildnumber)
+CURRENT_DIR=$(pwd)
+NEW_NAME=bestepicsioc-$VER-$BUILDNR
+UBUNTU_VER=$(lsb_release -sr)
 
-rm -rf ../bestepicsioc-$VER.$BUILD_NR
-mkdir  ../bestepicsioc-$VER.$BUILD_NR
+echo "Package: $NEW_NAME"
 
-cp -r . ../bestepicsioc-$VER.$BUILD_NR
+mkdir -p pkg/bestepicsioc-$VER-$BUILDNR
 
-cd ../bestepicsioc-$VER.$BUILD_NR
+cp -ar 	bestApp/ \
+		best_epics_ioc.desktop \
+        best_epics_ioc.png \
+        configure/ \
+        .buildnumber \
+        iocBoot/ \
+        Makefile \
+        .version \
+        .travis.yml \
+		pkg/bestepicsioc-$VER-$BUILDNR
 
-rm -rf .git
-rm -rf bestApp/op/.metadata
-rm -rf create_debian_package.sh
+rm -rf pkg/bestepicsioc-$VER-$BUILDNR/bestApp/op/.metadata
 
+cd pkg 
+tar czvf bestepicsioc-$VER-$BUILDNR.orig.tar.gz bestepicsioc-$VER-$BUILDNR/
+mkdir -p bestepicsioc-$VER-$BUILDNR/debian
 cd ..
 
-tar czvf bestepicsioc_$VER.$BUILD_NR.orig.tar.gz bestepicsioc-$VER.$BUILD_NR
-
-cd bestepicsioc-$VER.$BUILD_NR
-
-debuild -us -uc -k51895D5F &&
-
-echo "$BUILD_NR" > $ORIG_DIR/build_number
+if [ $UBUNTU_VER = "14.04" ]
+then
+    cp -r ./debian-14/* pkg/bestepicsioc-$VER-$BUILDNR/debian
+    cd pkg/bestepicsioc-$VER-$BUILDNR 
+    debuild -us -uc 
+    debuild -kBA3FBE17BF2D656B1F93D1896D47F3FD51895D5F -S -p"gpg --batch --passphrase $GPGPSW"
+else
+    cp -r ./debian-20/* pkg/bestepicsioc-$VER-$BUILDNR/debian
+    cd pkg/bestepicsioc-$VER-$BUILDNR 
+    debuild -us -uc 
+    debuild -kBA3FBE17BF2D656B1F93D1896D47F3FD51895D5F -S -p"gpg --batch --passphrase $GPGPSW --pinentry-mode loopback"
+fi
