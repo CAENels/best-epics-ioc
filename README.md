@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/CAENels/best-epics-ioc.svg?branch=master)](https://travis-ci.org/CAENels/best-epics-ioc)
 
+Documentation downloadable from [`CAEN ELS website`](https://www.caenels.com/products/best/)
+
 ## Changelog
 
 ### 1.0.32
